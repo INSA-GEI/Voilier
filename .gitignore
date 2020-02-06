@@ -35,6 +35,9 @@
 *.i*86
 *.x86_64
 *.hex
+*.bin
+*.binary
+*.s19
 
 # Debug files
 *.dSYM/
@@ -50,3 +53,44 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Altium
+__Previews/
+History/
+Project Logs for*/
+
+# kicad
+*.bak
+*.kicad_pcb-bak
+*.sch-bak
+
+# Miscelaneous
+*.zip
+*.tgz
+*.msi
+*.cab
+*.tar.*
+*.7z
+
+# documentations
+*.pdf
+*.chm
+
+# images
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.ico
+*.tiff
+*.svg
+_autosave-*
+
+# Inventor
+OldVersions/
+*.lck
+
+# DS_Store osx files
+*.DS_Store
+
+
