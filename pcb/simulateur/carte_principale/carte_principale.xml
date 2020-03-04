@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/dimercur/Documents/Travail/git/arm-ada-ng/hardware/pcb/arm-ada-ng/carte_principale.sch</source>
+    <date>jeu. 14 févr. 2019 11:01:32 CET</date>
+    <tool>Eeschema 5.0.2-bee76a0~70~ubuntu18.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>carte_principale.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J1">
+      <value>Arduino_UNO_R2</value>
+      <footprint>Insa:Arduino_UNO_Pin_Only</footprint>
+      <datasheet>https://www.arduino.cc/en/Main/arduinoBoardUno</datasheet>
+      <libsource lib="MCU_Module" part="Arduino_UNO_R2" description="Arduino UNO Microcontroller Module, release 2"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C628BB4</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>LSM6DS3</value>
+      <footprint>Package_LGA:LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y</footprint>
+      <datasheet>www.st.com/resource/en/datasheet/lsm6ds3.pdf</datasheet>
+      <libsource lib="Sensor_Motion" part="LSM6DS3" description="I2C/SPI, iNEMO inertial module: always-on 3D accelerometer and 3D gyroscope"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C628CF8</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>BMP280</value>
+      <footprint>Package_LGA:Bosch_LGA-8_2x2.5mm_P0.65mm_ClockwisePinNumbering</footprint>
+      <datasheet>https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMP280-DS001-19.pdf</datasheet>
+      <libsource lib="Sensor_Pressure" part="BMP280" description="Absolute Barometric Pressure Sensor, LGA-8"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C628DDB</tstamp>
+    </comp>
+    <comp ref="U5">
+      <value>74AHC1G125</value>
+      <footprint>Package_TO_SOT_SMD:SOT-353_SC-70-5</footprint>
+      <datasheet>http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf</datasheet>
+      <libsource lib="74xGxx" part="74AHC1G125" description="Single Buffer Gate Tri-State, Low-Voltage CMOS"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C629EF3</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>74AHCT1G04</value>
+      <footprint>Package_TO_SOT_SMD:SOT-353_SC-70-5</footprint>
+      <datasheet>http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf</datasheet>
+      <libsource lib="74xGxx" part="74AHCT1G04" description="Single NOT Gate, Low-Voltage CMOS"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C62B0A2</tstamp>
+    </comp>
+    <comp ref="U6">
+      <value>74LS166</value>
+      <footprint>Package_SO:SOIC-16_3.9x9.9mm_P1.27mm</footprint>
+      <datasheet>http://www.ti.com/lit/gpn/sn74LS166</datasheet>
+      <libsource lib="74xx" part="74LS166" description="Shift Register 8-bit, parallel load"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C62B37B</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>ESP-WROOM-02</value>
+      <footprint>RF_Module:ESP-WROOM-02</footprint>
+      <datasheet>https://www.espressif.com/sites/default/files/documentation/0c-esp-wroom-02_datasheet_en.pdf</datasheet>
+      <libsource lib="RF_Module" part="ESP-WROOM-02" description="Wi-Fi Module, ESP8266EX SoC, 32-bit, 802.11b/g/n, WPA/WPA2, 2.7-3.6V, SMD"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C62B86B</tstamp>
+    </comp>
+    <comp ref="U7">
+      <value>LIS2MDL</value>
+      <footprint>Package_LGA:LGA-12_2x2mm_P0.5mm</footprint>
+      <datasheet>https://www.st.com/resource/en/datasheet/lis2mdl.pdf</datasheet>
+      <libsource lib="Insa" part="LIS2MDL" description="Magnetometre 3 axes"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C63F305</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>TE-FFC-10-0.5</value>
+      <footprint>Insa:FFC-10-0.5</footprint>
+      <libsource lib="Insa" part="TE-FFC-10-0.5" description="Connecteur FFC 10 pins 0.5 mm"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C63FC59</tstamp>
+    </comp>
+    <comp ref="P2">
+      <value>TE-FFC-10-0.5</value>
+      <footprint>Insa:FFC-10-0.5</footprint>
+      <libsource lib="Insa" part="TE-FFC-10-0.5" description="Connecteur FFC 10 pins 0.5 mm"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C63FDF0</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x02</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C6591B6</tstamp>
+    </comp>
+    <comp ref="J3">
+      <value>Conn_01x02</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5C659273</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="74xGxx" part="74LVC1G04">
+      <aliases>
+        <alias>74LVC1GU04</alias>
+        <alias>74AHC1G04</alias>
+        <alias>74AHCT1G04</alias>
+        <alias>74AUC1G04</alias>
+        <alias>74AUP1G04</alias>
+        <alias>74AHC1GU04</alias>
+        <alias>74AHCT1GU04</alias>
+        <alias>74AUC1GU04</alias>
+        <alias>74AUP1GU04</alias>
+      </aliases>
+      <description>Single NOT Gate, Low-Voltage CMOS</description>
+      <docs>http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf</docs>
+      <footprints>
+        <fp>SOT*</fp>
+        <fp>SG-*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74LVC1G04</field>
+      </fields>
+      <pins>
+        <pin num="2" name="~" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="~" type="output"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="74xGxx" part="74LVC1G125">
+      <aliases>
+        <alias>74AHC1G125</alias>
+        <alias>74AHCT1G125</alias>
+        <alias>74AUC1G125</alias>
+        <alias>74AUP1G125</alias>
+      </aliases>
+      <description>Single Buffer Gate Tri-State, Low-Voltage CMOS</description>
+      <docs>http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf</docs>
+      <footprints>
+        <fp>SOT*</fp>
+        <fp>SG-*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74LVC1G125</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="input"/>
+        <pin num="2" name="~" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="~" type="3state"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="74xx" part="74LS166">
+      <description>Shift Register 8-bit, parallel load</description>
+      <docs>http://www.ti.com/lit/gpn/sn74LS166</docs>
+      <footprints>
+        <fp>DIP?16*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74LS166</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Ds" type="input"/>
+        <pin num="2" name="A" type="input"/>
+        <pin num="3" name="B" type="input"/>
+        <pin num="4" name="C" type="input"/>
+        <pin num="5" name="D" type="input"/>
+        <pin num="6" name="CE" type="input"/>
+        <pin num="7" name="Clk" type="input"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="Clr" type="input"/>
+        <pin num="10" name="E" type="input"/>
+        <pin num="11" name="F" type="input"/>
+        <pin num="12" name="G" type="input"/>
+        <pin num="13" name="Qh" type="output"/>
+        <pin num="14" name="H" type="input"/>
+        <pin num="15" name="PE" type="input"/>
+        <pin num="16" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x02">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Insa" part="LIS2MDL">
+      <description>Magnetometre 3 axes</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LIS2MDL</field>
+        <field name="Footprint">Package_LGA:LGA-12_2x2mm_P0.5mm</field>
+        <field name="Datasheet">https://www.st.com/resource/en/datasheet/lis2mdl.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SCL/SPC" type="input"/>
+        <pin num="2" name="NC" type="NotConnected"/>
+        <pin num="3" name="CS" type="input"/>
+        <pin num="4" name="SDA/SDI/SDO" type="BiDi"/>
+        <pin num="5" name="C1" type="unspc"/>
+        <pin num="6" name="GND" type="power_out"/>
+        <pin num="7" name="INT/DRDY/SDO" type="output"/>
+        <pin num="8" name="GND" type="power_out"/>
+        <pin num="9" name="VDD" type="power_in"/>
+        <pin num="10" name="VDDIO" type="power_in"/>
+        <pin num="11" name="NC" type="NotConnected"/>
+        <pin num="12" name="NC" type="NotConnected"/>
+      </pins>
+    </libpart>
+    <libpart lib="Insa" part="TE-FFC-10-0.5">
+      <description>Connecteur FFC 10 pins 0.5 mm</description>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">TE-FFC-10-0.5</field>
+        <field name="Footprint">Insa:FFC-10-0.5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+        <pin num="7" name="7" type="passive"/>
+        <pin num="8" name="8" type="passive"/>
+        <pin num="9" name="9" type="passive"/>
+        <pin num="10" name="10" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="MCU_Module" part="Arduino_UNO_R2">
+      <description>Arduino UNO Microcontroller Module, release 2</description>
+      <docs>https://www.arduino.cc/en/Main/arduinoBoardUno</docs>
+      <footprints>
+        <fp>Arduino*UNO*R2*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">A</field>
+        <field name="Value">Arduino_UNO_R2</field>
+        <field name="Footprint">Module:Arduino_UNO_R2</field>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="NotConnected"/>
+        <pin num="2" name="IOREF" type="output"/>
+        <pin num="3" name="RESET" type="input"/>
+        <pin num="4" name="3V3" type="power_out"/>
+        <pin num="5" name="+5V" type="power_out"/>
+        <pin num="6" name="GND" type="power_in"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="VIN" type="power_in"/>
+        <pin num="9" name="A0" type="BiDi"/>
+        <pin num="10" name="A1" type="BiDi"/>
+        <pin num="11" name="A2" type="BiDi"/>
+        <pin num="12" name="A3" type="BiDi"/>
+        <pin num="13" name="A4/SDA" type="BiDi"/>
+        <pin num="14" name="A5/SCL" type="BiDi"/>
+        <pin num="15" name="D0/RX" type="BiDi"/>
+        <pin num="16" name="D1/TX" type="BiDi"/>
+        <pin num="17" name="D2" type="BiDi"/>
+        <pin num="18" name="D3" type="BiDi"/>
+        <pin num="19" name="D4" type="BiDi"/>
+        <pin num="20" name="D5" type="BiDi"/>
+        <pin num="21" name="D6" type="BiDi"/>
+        <pin num="22" name="D7" type="BiDi"/>
+        <pin num="23" name="D8" type="BiDi"/>
+        <pin num="24" name="D9" type="BiDi"/>
+        <pin num="25" name="D10" type="BiDi"/>
+        <pin num="26" name="D11" type="BiDi"/>
+        <pin num="27" name="D12" type="BiDi"/>
+        <pin num="28" name="D13" type="BiDi"/>
+        <pin num="29" name="GND" type="power_in"/>
+        <pin num="30" name="AREF" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="RF_Module" part="ESP-WROOM-02">
+      <description>Wi-Fi Module, ESP8266EX SoC, 32-bit, 802.11b/g/n, WPA/WPA2, 2.7-3.6V, SMD</description>
+      <docs>https://www.espressif.com/sites/default/files/documentation/0c-esp-wroom-02_datasheet_en.pdf</docs>
+      <footprints>
+        <fp>ESP?WROOM?02*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ESP-WROOM-02</field>
+        <field name="Footprint">RF_Module:ESP-WROOM-02</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD" type="power_in"/>
+        <pin num="2" name="EN" type="input"/>
+        <pin num="3" name="IO14" type="BiDi"/>
+        <pin num="4" name="IO12" type="BiDi"/>
+        <pin num="5" name="IO13" type="BiDi"/>
+        <pin num="6" name="IO15" type="BiDi"/>
+        <pin num="7" name="IO2" type="BiDi"/>
+        <pin num="8" name="IO0" type="BiDi"/>
+        <pin num="9" name="GND" type="power_in"/>
+        <pin num="10" name="IO4" type="BiDi"/>
+        <pin num="11" name="RXD" type="BiDi"/>
+        <pin num="12" name="TXD" type="BiDi"/>
+        <pin num="13" name="GND" type="passive"/>
+        <pin num="14" name="IO5" type="BiDi"/>
+        <pin num="15" name="RST" type="input"/>
+        <pin num="16" name="TOUT" type="input"/>
+        <pin num="17" name="IO16" type="BiDi"/>
+        <pin num="18" name="GND" type="passive"/>
+        <pin num="19" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Sensor_Motion" part="LSM6DS3">
+      <description>I2C/SPI, iNEMO inertial module: always-on 3D accelerometer and 3D gyroscope</description>
+      <docs>www.st.com/resource/en/datasheet/lsm6ds3.pdf</docs>
+      <footprints>
+        <fp>LGA*3x2.5mm*P0.5mm*LayoutBorder3x4y*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LSM6DS3</field>
+        <field name="Footprint">Package_LGA:LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SDO/SA0" type="BiDi"/>
+        <pin num="2" name="SDX" type="BiDi"/>
+        <pin num="3" name="SCX" type="input"/>
+        <pin num="4" name="INT1" type="output"/>
+        <pin num="5" name="VDDIO" type="power_in"/>
+        <pin num="6" name="GND" type="power_in"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="VDD" type="power_in"/>
+        <pin num="9" name="INT2" type="output"/>
+        <pin num="10" name="NC" type="NotConnected"/>
+        <pin num="11" name="NC" type="NotConnected"/>
+        <pin num="12" name="CS" type="input"/>
+        <pin num="13" name="SCL" type="input"/>
+        <pin num="14" name="SDA" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="Sensor_Pressure" part="BMP280">
+      <description>Absolute Barometric Pressure Sensor, LGA-8</description>
+      <docs>https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMP280-DS001-19.pdf</docs>
+      <footprints>
+        <fp>Bosch*LGA*2x2.5mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BMP280</field>
+        <field name="Footprint">Package_LGA:Bosch_LGA-8_2x2.5mm_P0.65mm_ClockwisePinNumbering</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="CSB" type="input"/>
+        <pin num="3" name="SDI" type="BiDi"/>
+        <pin num="4" name="SCK" type="input"/>
+        <pin num="5" name="SDO" type="BiDi"/>
+        <pin num="6" name="VDDIO" type="power_in"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="74xGxx">
+      <uri>/home/dimercur/kicad/kicad-symbols/74xGxx.lib</uri>
+    </library>
+    <library logical="74xx">
+      <uri>/home/dimercur/kicad/kicad-symbols/74xx.lib</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>/home/dimercur/kicad/kicad-symbols/Connector_Generic.lib</uri>
+    </library>
+    <library logical="Insa">
+      <uri>/home/dimercur/kicad/local-symbols/Insa.lib</uri>
+    </library>
+    <library logical="MCU_Module">
+      <uri>/home/dimercur/kicad/kicad-symbols/MCU_Module.lib</uri>
+    </library>
+    <library logical="RF_Module">
+      <uri>/home/dimercur/kicad/kicad-symbols/RF_Module.lib</uri>
+    </library>
+    <library logical="Sensor_Motion">
+      <uri>/home/dimercur/kicad/kicad-symbols/Sensor_Motion.lib</uri>
+    </library>
+    <library logical="Sensor_Pressure">
+      <uri>/home/dimercur/kicad/kicad-symbols/Sensor_Pressure.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GND">
+      <node ref="P1" pin="6"/>
+      <node ref="P1" pin="7"/>
+      <node ref="P1" pin="9"/>
+      <node ref="P2" pin="1"/>
+      <node ref="J1" pin="29"/>
+      <node ref="U3" pin="7"/>
+      <node ref="U3" pin="1"/>
+      <node ref="U2" pin="7"/>
+      <node ref="U2" pin="6"/>
+      <node ref="U4" pin="3"/>
+      <node ref="U5" pin="3"/>
+      <node ref="J1" pin="7"/>
+      <node ref="J1" pin="6"/>
+      <node ref="U6" pin="8"/>
+      <node ref="U1" pin="13"/>
+      <node ref="P2" pin="7"/>
+      <node ref="U1" pin="9"/>
+      <node ref="P2" pin="9"/>
+      <node ref="U1" pin="19"/>
+      <node ref="U1" pin="18"/>
+      <node ref="P1" pin="1"/>
+      <node ref="U7" pin="6"/>
+      <node ref="U7" pin="8"/>
+    </net>
+    <net code="2" name="Net-(U4-Pad4)">
+      <node ref="U4" pin="4"/>
+      <node ref="U6" pin="15"/>
+    </net>
+    <net code="3" name="Net-(U5-Pad2)">
+      <node ref="U5" pin="2"/>
+      <node ref="U6" pin="13"/>
+    </net>
+    <net code="4" name="VDD">
+      <node ref="U2" pin="8"/>
+      <node ref="J1" pin="4"/>
+      <node ref="U7" pin="10"/>
+      <node ref="U3" pin="6"/>
+      <node ref="U2" pin="5"/>
+      <node ref="U3" pin="8"/>
+      <node ref="U1" pin="1"/>
+      <node ref="U7" pin="9"/>
+      <node ref="U6" pin="16"/>
+    </net>
+    <net code="5" name="/EN_KEYS">
+      <node ref="U4" pin="2"/>
+      <node ref="U5" pin="1"/>
+      <node ref="U6" pin="6"/>
+    </net>
+    <net code="6" name="Net-(U5-Pad4)">
+      <node ref="U5" pin="4"/>
+    </net>
+    <net code="7" name="Net-(U7-Pad12)">
+      <node ref="U7" pin="12"/>
+    </net>
+    <net code="8" name="Net-(U7-Pad7)">
+      <node ref="U7" pin="7"/>
+    </net>
+    <net code="9" name="Net-(U7-Pad5)">
+      <node ref="U7" pin="5"/>
+    </net>
+    <net code="10" name="Net-(U7-Pad4)">
+      <node ref="U7" pin="4"/>
+    </net>
+    <net code="11" name="Net-(U7-Pad3)">
+      <node ref="U7" pin="3"/>
+    </net>
+    <net code="12" name="Net-(U7-Pad2)">
+      <node ref="U7" pin="2"/>
+    </net>
+    <net code="13" name="Net-(U7-Pad11)">
+      <node ref="U7" pin="11"/>
+    </net>
+    <net code="14" name="Net-(U7-Pad1)">
+      <node ref="U7" pin="1"/>
+    </net>
+    <net code="15" name="/Key_B">
+      <node ref="P2" pin="5"/>
+      <node ref="U6" pin="14"/>
+    </net>
+    <net code="16" name="/Key_A">
+      <node ref="U6" pin="12"/>
+      <node ref="P2" pin="4"/>
+    </net>
+    <net code="17" name="/Key_Y">
+      <node ref="P2" pin="3"/>
+      <node ref="U6" pin="11"/>
+    </net>
+    <net code="18" name="/Key_X">
+      <node ref="U6" pin="10"/>
+      <node ref="P2" pin="2"/>
+    </net>
+    <net code="19" name="/Key_Left">
+      <node ref="U6" pin="5"/>
+      <node ref="P1" pin="5"/>
+    </net>
+    <net code="20" name="/Key_Right">
+      <node ref="U6" pin="4"/>
+      <node ref="P1" pin="4"/>
+    </net>
+    <net code="21" name="/Key_Up">
+      <node ref="U6" pin="3"/>
+      <node ref="P1" pin="3"/>
+    </net>
+    <net code="22" name="/Key_Down">
+      <node ref="P1" pin="2"/>
+      <node ref="U6" pin="2"/>
+    </net>
+    <net code="23" name="/Audio_Right_2">
+      <node ref="P2" pin="8"/>
+      <node ref="J3" pin="1"/>
+    </net>
+    <net code="24" name="/Audio_Right_1">
+      <node ref="J3" pin="2"/>
+      <node ref="P2" pin="10"/>
+    </net>
+    <net code="25" name="/Audio_Left_2">
+      <node ref="P1" pin="8"/>
+      <node ref="J2" pin="1"/>
+    </net>
+    <net code="26" name="/Audio_Left_1">
+      <node ref="J2" pin="2"/>
+      <node ref="P1" pin="10"/>
+    </net>
+    <net code="27" name="/Key_RST">
+      <node ref="P2" pin="6"/>
+    </net>
+    <net code="28" name="Net-(U3-Pad5)">
+      <node ref="U3" pin="5"/>
+    </net>
+    <net code="29" name="Net-(U3-Pad4)">
+      <node ref="U3" pin="4"/>
+    </net>
+    <net code="30" name="Net-(U3-Pad3)">
+      <node ref="U3" pin="3"/>
+    </net>
+    <net code="31" name="Net-(U3-Pad2)">
+      <node ref="U3" pin="2"/>
+    </net>
+    <net code="32" name="Net-(U2-Pad9)">
+      <node ref="U2" pin="9"/>
+    </net>
+    <net code="33" name="Net-(U2-Pad4)">
+      <node ref="U2" pin="4"/>
+    </net>
+    <net code="34" name="Net-(U2-Pad3)">
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="35" name="Net-(U2-Pad2)">
+      <node ref="U2" pin="2"/>
+    </net>
+    <net code="36" name="Net-(U2-Pad14)">
+      <node ref="U2" pin="14"/>
+    </net>
+    <net code="37" name="Net-(U6-Pad1)">
+      <node ref="U6" pin="1"/>
+    </net>
+    <net code="38" name="VCC">
+      <node ref="U5" pin="5"/>
+      <node ref="U4" pin="5"/>
+    </net>
+    <net code="39" name="Net-(U2-Pad13)">
+      <node ref="U2" pin="13"/>
+    </net>
+    <net code="40" name="Net-(J1-Pad17)">
+      <node ref="J1" pin="17"/>
+    </net>
+    <net code="41" name="Net-(J1-Pad24)">
+      <node ref="J1" pin="24"/>
+    </net>
+    <net code="42" name="Net-(J1-Pad23)">
+      <node ref="J1" pin="23"/>
+    </net>
+    <net code="43" name="Net-(J1-Pad22)">
+      <node ref="J1" pin="22"/>
+    </net>
+    <net code="44" name="Net-(J1-Pad21)">
+      <node ref="J1" pin="21"/>
+    </net>
+    <net code="45" name="Net-(J1-Pad20)">
+      <node ref="J1" pin="20"/>
+    </net>
+    <net code="46" name="Net-(J1-Pad2)">
+      <node ref="J1" pin="2"/>
+    </net>
+    <net code="47" name="Net-(J1-Pad19)">
+      <node ref="J1" pin="19"/>
+    </net>
+    <net code="48" name="Net-(J1-Pad18)">
+      <node ref="J1" pin="18"/>
+    </net>
+    <net code="49" name="Net-(J1-Pad25)">
+      <node ref="J1" pin="25"/>
+    </net>
+    <net code="50" name="Net-(J1-Pad16)">
+      <node ref="J1" pin="16"/>
+    </net>
+    <net code="51" name="Net-(J1-Pad15)">
+      <node ref="J1" pin="15"/>
+    </net>
+    <net code="52" name="Net-(J1-Pad14)">
+      <node ref="J1" pin="14"/>
+    </net>
+    <net code="53" name="Net-(J1-Pad13)">
+      <node ref="J1" pin="13"/>
+    </net>
+    <net code="54" name="Net-(J1-Pad12)">
+      <node ref="J1" pin="12"/>
+    </net>
+    <net code="55" name="Net-(J1-Pad11)">
+      <node ref="J1" pin="11"/>
+    </net>
+    <net code="56" name="Net-(J1-Pad10)">
+      <node ref="J1" pin="10"/>
+    </net>
+    <net code="57" name="Net-(J1-Pad5)">
+      <node ref="J1" pin="5"/>
+    </net>
+    <net code="58" name="Net-(U2-Pad12)">
+      <node ref="U2" pin="12"/>
+    </net>
+    <net code="59" name="Net-(U2-Pad11)">
+      <node ref="U2" pin="11"/>
+    </net>
+    <net code="60" name="Net-(U2-Pad10)">
+      <node ref="U2" pin="10"/>
+    </net>
+    <net code="61" name="Net-(U2-Pad1)">
+      <node ref="U2" pin="1"/>
+    </net>
+    <net code="62" name="Net-(J1-Pad9)">
+      <node ref="J1" pin="9"/>
+    </net>
+    <net code="63" name="Net-(J1-Pad8)">
+      <node ref="J1" pin="8"/>
+    </net>
+    <net code="64" name="Net-(J1-Pad30)">
+      <node ref="J1" pin="30"/>
+    </net>
+    <net code="65" name="Net-(J1-Pad3)">
+      <node ref="J1" pin="3"/>
+    </net>
+    <net code="66" name="Net-(J1-Pad28)">
+      <node ref="J1" pin="28"/>
+    </net>
+    <net code="67" name="Net-(J1-Pad27)">
+      <node ref="J1" pin="27"/>
+    </net>
+    <net code="68" name="Net-(J1-Pad26)">
+      <node ref="J1" pin="26"/>
+    </net>
+    <net code="69" name="Net-(U1-Pad12)">
+      <node ref="U1" pin="12"/>
+    </net>
+    <net code="70" name="Net-(U1-Pad11)">
+      <node ref="U1" pin="11"/>
+    </net>
+    <net code="71" name="Net-(U1-Pad10)">
+      <node ref="U1" pin="10"/>
+    </net>
+    <net code="72" name="Net-(U6-Pad9)">
+      <node ref="U6" pin="9"/>
+    </net>
+    <net code="73" name="Net-(U6-Pad7)">
+      <node ref="U6" pin="7"/>
+    </net>
+    <net code="74" name="Net-(U1-Pad3)">
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="75" name="Net-(U1-Pad8)">
+      <node ref="U1" pin="8"/>
+    </net>
+    <net code="76" name="Net-(U1-Pad7)">
+      <node ref="U1" pin="7"/>
+    </net>
+    <net code="77" name="Net-(U1-Pad6)">
+      <node ref="U1" pin="6"/>
+    </net>
+    <net code="78" name="Net-(U1-Pad5)">
+      <node ref="U1" pin="5"/>
+    </net>
+    <net code="79" name="Net-(U1-Pad4)">
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="80" name="Net-(J1-Pad1)">
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="81" name="Net-(U1-Pad2)">
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="82" name="Net-(U1-Pad17)">
+      <node ref="U1" pin="17"/>
+    </net>
+    <net code="83" name="Net-(U1-Pad16)">
+      <node ref="U1" pin="16"/>
+    </net>
+    <net code="84" name="Net-(U1-Pad15)">
+      <node ref="U1" pin="15"/>
+    </net>
+    <net code="85" name="Net-(U1-Pad14)">
+      <node ref="U1" pin="14"/>
+    </net>
+  </nets>
+</export>
