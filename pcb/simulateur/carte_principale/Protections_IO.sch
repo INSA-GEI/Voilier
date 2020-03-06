@@ -1,0 +1,732 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L 74xGxx:74LVC2G17 U?
+U 1 1 5E9CF592
+P 3800 2100
+AR Path="/5E9CF592" Ref="U?"  Part="1" 
+AR Path="/5E9B1379/5E9CF592" Ref="U4"  Part="1" 
+F 0 "U4" H 3775 2367 50  0000 C CNN
+F 1 "74LVC2G17" H 3775 2276 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 3800 2100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 3800 2100 50  0001 C CNN
+	1    3800 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74LVC2G17 U?
+U 2 1 5E9CF598
+P 3800 2650
+AR Path="/5E9CF598" Ref="U?"  Part="2" 
+AR Path="/5E9B1379/5E9CF598" Ref="U4"  Part="2" 
+F 0 "U4" H 3775 2917 50  0000 C CNN
+F 1 "74LVC2G17" H 3775 2826 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 3800 2650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 3800 2650 50  0001 C CNN
+	2    3800 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E9CF59E
+P 3300 2100
+AR Path="/5E9CF59E" Ref="R?"  Part="1" 
+AR Path="/5E9B1379/5E9CF59E" Ref="R12"  Part="1" 
+F 0 "R12" H 3370 2146 50  0000 L CNN
+F 1 "330" H 3370 2055 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3230 2100 50  0001 C CNN
+F 3 "~" H 3300 2100 50  0001 C CNN
+	1    3300 2100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E9CF5A4
+P 3300 2650
+AR Path="/5E9CF5A4" Ref="R?"  Part="1" 
+AR Path="/5E9B1379/5E9CF5A4" Ref="R13"  Part="1" 
+F 0 "R13" H 3370 2696 50  0000 L CNN
+F 1 "330" H 3370 2605 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3230 2650 50  0001 C CNN
+F 3 "~" H 3300 2650 50  0001 C CNN
+	1    3300 2650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3450 2100 3500 2100
+Wire Wire Line
+	3500 2650 3450 2650
+Wire Wire Line
+	3150 2650 2600 2650
+Wire Wire Line
+	3150 2100 2600 2100
+Wire Wire Line
+	4050 2100 4600 2100
+Wire Wire Line
+	4050 2650 4600 2650
+Text Label 2600 2650 0    50   ~ 0
+MOT_PWM
+Text Label 2600 2100 0    50   ~ 0
+MOT_DIR
+Text Label 4600 2650 2    50   ~ 0
+SIM_MOT_PWM
+Text Label 4600 2100 2    50   ~ 0
+SIM_MOT_DIR
+$Comp
+L power:GND #PWR?
+U 1 1 5E9CF5B4
+P 3800 2850
+AR Path="/5E9CF5B4" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF5B4" Ref="#PWR0119"  Part="1" 
+F 0 "#PWR0119" H 3800 2600 50  0001 C CNN
+F 1 "GND" H 3805 2677 50  0000 C CNN
+F 2 "" H 3800 2850 50  0001 C CNN
+F 3 "" H 3800 2850 50  0001 C CNN
+	1    3800 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E9CF5BA
+P 3800 1800
+AR Path="/5E9CF5BA" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF5BA" Ref="#PWR0120"  Part="1" 
+F 0 "#PWR0120" H 3800 1650 50  0001 C CNN
+F 1 "+3.3V" H 3815 1973 50  0000 C CNN
+F 2 "" H 3800 1800 50  0001 C CNN
+F 3 "" H 3800 1800 50  0001 C CNN
+	1    3800 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 2000 3800 1800
+Wire Wire Line
+	3800 2750 3800 2850
+$Comp
+L 74xGxx:74LVC2G17 U?
+U 1 1 5E9CF5C2
+P 3800 3700
+AR Path="/5E9CF5C2" Ref="U?"  Part="1" 
+AR Path="/5E9B1379/5E9CF5C2" Ref="U5"  Part="1" 
+F 0 "U5" H 3775 3967 50  0000 C CNN
+F 1 "74LVC2G17" H 3775 3876 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 3800 3700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 3800 3700 50  0001 C CNN
+	1    3800 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74LVC2G17 U?
+U 2 1 5E9CF5C8
+P 3800 4250
+AR Path="/5E9CF5C8" Ref="U?"  Part="2" 
+AR Path="/5E9B1379/5E9CF5C8" Ref="U5"  Part="2" 
+F 0 "U5" H 3775 4517 50  0000 C CNN
+F 1 "74LVC2G17" H 3775 4426 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 3800 4250 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 3800 4250 50  0001 C CNN
+	2    3800 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E9CF5CE
+P 3300 3700
+AR Path="/5E9CF5CE" Ref="R?"  Part="1" 
+AR Path="/5E9B1379/5E9CF5CE" Ref="R14"  Part="1" 
+F 0 "R14" H 3370 3746 50  0000 L CNN
+F 1 "330" H 3370 3655 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3230 3700 50  0001 C CNN
+F 3 "~" H 3300 3700 50  0001 C CNN
+	1    3300 3700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E9CF5D4
+P 3300 4250
+AR Path="/5E9CF5D4" Ref="R?"  Part="1" 
+AR Path="/5E9B1379/5E9CF5D4" Ref="R15"  Part="1" 
+F 0 "R15" H 3370 4296 50  0000 L CNN
+F 1 "330" H 3370 4205 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3230 4250 50  0001 C CNN
+F 3 "~" H 3300 4250 50  0001 C CNN
+	1    3300 4250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3450 3700 3500 3700
+Wire Wire Line
+	3500 4250 3450 4250
+Wire Wire Line
+	3150 4250 2600 4250
+Wire Wire Line
+	3150 3700 2600 3700
+Wire Wire Line
+	4050 3700 4600 3700
+Wire Wire Line
+	4050 4250 4600 4250
+Text Label 2600 3700 0    50   ~ 0
+SERVO_PWM
+Text Label 2600 4250 0    50   ~ 0
+XBEE_UART_TX
+Text Label 4600 3700 2    50   ~ 0
+SIM_SERVO_PWM
+Text Label 4600 4250 2    50   ~ 0
+SIM_UART_TX
+$Comp
+L power:GND #PWR?
+U 1 1 5E9CF5E4
+P 3800 4450
+AR Path="/5E9CF5E4" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF5E4" Ref="#PWR0121"  Part="1" 
+F 0 "#PWR0121" H 3800 4200 50  0001 C CNN
+F 1 "GND" H 3805 4277 50  0000 C CNN
+F 2 "" H 3800 4450 50  0001 C CNN
+F 3 "" H 3800 4450 50  0001 C CNN
+	1    3800 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E9CF5EA
+P 3800 3400
+AR Path="/5E9CF5EA" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF5EA" Ref="#PWR0122"  Part="1" 
+F 0 "#PWR0122" H 3800 3250 50  0001 C CNN
+F 1 "+3.3V" H 3815 3573 50  0000 C CNN
+F 2 "" H 3800 3400 50  0001 C CNN
+F 3 "" H 3800 3400 50  0001 C CNN
+	1    3800 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 3600 3800 3400
+Wire Wire Line
+	3800 4350 3800 4450
+$Comp
+L 74xGxx:74LVC2G17 U?
+U 1 1 5E9CF5F2
+P 6500 3700
+AR Path="/5E9CF5F2" Ref="U?"  Part="1" 
+AR Path="/5E9B1379/5E9CF5F2" Ref="U7"  Part="1" 
+F 0 "U7" H 6475 3967 50  0000 C CNN
+F 1 "74LVC2G17" H 6475 3876 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 6500 3700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 6500 3700 50  0001 C CNN
+	1    6500 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74LVC2G17 U?
+U 2 1 5E9CF5F8
+P 6500 4250
+AR Path="/5E9CF5F8" Ref="U?"  Part="2" 
+AR Path="/5E9B1379/5E9CF5F8" Ref="U7"  Part="2" 
+F 0 "U7" H 6475 4517 50  0000 C CNN
+F 1 "74LVC2G17" H 6475 4426 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 6500 4250 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 6500 4250 50  0001 C CNN
+	2    6500 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E9CF5FE
+P 7000 3700
+AR Path="/5E9CF5FE" Ref="R?"  Part="1" 
+AR Path="/5E9B1379/5E9CF5FE" Ref="R18"  Part="1" 
+F 0 "R18" H 7070 3746 50  0000 L CNN
+F 1 "330" H 7070 3655 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6930 3700 50  0001 C CNN
+F 3 "~" H 7000 3700 50  0001 C CNN
+	1    7000 3700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E9CF604
+P 7000 4250
+AR Path="/5E9CF604" Ref="R?"  Part="1" 
+AR Path="/5E9B1379/5E9CF604" Ref="R19"  Part="1" 
+F 0 "R19" H 7070 4296 50  0000 L CNN
+F 1 "330" H 7070 4205 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6930 4250 50  0001 C CNN
+F 3 "~" H 7000 4250 50  0001 C CNN
+	1    7000 4250
+	0    -1   -1   0   
+$EndComp
+Text Label 5600 4250 0    50   ~ 0
+SIM_GIRO_IDX
+Text Label 5600 3700 0    50   ~ 0
+SIM_UART_RX
+$Comp
+L power:GND #PWR?
+U 1 1 5E9CF60C
+P 6500 4450
+AR Path="/5E9CF60C" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF60C" Ref="#PWR0123"  Part="1" 
+F 0 "#PWR0123" H 6500 4200 50  0001 C CNN
+F 1 "GND" H 6505 4277 50  0000 C CNN
+F 2 "" H 6500 4450 50  0001 C CNN
+F 3 "" H 6500 4450 50  0001 C CNN
+	1    6500 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E9CF612
+P 6500 3400
+AR Path="/5E9CF612" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF612" Ref="#PWR0124"  Part="1" 
+F 0 "#PWR0124" H 6500 3250 50  0001 C CNN
+F 1 "+3.3V" H 6515 3573 50  0000 C CNN
+F 2 "" H 6500 3400 50  0001 C CNN
+F 3 "" H 6500 3400 50  0001 C CNN
+	1    6500 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 3600 6500 3400
+Wire Wire Line
+	6500 4350 6500 4450
+$Comp
+L 74xGxx:74LVC2G17 U?
+U 1 1 5E9CF61A
+P 6500 2100
+AR Path="/5E9CF61A" Ref="U?"  Part="1" 
+AR Path="/5E9B1379/5E9CF61A" Ref="U6"  Part="1" 
+F 0 "U6" H 6475 2367 50  0000 C CNN
+F 1 "74LVC2G17" H 6475 2276 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 6500 2100 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 6500 2100 50  0001 C CNN
+	1    6500 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74LVC2G17 U?
+U 2 1 5E9CF620
+P 6500 2650
+AR Path="/5E9CF620" Ref="U?"  Part="2" 
+AR Path="/5E9B1379/5E9CF620" Ref="U6"  Part="2" 
+F 0 "U6" H 6475 2917 50  0000 C CNN
+F 1 "74LVC2G17" H 6475 2826 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 6500 2650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 6500 2650 50  0001 C CNN
+	2    6500 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E9CF626
+P 7000 2100
+AR Path="/5E9CF626" Ref="R?"  Part="1" 
+AR Path="/5E9B1379/5E9CF626" Ref="R16"  Part="1" 
+F 0 "R16" H 7070 2146 50  0000 L CNN
+F 1 "330" H 7070 2055 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6930 2100 50  0001 C CNN
+F 3 "~" H 7000 2100 50  0001 C CNN
+	1    7000 2100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5E9CF62C
+P 7000 2650
+AR Path="/5E9CF62C" Ref="R?"  Part="1" 
+AR Path="/5E9B1379/5E9CF62C" Ref="R17"  Part="1" 
+F 0 "R17" H 7070 2696 50  0000 L CNN
+F 1 "330" H 7070 2605 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 6930 2650 50  0001 C CNN
+F 3 "~" H 7000 2650 50  0001 C CNN
+	1    7000 2650
+	0    -1   -1   0   
+$EndComp
+Text Label 5600 2650 0    50   ~ 0
+SIM_GIRO_PHA
+Text Label 5600 2100 0    50   ~ 0
+SIM_GIRO_PHB
+$Comp
+L power:GND #PWR?
+U 1 1 5E9CF634
+P 6500 2850
+AR Path="/5E9CF634" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF634" Ref="#PWR0125"  Part="1" 
+F 0 "#PWR0125" H 6500 2600 50  0001 C CNN
+F 1 "GND" H 6505 2677 50  0000 C CNN
+F 2 "" H 6500 2850 50  0001 C CNN
+F 3 "" H 6500 2850 50  0001 C CNN
+	1    6500 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E9CF63A
+P 6500 1800
+AR Path="/5E9CF63A" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF63A" Ref="#PWR0126"  Part="1" 
+F 0 "#PWR0126" H 6500 1650 50  0001 C CNN
+F 1 "+3.3V" H 6515 1973 50  0000 C CNN
+F 2 "" H 6500 1800 50  0001 C CNN
+F 3 "" H 6500 1800 50  0001 C CNN
+	1    6500 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 2000 6500 1800
+Wire Wire Line
+	6500 2750 6500 2850
+Wire Wire Line
+	5600 2100 6200 2100
+Wire Wire Line
+	5600 2650 6200 2650
+Wire Wire Line
+	5600 3700 6200 3700
+Wire Wire Line
+	5600 4250 6200 4250
+Wire Wire Line
+	6750 2100 6850 2100
+Wire Wire Line
+	6850 2650 6750 2650
+Wire Wire Line
+	7150 2100 7900 2100
+Wire Wire Line
+	7150 2650 7900 2650
+Wire Wire Line
+	6750 3700 6850 3700
+Wire Wire Line
+	6850 4250 6750 4250
+Wire Wire Line
+	7150 3700 7900 3700
+Wire Wire Line
+	7150 4250 7900 4250
+Text Label 7900 3700 2    50   ~ 0
+XBEE_UART_RX
+Text Label 7900 4250 2    50   ~ 0
+GIRO_INDEX
+Text Label 7900 2100 2    50   ~ 0
+GIRO_PHB
+Text Label 7900 2650 2    50   ~ 0
+GIRO_PHA
+$Comp
+L Device:C C?
+U 1 1 5E9CF652
+P 4900 2350
+AR Path="/5E9CF652" Ref="C?"  Part="1" 
+AR Path="/5E9B1379/5E9CF652" Ref="C6"  Part="1" 
+F 0 "C6" H 5015 2396 50  0000 L CNN
+F 1 "100nF" H 5015 2305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4938 2200 50  0001 C CNN
+F 3 "~" H 4900 2350 50  0001 C CNN
+	1    4900 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E9CF658
+P 4900 2500
+AR Path="/5E9CF658" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF658" Ref="#PWR0127"  Part="1" 
+F 0 "#PWR0127" H 4900 2250 50  0001 C CNN
+F 1 "GND" H 4905 2327 50  0000 C CNN
+F 2 "" H 4900 2500 50  0001 C CNN
+F 3 "" H 4900 2500 50  0001 C CNN
+	1    4900 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E9CF65E
+P 4900 2200
+AR Path="/5E9CF65E" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF65E" Ref="#PWR0128"  Part="1" 
+F 0 "#PWR0128" H 4900 2050 50  0001 C CNN
+F 1 "+3.3V" H 4915 2373 50  0000 C CNN
+F 2 "" H 4900 2200 50  0001 C CNN
+F 3 "" H 4900 2200 50  0001 C CNN
+	1    4900 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5E9CF664
+P 4900 3950
+AR Path="/5E9CF664" Ref="C?"  Part="1" 
+AR Path="/5E9B1379/5E9CF664" Ref="C7"  Part="1" 
+F 0 "C7" H 5015 3996 50  0000 L CNN
+F 1 "100nF" H 5015 3905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4938 3800 50  0001 C CNN
+F 3 "~" H 4900 3950 50  0001 C CNN
+	1    4900 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E9CF66A
+P 4900 4100
+AR Path="/5E9CF66A" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF66A" Ref="#PWR0129"  Part="1" 
+F 0 "#PWR0129" H 4900 3850 50  0001 C CNN
+F 1 "GND" H 4905 3927 50  0000 C CNN
+F 2 "" H 4900 4100 50  0001 C CNN
+F 3 "" H 4900 4100 50  0001 C CNN
+	1    4900 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E9CF670
+P 4900 3800
+AR Path="/5E9CF670" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF670" Ref="#PWR0130"  Part="1" 
+F 0 "#PWR0130" H 4900 3650 50  0001 C CNN
+F 1 "+3.3V" H 4915 3973 50  0000 C CNN
+F 2 "" H 4900 3800 50  0001 C CNN
+F 3 "" H 4900 3800 50  0001 C CNN
+	1    4900 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5E9CF676
+P 8150 3950
+AR Path="/5E9CF676" Ref="C?"  Part="1" 
+AR Path="/5E9B1379/5E9CF676" Ref="C9"  Part="1" 
+F 0 "C9" H 8265 3996 50  0000 L CNN
+F 1 "100nF" H 8265 3905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8188 3800 50  0001 C CNN
+F 3 "~" H 8150 3950 50  0001 C CNN
+	1    8150 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E9CF67C
+P 8150 4100
+AR Path="/5E9CF67C" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF67C" Ref="#PWR0131"  Part="1" 
+F 0 "#PWR0131" H 8150 3850 50  0001 C CNN
+F 1 "GND" H 8155 3927 50  0000 C CNN
+F 2 "" H 8150 4100 50  0001 C CNN
+F 3 "" H 8150 4100 50  0001 C CNN
+	1    8150 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E9CF682
+P 8150 3800
+AR Path="/5E9CF682" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF682" Ref="#PWR0132"  Part="1" 
+F 0 "#PWR0132" H 8150 3650 50  0001 C CNN
+F 1 "+3.3V" H 8165 3973 50  0000 C CNN
+F 2 "" H 8150 3800 50  0001 C CNN
+F 3 "" H 8150 3800 50  0001 C CNN
+	1    8150 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5E9CF688
+P 8150 2350
+AR Path="/5E9CF688" Ref="C?"  Part="1" 
+AR Path="/5E9B1379/5E9CF688" Ref="C8"  Part="1" 
+F 0 "C8" H 8265 2396 50  0000 L CNN
+F 1 "100nF" H 8265 2305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8188 2200 50  0001 C CNN
+F 3 "~" H 8150 2350 50  0001 C CNN
+	1    8150 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E9CF68E
+P 8150 2500
+AR Path="/5E9CF68E" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF68E" Ref="#PWR0133"  Part="1" 
+F 0 "#PWR0133" H 8150 2250 50  0001 C CNN
+F 1 "GND" H 8155 2327 50  0000 C CNN
+F 2 "" H 8150 2500 50  0001 C CNN
+F 3 "" H 8150 2500 50  0001 C CNN
+	1    8150 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E9CF694
+P 8150 2200
+AR Path="/5E9CF694" Ref="#PWR?"  Part="1" 
+AR Path="/5E9B1379/5E9CF694" Ref="#PWR0134"  Part="1" 
+F 0 "#PWR0134" H 8150 2050 50  0001 C CNN
+F 1 "+3.3V" H 8165 2373 50  0000 C CNN
+F 2 "" H 8150 2200 50  0001 C CNN
+F 3 "" H 8150 2200 50  0001 C CNN
+	1    8150 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 5500 1950 5500
+Wire Wire Line
+	1250 5600 1950 5600
+Wire Wire Line
+	1250 5850 1950 5850
+Wire Wire Line
+	1250 5950 1950 5950
+Wire Wire Line
+	1250 6050 1950 6050
+Text Label 1950 5500 2    50   ~ 0
+XBEE_UART_TX
+Text Label 1950 5600 2    50   ~ 0
+XBEE_UART_RX
+Text Label 1950 5850 2    50   ~ 0
+GIRO_PHA
+Text Label 1950 5950 2    50   ~ 0
+GIRO_PHB
+Text Label 1950 6050 2    50   ~ 0
+GIRO_INDEX
+Text HLabel 1250 5600 0    50   Output ~ 0
+UART_RX
+Text HLabel 1250 5500 0    50   Input ~ 0
+UART_TX
+Text HLabel 1250 5850 0    50   Output ~ 0
+GIRO_PHA
+Text HLabel 1250 5950 0    50   Output ~ 0
+GIRO_PHB
+Text HLabel 1250 6050 0    50   Output ~ 0
+GIRO_IDX
+Text HLabel 1250 6200 0    50   Input ~ 0
+MOT_PWM
+Text HLabel 1250 6300 0    50   Input ~ 0
+MOT_DIR
+Text HLabel 1250 6400 0    50   Input ~ 0
+SERVO_PWM
+Text HLabel 1250 6550 0    50   Input ~ 0
+SPI_MOSI
+Text HLabel 1250 6650 0    50   Output ~ 0
+SPI_MISO
+Text HLabel 1250 6750 0    50   Input ~ 0
+SPI_SCK
+Text HLabel 1250 6850 0    50   Input ~ 0
+SPI_CS
+Wire Wire Line
+	1250 6200 1950 6200
+Wire Wire Line
+	1250 6300 1950 6300
+Wire Wire Line
+	1250 6400 1950 6400
+Wire Wire Line
+	1250 6550 1950 6550
+Wire Wire Line
+	1250 6650 1950 6650
+Wire Wire Line
+	1250 6750 1950 6750
+Wire Wire Line
+	1250 6850 1950 6850
+Text Label 1950 6200 2    50   ~ 0
+MOT_PWM
+Text Label 1950 6300 2    50   ~ 0
+MOT_DIR
+Text Label 1950 6400 2    50   ~ 0
+SERVO_PWM
+Text Label 1950 6550 2    50   ~ 0
+SPI_MOSI
+Text Label 1950 6650 2    50   ~ 0
+SPI_MISO
+Text Label 1950 6750 2    50   ~ 0
+SPI_SCK
+Text Label 1950 6850 2    50   ~ 0
+SPI_CS
+Wire Wire Line
+	3050 5500 3750 5500
+Wire Wire Line
+	3050 5600 3750 5600
+Wire Wire Line
+	3050 5850 3750 5850
+Wire Wire Line
+	3050 5950 3750 5950
+Wire Wire Line
+	3050 6050 3750 6050
+Text Label 3750 5500 2    50   ~ 0
+SIM_UART_TX
+Text Label 3750 5600 2    50   ~ 0
+SIM_UART_RX
+Text Label 3750 5850 2    50   ~ 0
+SIM_GIRO_PHA
+Text Label 3750 5950 2    50   ~ 0
+SIM_GIRO_PHB
+Text Label 3750 6050 2    50   ~ 0
+SIM_GIRO_IDX
+Text HLabel 3050 5600 0    50   Input ~ 0
+SIM_UART_RX
+Text HLabel 3050 5500 0    50   Output ~ 0
+SIM_UART_TX
+Text HLabel 3050 5850 0    50   Input ~ 0
+SIM_GIRO_PHA
+Text HLabel 3050 5950 0    50   Input ~ 0
+SIM_GIRO_PHB
+Text HLabel 3050 6050 0    50   Input ~ 0
+SIM_GIRO_IDX
+Text HLabel 3050 6200 0    50   Output ~ 0
+SIM_MOT_PWM
+Text HLabel 3050 6300 0    50   Output ~ 0
+SIM_MOT_DIR
+Text HLabel 3050 6400 0    50   Output ~ 0
+SIM_SERVO_PWM
+Text HLabel 3050 6550 0    50   Output ~ 0
+SIM_SPI_MOSI
+Text HLabel 3050 6650 0    50   Input ~ 0
+SIM_SPI_MISO
+Text HLabel 3050 6750 0    50   Output ~ 0
+SIM_SPI_SCK
+Text HLabel 3050 6850 0    50   Output ~ 0
+SIM_SPI_CS
+Wire Wire Line
+	3050 6200 3750 6200
+Wire Wire Line
+	3050 6300 3750 6300
+Wire Wire Line
+	3050 6400 3750 6400
+Wire Wire Line
+	3050 6550 3750 6550
+Wire Wire Line
+	3050 6650 3750 6650
+Wire Wire Line
+	3050 6750 3750 6750
+Wire Wire Line
+	3050 6850 3750 6850
+Text Label 3750 6200 2    50   ~ 0
+SIM_MOT_PWM
+Text Label 3750 6300 2    50   ~ 0
+SIM_MOT_DIR
+Text Label 3750 6400 2    50   ~ 0
+SIM_SERVO_PWM
+Text Label 3750 6550 2    50   ~ 0
+SIM_SPI_MOSI
+Text Label 3750 6650 2    50   ~ 0
+SIM_SPI_MISO
+Text Label 3750 6750 2    50   ~ 0
+SIM_SPI_SCK
+Text Label 3750 6850 2    50   ~ 0
+SIM_SPI_CS
+NoConn ~ 1950 6550
+NoConn ~ 1950 6650
+NoConn ~ 1950 6750
+NoConn ~ 1950 6850
+NoConn ~ 3750 6850
+NoConn ~ 3750 6750
+NoConn ~ 3750 6650
+NoConn ~ 3750 6550
+$EndSCHEMATC

@@ -1,0 +1,52 @@
+Généralités
+-----------
+
+Le connecteur a 30 pins. Les pins impairs sont coté TOP du PCB (non routé, non utilisé), les pins pairs sont coté BOTTOM.
+La pin 1 est à gauche lorsque l'on regarde la carte coté TOP face à soit, connecteur en bas, 
+la pin 2 est en face, sur l'autre coté du PCB.
+
+Pinout du connecteur des cartes Etudiants et Professeur (connecteur type PC-ISA)
+--------------------------------------------------------------------------------
+
+        PIN   |   NOM              |   TYPE          |           DIRECTION            
+                                                        DU POINT DE VUE DE LA CARTE
+        2     |   3v3              |   PWR           |           Entrée	
+        4     |   GND              |   PWR           |           Entrée
+        6     |   GND              |   PWR           |           Entrée
+        8     |   CARTE_DETECTION  |   NUMERIQUE     |           Sortie ('1' sur la carte étudiant, '0' sur la carte professeur)
+        10    |   MOTEUR_PWM       |   NUMERIQUE     |           Sortie
+        12    |   MOTEUR_DIRECTION |   NUMERIQUE     |           Sortie
+        14    |   SERVO_PWM        |   NUMERIQUE     |           Sortie
+        16    |   GIROUETTE_PHA    |   NUMERIQUE     |           Entrée
+        18    |   GIROUETTE_PHB    |   NUMERIQUE     |           Entrée
+        20    |   GIROUETTE_INDEX  |   NUMERIQUE     |           Entrée
+        22    |   CAPTEURS_I2C_SDA |   NUMERIQUE     |           Bi-Directionnel
+        24    |   CAPTEURS_I2C_SCL |   NUMERIQUE     |           Bi-Directionnel
+        26    |   XBEE_UART_TX     |   NUMERIQUE     |           Sortie (TX du STM32F103)
+        28    |   XBEE_UART_RX     |   NUMERIQUE     |           Entrée (RX du STM32F103)
+        30    |   TENSION_BATTERIE |   ANALOGIQUE    |           Entrée (0 <-> 3v3)
+
+
+Pinout du simulateur
+--------------------
+
+        PIN   |   NOM              |   TYPE          |           DIRECTION                   |  PIN STM32 (PIN ARDUINO) 
+                                                        DU POINT DE VUE DU SIMULATEUR	     	[PERIPHERIQUE DU STM32F7 (SIMU)]
+        2     |   3v3              |   PWR           |           Sortie	                     |  --
+        4     |   GND              |   PWR           |           Sortie                      |  --
+        6     |   GND              |   PWR           |           Sortie                      |  --
+        8     |   CARTE_DETECTION  |   NUMERIQUE     |           Entrée                      |  PF10(A1) [ADC3_IN8]
+        10    |   MOTEUR_PWM       |   NUMERIQUE     |           Entrée                      |  PB4 (D3) [TIM3_CH1] 
+        12    |   MOTEUR_DIRECTION |   NUMERIQUE     |           Entrée                      |  PI2 (D8) [GPIO/EXTI]
+        14    |   SERVO_PWM        |   NUMERIQUE     |           Entrée                      |  PH6 (D6) [TIM12_CH1]
+        16    |   GIROUETTE_PHA    |   NUMERIQUE     |           Sortie                      |  PI3 (D7) [GPIO]
+        18    |   GIROUETTE_PHB    |   NUMERIQUE     |           Sortie                      |  PG7 (D4) [GPIO]
+        20    |   GIROUETTE_INDEX  |   NUMERIQUE     |           Sortie                      |  PG6 (D2) [GPIO]
+        22    |   CAPTEURS_I2C_SDA |   NUMERIQUE     |           Bi-Directionnel             |  PB9 (D14)[I2C1_SDA]
+        24    |   CAPTEURS_I2C_SCL |   NUMERIQUE     |           Bi-Directionnel             |  PB8 (D15)[I2C1_SCL]
+        26    |   XBEE_UART_TX     |   NUMERIQUE     |           Entrée (RX du STM32F7xx)    |  PC7 (D0) [USART6_RX]
+        28    |   XBEE_UART_RX     |   NUMERIQUE     |           Sortie (TX du STM32F7xx)    |  PC6 (D1) [USART6_TX]
+        30    |   TENSION_BATTERIE |   ANALOGIQUE    |           Sortie (0 <-> 3v3)          |  PA8 (D5) [TIM1_CH1 + Filtre RC Fc~ 1Hz]
+
+
+

@@ -1,4 +1,4 @@
-update=Wed 04 Mar 2020 17:24:22 CET
+update=Thu 05 Mar 2020 15:43:23 CET
 version=1
 last_client=kicad
 [general]
@@ -15,7 +15,7 @@ LibDir=
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=
+PlotDirectoryName=PDF/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=Pcbnew
@@ -44,9 +44,9 @@ TrackWidth3=0.25
 TrackWidth4=0.3
 TrackWidth5=0.4
 TrackWidth6=0.5
-TrackWidth7=0.63
-TrackWidth8=0.76
-TrackWidth9=1.27
+TrackWidth7=0.75
+TrackWidth8=1
+TrackWidth9=2
 ViaDiameter1=0.8
 ViaDrill1=0.4
 ViaDiameter2=0.6
@@ -87,7 +87,7 @@ OthersTextUpright=1
 SolderMaskClearance=0.051
 SolderMaskMinWidth=0.25
 SolderPasteClearance=0
-SolderPasteRatio=0
+SolderPasteRatio=-0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
 Type=0
