@@ -102,29 +102,29 @@ F 3 "" H 9350 6150 50  0001 C CNN
 	1    9350 6150
 	1    0    0    -1  
 $EndComp
-Text Label 10900 5300 2    50   ~ 0
+Text Label 8700 5400 0    50   ~ 0
 MOT_PWM
 Text Label 8700 5300 0    50   ~ 0
 MOT_DIR
-Text Label 8700 5400 0    50   ~ 0
+Text Label 10900 5300 2    50   ~ 0
 SERVO_PWM
-Text Label 8700 5600 0    50   ~ 0
+Text Label 8700 5700 0    50   ~ 0
 GIRO_PHA
 Text Label 10900 5600 2    50   ~ 0
 GIRO_PHB
-Text Label 8700 5500 0    50   ~ 0
+Text Label 10900 5700 2    50   ~ 0
 GIRO_INDEX
-Text Label 8700 5200 0    50   ~ 0
+Text Label 10900 5500 2    50   ~ 0
 CAPTEURS_SDA
-Text Label 10900 5200 2    50   ~ 0
+Text Label 8700 5500 0    50   ~ 0
 CAPTEURS_SCL
 Text Label 10900 5400 2    50   ~ 0
 XBEE_UART_TX
-Text Label 10900 5500 2    50   ~ 0
+Text Label 8700 5800 0    50   ~ 0
 XBEE_UART_RX
 Wire Wire Line
 	9500 5700 8700 5700
-Text Label 10900 5700 2    50   ~ 0
+Text Label 10900 5800 2    50   ~ 0
 TENSION_BATTERIE
 Wire Wire Line
 	9200 2600 8300 2600
@@ -456,7 +456,7 @@ Wire Wire Line
 	5400 1350 5900 1350
 Wire Wire Line
 	10000 5700 10900 5700
-Text Label 8700 5700 0    50   ~ 0
+Text Label 8700 5900 0    50   ~ 0
 CARD_DETECT
 Wire Wire Line
 	10200 2500 10900 2500
@@ -798,11 +798,11 @@ Wire Wire Line
 	10000 6000 10900 6000
 NoConn ~ 10900 6000
 NoConn ~ 8700 6000
-Text Label 8700 5800 0    50   ~ 0
+Text Label 10900 5200 2    50   ~ 0
 SPI_MOSI
-Text Label 8700 5900 0    50   ~ 0
+Text Label 8700 5200 0    50   ~ 0
 SPI_SCK
-Text Label 10900 5800 2    50   ~ 0
+Text Label 8700 5600 0    50   ~ 0
 SPI_MISO
 Text Label 10900 5900 2    50   ~ 0
 SPI_CS
