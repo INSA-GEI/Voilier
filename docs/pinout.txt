@@ -1,0 +1,60 @@
+Généralités
+-----------
+
+Le connecteur a 30 pins. Les pins impairs sont coté TOP du PCB (non routé, non utilisé), les pins pairs sont coté BOTTOM.
+La pin 1 est à gauche lorsque l'on regarde la carte coté TOP face à soit, connecteur en bas, 
+la pin 2 est en face, sur l'autre coté du PCB.
+
+Pinout du connecteur des cartes Etudiants et Professeur (connecteur type PC-ISA)
+--------------------------------------------------------------------------------
+
+        PIN   |   NOM               |   TYPE          |           DIRECTION            
+                                                         DU POINT DE VUE DE LA CARTE
+        2     |   GND               |   PWR           |           Entrée
+        4     |   GND               |   PWR           |           Entrée
+        6     |   3v3               |   PWR           |           Entrée	
+        8     |   CAPTEUR_SPI_MOSI  |   NUMERIQUE     |           Sortie (Le STM32F103 est maitre)
+        10    |   CAPTEUR_SPI_MISO  |   NUMERIQUE     |           Entrée
+        12    |   CAPTEUR_SPI_CLK   |   NUMERIQUE     |           Sortie
+        14    |   CAPTEUR_CS        |   NUMERIQUE     |           Sortie
+        16    |   PLATEAU_DIRECTION |   NUMERIQUE     |           Sortie
+        18    |   SERVO_PWM         |   NUMERIQUE     |           Sortie
+        20    |   PLATEAU_PWM       |   NUMERIQUE     |           Sortie
+        22    |   XBEE_UART_TX      |   NUMERIQUE     |           Sortie (TX du STM32F103)
+        24    |   XBEE_UART_RX      |   NUMERIQUE     |           Entrée (RX du STM32F103)
+        26    |   CAPTEUR_I2C_SCL   |   NUMERIQUE     |           Bi-Directionnel
+        28    |   CAPTEUR_I2C_SDA   |   NUMERIQUE     |           Bi-Directionnel
+        30    |   GIROUETTE_PHB     |   NUMERIQUE     |           Entrée
+        32    |   GIROUETTE_PHA     |   NUMERIQUE     |           Entrée
+        34    |   GIROUETTE_INDEX   |   NUMERIQUE     |           Entrée
+        36    |   DETECTION_CARTE   |   NUMERIQUE     |           Sortie ('1' sur la carte étudiant, '0' sur la carte professeur)
+        38    |   TENSION_BATTERIE  |   ANALOGIQUE    |           Entrée (0 <-> 3v3)
+        40    |   RFU               |   NC            |           NC
+
+Pinout du simulateur
+--------------------
+
+        PIN   |   NOM               |   TYPE          |           DIRECTION                   |  PIN STM32 (PIN ARDUINO) 
+                                                          DU POINT DE VUE DU SIMULATEUR         [PERIPHERIQUE DU STM32F7 (SIMU)]
+        2     |   GND               |   PWR           |           Sortie                      |  --
+        4     |   GND               |   PWR           |           Sortie                      |  --
+        6     |   3v3               |   PWR           |           Sortie	              |  --
+        8     |   CAPTEUR_SPI_MOSI  |   NUMERIQUE     |           Entrée (les periphs sont)   |  PB15(D11)[SPI2_MOSI]
+        10    |   CAPTEUR_SPI_MISO  |   NUMERIQUE     |           Sortie (esclaves)           |  PB14(D12)[SPI2_MISO]
+        12    |   CAPTEUR_SPI_CLK   |   NUMERIQUE     |           Entrée                      |  PI1 (D13)[SPI2_CSK]
+        14    |   CAPTEUR_CS        |   NUMERIQUE     |           Entrée                      |  PF9 (A2) [GPIO] 
+        16    |   PLATEAU_DIRECTION |   NUMERIQUE     |           Entrée                      |  PI2 (D8) [GPIO/EXTI]
+        18    |   SERVO_PWM         |   NUMERIQUE     |           Entrée                      |  PH6 (D6) [TIM12_CH1]
+        20    |   PLATEAU_PWM       |   NUMERIQUE     |           Entrée                      |  PB4 (D3) [TIM3_CH1] 
+        22    |   XBEE_UART_TX      |   NUMERIQUE     |           Entrée (RX du STM32F7xx)    |  PC7 (D0) [USART6_RX]
+        24    |   XBEE_UART_RX      |   NUMERIQUE     |           Sortie (TX du STM32F7xx)    |  PC6 (D1) [USART6_TX]
+        26    |   CAPTEUR_I2C_SCL   |   NUMERIQUE     |           Bi-Directionnel             |  PB8 (D15)[I2C1_SCL]
+        28    |   CAPTEUR_I2C_SDA   |   NUMERIQUE     |           Bi-Directionnel             |  PB9 (D14)[I2C1_SDA]
+        30    |   GIROUETTE_PHB     |   NUMERIQUE     |           Sortie                      |  PG7 (D4) [GPIO]
+        32    |   GIROUETTE_PHA     |   NUMERIQUE     |           Sortie                      |  PI3 (D7) [GPIO]
+        34    |   GIROUETTE_INDEX   |   NUMERIQUE     |           Sortie                      |  PG6 (D2) [GPIO]
+        36    |   DETECTION_CARTE   |   NUMERIQUE     |           Entrée                      |  PF10(A1) [ADC3_IN8]
+        38    |   TENSION_BATTERIE  |   ANALOGIQUE    |           Sortie (0 <-> 3v3)          |  PA8 (D5) [TIM1_CH1 + Filtre RC Fc~ 1Hz]
+        40    |   RFU               |   NC            |           NC                          |  NC
+
+
