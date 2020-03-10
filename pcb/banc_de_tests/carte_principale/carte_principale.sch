@@ -48,11 +48,11 @@ Wire Notes Line
 	8400 4100 7900 3500
 Wire Notes Line
 	7900 3500 7900 500 
-Text Notes 8350 800  0    59   ~ 0
-D13 = SPI2_SCK\nD12 = SPI2_MISO\nD11 = SPI2_MOSI
-Text Notes 8350 950  0    59   ~ 0
+Text Notes 8100 900  0    59   ~ 0
+D13 = SPI2_SCK\nD12 = SPI2_MISO\nD11 = SPI2_MOSI\nA2 = SPI2_CS
+Text Notes 8100 1050 0    59   ~ 0
 D0/D1 = USART6
-Text Notes 8350 1100 0    59   ~ 0
+Text Notes 8100 1200 0    59   ~ 0
 D14/D15 = I2C1
 $Comp
 L insa-sym:LOGO Logo1
@@ -120,11 +120,11 @@ Text Label 8700 5500 0    50   ~ 0
 CAPTEURS_SCL
 Text Label 10900 5400 2    50   ~ 0
 XBEE_UART_TX
-Text Label 8700 5800 0    50   ~ 0
+Text Label 10900 5800 2    50   ~ 0
 XBEE_UART_RX
 Wire Wire Line
 	9500 5700 8700 5700
-Text Label 10900 5800 2    50   ~ 0
+Text Label 8700 5800 0    50   ~ 0
 TENSION_BATTERIE
 Wire Wire Line
 	9200 2600 8300 2600
@@ -948,4 +948,10 @@ F23 "SIM_SPI_MISO" I R 4550 6300 50
 F24 "SIM_SPI_SCK" O R 4550 6400 50 
 F25 "SIM_SPI_CS" O R 4550 6500 50 
 $EndSheet
+Text Notes 10250 800  0    59   ~ 0
+D3 = TIM3_CH1\nD6 = TIM12_CH1\nD5 = TIM1_CH1
+Text Notes 10250 950  0    59   ~ 0
+A1 = ADC3_IN8
+Text Notes 10250 1100 0    59   ~ 0
+D2,D4,D7,D8 = GPIO
 $EndSCHEMATC
