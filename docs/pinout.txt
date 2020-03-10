@@ -1,7 +1,7 @@
 Généralités
 -----------
 
-Le connecteur a 30 pins. Les pins impairs sont coté TOP du PCB (non routé, non utilisé), les pins pairs sont coté BOTTOM.
+Le connecteur a 40 pins. Les pins impairs sont coté TOP du PCB (non routé, non utilisé), les pins pairs sont coté BOTTOM.
 La pin 1 est à gauche lorsque l'on regarde la carte coté TOP face à soit, connecteur en bas, 
 la pin 2 est en face, sur l'autre coté du PCB.
 
@@ -12,7 +12,7 @@ Pinout du connecteur des cartes Etudiants et Professeur (connecteur type PC-ISA)
                                                          DU POINT DE VUE DE LA CARTE
         2     |   GND               |   PWR           |           Entrée
         4     |   GND               |   PWR           |           Entrée
-        6     |   3v3               |   PWR           |           Entrée	
+        6     |   5v                |   PWR           |           Entrée	
         8     |   CAPTEUR_SPI_MOSI  |   NUMERIQUE     |           Sortie (Le STM32F103 est maitre)
         10    |   CAPTEUR_SPI_MISO  |   NUMERIQUE     |           Entrée
         12    |   CAPTEUR_SPI_CLK   |   NUMERIQUE     |           Sortie
@@ -38,7 +38,7 @@ Pinout du simulateur
                                                           DU POINT DE VUE DU SIMULATEUR         [PERIPHERIQUE DU STM32F7 (SIMU)]
         2     |   GND               |   PWR           |           Sortie                      |  --
         4     |   GND               |   PWR           |           Sortie                      |  --
-        6     |   3v3               |   PWR           |           Sortie	              |  --
+        6     |   5v                |   PWR           |           Sortie	              |  --
         8     |   CAPTEUR_SPI_MOSI  |   NUMERIQUE     |           Entrée (les periphs sont)   |  PB15(D11)[SPI2_MOSI]
         10    |   CAPTEUR_SPI_MISO  |   NUMERIQUE     |           Sortie (esclaves)           |  PB14(D12)[SPI2_MISO]
         12    |   CAPTEUR_SPI_CLK   |   NUMERIQUE     |           Entrée                      |  PI1 (D13)[SPI2_CSK]
