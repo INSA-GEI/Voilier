@@ -1,4 +1,4 @@
-16587634925711964
+16730714651080964
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -180,6 +180,13 @@ SMT battery holder for CR1216/1220/1225, https://linxtechnologies.com/wp/wp-cont
 battery holder coin cell cr1216 cr1220 cr1225
 0
 3
+2
+Battery
+BatteryHolder_MPD_BA9VPC_1xPP3
+1xPP3 (9V) battery holder, Memory Protection Devices P/N BA9VPC, http://www.memoryprotectiondevices.com/datasheets/BA9VPC-datasheet.pdf
+PP3 Battery Holder BA9VPC 9V
+0
+2
 2
 Battery
 BatteryHolder_MPD_BC2AAPC_2xAA
@@ -6611,6 +6618,13 @@ Connector_Coaxial
 SMA_Samtec_SMA-J-P-X-ST-EM1_EdgeMount
 Connector SMA, 0Hz to 20GHz, 50Ohm, Edge Mount (http://suddendocs.samtec.com/prints/sma-j-p-x-st-em1-mkt.pdf)
 SMA Straight Samtec Edge Mount
+0
+5
+2
+Connector_Coaxial
+SMA_Wurth_60312002114503_Vertical
+https://www.we-online.de/katalog/datasheet/60312002114503.pdf
+SMA THT Female Jack Vertical ExtendedLegs
 0
 5
 2
@@ -38038,6 +38052,13 @@ RJ45 Magjack
 14
 13
 Connector_RJ
+RJ45_Ninigi_GE
+1 port ethernet throughhole connector, https://en.ninigi.com/product/rj45ge/pdf
+RJ45 ethernet 8p8c
+0
+10
+9
+Connector_RJ
 RJ45_OST_PJ012-8P8CX_Vertical
 RJ45 vertical connector http://www.on-shore.com/wp-content/uploads/2015/09/PJ012-8P8CX.pdf
 RJ45 PJ012
@@ -41566,6 +41587,13 @@ USB-A
 6
 5
 Connector_USB
+USB_A_CONNFLY_DS1095-WNR0
+http://www.connfly.com/userfiles/image/UpLoadFile/File/2013/5/6/DS1095.pdf
+USB-A receptacle horizontal through-hole
+0
+6
+5
+Connector_USB
 USB_A_Molex_105057_Vertical
 https://www.molex.com/pdm_docs/sd/1050570001_sd.pdf
 USB A Vertical
@@ -42084,6 +42112,13 @@ connector
 1
 1
 Connector_Wire
+SolderWirePad_1x01_SMD_1x2mm
+Wire Pad, Square, SMD Pad,  5mm x 10mm,
+MesurementPoint Square SMDPad 5mmx10mm 
+0
+1
+1
+Connector_Wire
 SolderWirePad_1x01_SMD_5x10mm
 Wire Pad, Square, SMD Pad,  5mm x 10mm,
 MesurementPoint Square SMDPad 5mmx10mm 
@@ -42448,6 +42483,20 @@ DCDC-Converter CINCON EC6Cxx single output
 6
 6
 Converter_DCDC
+Converter_DCDC_Cyntec_MUN12AD01-SH
+http://www.cyntec.com/upfile/products/download/Cyntec%20MUN12AD01-SH_Datasheet.pdf
+Power Module uPOL MUN12AD01
+0
+13
+9
+Converter_DCDC
+Converter_DCDC_Cyntec_MUN12AD03-SH
+http://www.cyntec.com/upfile/products/download/Cyntec%20MUN12AD03-SH_Datasheet.pdf
+Power Module uPOL MUN12AD03
+0
+19
+11
+Converter_DCDC
 Converter_DCDC_MeanWell_NID30_THT
 Meanwell DCDC non-isolated converter SIP module, http://www.meanwell.com/webapp/product/search.aspx?prod=nid30
 DCDC non-isolated converter 
@@ -42545,6 +42594,13 @@ dc-dc recom buck sip-12 pitch 2.54mm
 0
 12
 12
+Converter_DCDC
+Converter_DCDC_RECOM_RPA60-xxxxSFW
+RPA60-FW 60W Isolated DC to DC Converters
+DCDC Regulator Single
+0
+6
+6
 Converter_DCDC
 Converter_DCDC_RECOM_RPMx.x-x.0
 https://www.recom-power.com/pdf/Innoline/RPM-6.0.pdf
@@ -42708,11 +42764,18 @@ XP_POWER  ITXxxxxSA SIP DCDC-Converter
 5
 Converter_DCDC
 Converter_DCDC_XP_POWER-ITxxxxxS_THT
-XP_POWER  ITxxxxxS, SIP, (https://www.xppower.com/pdfs/SF_ITX.pdf https://www.xppower.com/pdfs/SF_ITQ.pdf), generated with kicad-footprint-generator
+XP_POWER  ITxxxxxS, SIP, (https://www.xppower.com/portals/0/pdfs/SF_ITX.pdf https://www.xppower.com/portals/0/pdfs/SF_ITQ.pdf), generated with kicad-footprint-generator
 XP_POWER  ITxxxxxS SIP DCDC-Converter
 0
-5
-5
+7
+7
+Converter_DCDC
+Converter_DCDC_XP_POWER_JTDxxxxxxx_THT
+XP Power JTD Series DC-DC Converter
+DCDC Isolated
+0
+6
+6
 Converter_DCDC
 Converter_DCDC_XP_POWER_JTExxxxDxx_THT
 DCDC-Converter, XP POWER, Type JTE06 Series,  Dual Output
@@ -49945,6 +50008,20 @@ L_Toroid Vertical series Radial pin pitch 31.80mm  length 67.6mm width 36.1mm Vi
 2
 2
 Insa
+5-5530843-4
+TE 5-5530843-4 Connector
+
+0
+40
+40
+Insa
+5-5530843-4-PCB
+TE 5-5530843-4 PCB Edge
+
+0
+40
+40
+Insa
 AEDR-8300
 
 
@@ -51533,6 +51610,27 @@ ST Morpho Connector 144 STLink
 0
 148
 148
+Module
+Texas_EUK_R-PDSS-T7_THT
+Texas Instruments EUK 7 Pin Double Sided Module
+module pcb
+0
+7
+7
+Module
+Texas_EUS_R-PDSS-T5_THT
+Texas Instruments EUS 5 Pin Double Sided Module
+module pcb
+0
+5
+5
+Module
+Texas_EUW_R-PDSS-T7_THT
+Texas Instruments EUW 7 Pin Double Sided Module
+module pcb
+0
+7
+7
 Module
 WEMOS_D1_mini_light
 16-pin module, column spacing 22.86 mm (900 mils), https://wiki.wemos.cc/products:d1:d1_mini, https://c1.staticflickr.com/1/734/31400410271_f278b087db_z.jpg
@@ -54803,6 +54901,13 @@ DFN 0.4
 6
 6
 Package_DFN_QFN
+DFN-8-1EP_2x2mm_P0.5mm_EP0.7x1.3mm
+DFN, 8 Pin (https://www.onsemi.com/pub/Collateral/NUF4401MN-D.PDF#page=6), generated with kicad-footprint-generator ipc_noLead_generator.py
+DFN NoLead
+0
+13
+9
+Package_DFN_QFN
 DFN-8-1EP_2x2mm_P0.5mm_EP0.9x1.3mm
 DFN, 8 Pin (https://www.onsemi.com/pub/Collateral/NB3N551-D.PDF#page=7), generated with kicad-footprint-generator ipc_noLead_generator.py
 DFN NoLead
@@ -55145,6 +55250,27 @@ DFN package size 1006 3 pins
 0
 3
 3
+Package_DFN_QFN
+Diodes_UDFN-10_1.0x2.5mm_P0.5mm
+U-DFN2510-10 package used by Diodes Incorporated (https://www.diodes.com/assets/Package-Files/U-DFN2510-10-Type-CJ.pdf)
+UDFN-10 U-DFN2510-10 Diodes
+0
+10
+10
+Package_DFN_QFN
+HVQFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm
+HVQFN, 24 Pin (https://www.nxp.com/docs/en/package-information/SOT616-3.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
+HVQFN NoLead
+0
+34
+25
+Package_DFN_QFN
+HVQFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm_ThermalVias
+HVQFN, 24 Pin (https://www.nxp.com/docs/en/package-information/SOT616-3.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
+HVQFN NoLead
+0
+39
+25
 Package_DFN_QFN
 Infineon_MLPQ-16-14-1EP_4x4mm_P0.5mm
 MLPQ 32 leads, 7x7mm, 0.127mm stencil (https://www.infineon.com/dgdl/Infineon-AN1170-AN-v05_00-EN.pdf?fileId=5546d462533600a40153559ac3e51134)
@@ -56000,6 +56126,20 @@ QFN NoLead
 59
 33
 Package_DFN_QFN
+QFN-32-1EP_5x5mm_P0.5mm_EP3.3x3.3mm
+QFN, 32 Pin (http://ww1.microchip.com/downloads/en/DeviceDoc/00002164B.pdf#page=68), generated with kicad-footprint-generator ipc_noLead_generator.py
+QFN NoLead
+0
+42
+33
+Package_DFN_QFN
+QFN-32-1EP_5x5mm_P0.5mm_EP3.3x3.3mm_ThermalVias
+QFN, 32 Pin (http://ww1.microchip.com/downloads/en/DeviceDoc/00002164B.pdf#page=68), generated with kicad-footprint-generator ipc_noLead_generator.py
+QFN NoLead
+0
+59
+33
+Package_DFN_QFN
 QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm
 QFN, 32 Pin (http://infocenter.nordicsemi.com/pdf/nRF52810_PS_v1.1.pdf#page=468), generated with kicad-footprint-generator ipc_noLead_generator.py
 QFN NoLead
@@ -56798,6 +56938,13 @@ DFN
 12
 12
 Package_DFN_QFN
+TQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm
+TQFN, 16 Pin (https://www.diodes.com/assets/Datasheets/PI6C5946002.pdf#page=12), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+21
+17
+Package_DFN_QFN
 TQFN-16-1EP_3x3mm_P0.5mm_EP1.23x1.23mm
 TQFN, 16 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0136.PDF (T1633-5), https://pdfserv.maximintegrated.com/land_patterns/90-0032.PDF), generated with kicad-footprint-generator ipc_noLead_generator.py
 TQFN NoLead
@@ -56805,40 +56952,180 @@ TQFN NoLead
 21
 17
 Package_DFN_QFN
-TQFN-16-1EP_5x5mm_P0.8mm_EP3.1x3.1mm
-TQFN, 16 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN-16-1EP_3x3mm_P0.5mm_EP1.23x1.23mm_ThermalVias
+TQFN, 16 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0136.PDF (T1633-5), https://pdfserv.maximintegrated.com/land_patterns/90-0032.PDF), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+26
+17
+Package_DFN_QFN
+TQFN-16-1EP_5x5mm_P0.8mm_EP2.29x2.29mm
+TQFN, 16 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T1655-4)), generated with kicad-footprint-generator ipc_noLead_generator.py
 TQFN NoLead
 0
 21
 17
 Package_DFN_QFN
+TQFN-16-1EP_5x5mm_P0.8mm_EP2.29x2.29mm_ThermalVias
+TQFN, 16 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T1655-4)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+26
+17
+Package_DFN_QFN
+TQFN-16-1EP_5x5mm_P0.8mm_EP3.1x3.1mm
+TQFN, 16 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T1655-2)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+21
+17
+Package_DFN_QFN
+TQFN-16-1EP_5x5mm_P0.8mm_EP3.1x3.1mm_ThermalVias
+TQFN, 16 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T1655-2)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+31
+17
+Package_DFN_QFN
 TQFN-20-1EP_5x5mm_P0.65mm_EP3.1x3.1mm
-TQFN, 20 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN, 20 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T2055-3)), generated with kicad-footprint-generator ipc_noLead_generator.py
 TQFN NoLead
 0
 25
 21
 Package_DFN_QFN
 TQFN-20-1EP_5x5mm_P0.65mm_EP3.1x3.1mm_ThermalVias
-TQFN, 20 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN, 20 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T2055-3)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+35
+21
+Package_DFN_QFN
+TQFN-20-1EP_5x5mm_P0.65mm_EP3.25x3.25mm
+TQFN, 20 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T2055-5)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+25
+21
+Package_DFN_QFN
+TQFN-20-1EP_5x5mm_P0.65mm_EP3.25x3.25mm_ThermalVias
+TQFN, 20 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T2055-5)), generated with kicad-footprint-generator ipc_noLead_generator.py
 TQFN NoLead
 0
 35
 21
 Package_DFN_QFN
 TQFN-24-1EP_4x4mm_P0.5mm_EP2.8x2.8mm_PullBack
-TQFN, 24 Pin (https://ams.com/documents/20143/36005/AS1115_DS000206_1-00.pdf/3d3e6d35-b184-1329-adf9-2d769eb2404f), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN, 24 Pin (https://ams.com/documents/20143/36005/AS1115_DS000206_1-00.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
 TQFN NoLead
 0
 29
 25
 Package_DFN_QFN
 TQFN-24-1EP_4x4mm_P0.5mm_EP2.8x2.8mm_PullBack_ThermalVias
-TQFN, 24 Pin (https://ams.com/documents/20143/36005/AS1115_DS000206_1-00.pdf/3d3e6d35-b184-1329-adf9-2d769eb2404f), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN, 24 Pin (https://ams.com/documents/20143/36005/AS1115_DS000206_1-00.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
 TQFN NoLead
 0
 39
 25
+Package_DFN_QFN
+TQFN-28-1EP_5x5mm_P0.5mm_EP2.7x2.7mm
+TQFN, 28 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T2855-4)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+33
+29
+Package_DFN_QFN
+TQFN-28-1EP_5x5mm_P0.5mm_EP2.7x2.7mm_ThermalVias
+TQFN, 28 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T2855-4)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+38
+29
+Package_DFN_QFN
+TQFN-28-1EP_5x5mm_P0.5mm_EP3.25x3.25mm
+TQFN, 28 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T2855-3)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+33
+29
+Package_DFN_QFN
+TQFN-28-1EP_5x5mm_P0.5mm_EP3.25x3.25mm_ThermalVias
+TQFN, 28 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T2855-3)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+43
+29
+Package_DFN_QFN
+TQFN-32-1EP_5x5mm_P0.5mm_EP2.1x2.1mm
+TQFN, 32 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T3255-6)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+37
+33
+Package_DFN_QFN
+TQFN-32-1EP_5x5mm_P0.5mm_EP2.1x2.1mm_ThermalVias
+TQFN, 32 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T3255-6)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+42
+33
+Package_DFN_QFN
+TQFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm
+TQFN, 32 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T3255-3)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+37
+33
+Package_DFN_QFN
+TQFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm_ThermalVias
+TQFN, 32 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T3255-3)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+47
+33
+Package_DFN_QFN
+TQFN-32-1EP_5x5mm_P0.5mm_EP3.4x3.4mm
+TQFN, 32 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T3255-9)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+37
+33
+Package_DFN_QFN
+TQFN-32-1EP_5x5mm_P0.5mm_EP3.4x3.4mm_ThermalVias
+TQFN, 32 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T3255-9)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+47
+33
+Package_DFN_QFN
+TQFN-40-1EP_5x5mm_P0.4mm_EP3.5x3.5mm
+TQFN, 40 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T4055-1)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+45
+41
+Package_DFN_QFN
+TQFN-40-1EP_5x5mm_P0.4mm_EP3.5x3.5mm_ThermalVias
+TQFN, 40 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0140.PDF (T4055-1)), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+55
+41
+Package_DFN_QFN
+TQFN-48-1EP_7x7mm_P0.5mm_EP5.1x5.1mm
+TQFN, 48 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0144.PDF), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+58
+49
+Package_DFN_QFN
+TQFN-48-1EP_7x7mm_P0.5mm_EP5.1x5.1mm_ThermalVias
+TQFN, 48 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0144.PDF), generated with kicad-footprint-generator ipc_noLead_generator.py
+TQFN NoLead
+0
+75
+49
 Package_DFN_QFN
 Texas_DRB0008A
 DFN-8, 3x3x1mm, http://www.ti.com/lit/ds/symlink/ucc24610.pdf
@@ -56853,6 +57140,13 @@ ti qfm mof0009a
 0
 24
 9
+Package_DFN_QFN
+Texas_QFN-41_10x16mm
+QFN, 41 Pin (http://www.ti.com/lit/ml/mpqf506/mpqf506.pdf)
+QFN DFN_QFN
+0
+65
+41
 Package_DFN_QFN
 Texas_R-PUQFN-N10
 http://www.ti.com/general/docs/lit/getliterature.tsp?baseLiteratureNumber=MPQF186&fileType=pdf
@@ -57749,6 +58043,20 @@ WQFN 0.5
 0
 37
 33
+Package_DFN_QFN
+WQFN-42-1EP_3.5x9mm_P0.5mm_EP2.05x7.55mm
+WQFN, 42 Pin (http://www.ti.com/lit/ds/symlink/ts3l501e.pdf#page=23), generated with kicad-footprint-generator ipc_noLead_generator.py
+WQFN NoLead
+0
+57
+43
+Package_DFN_QFN
+WQFN-42-1EP_3.5x9mm_P0.5mm_EP2.05x7.55mm_ThermalVias
+WQFN, 42 Pin (http://www.ti.com/lit/ds/symlink/ts3l501e.pdf#page=23), generated with kicad-footprint-generator ipc_noLead_generator.py
+WQFN NoLead
+0
+82
+43
 Package_DIP
 DIP-4_W7.62mm
 4-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)
@@ -61166,6 +61474,13 @@ MSOP SO
 16
 16
 Package_SO
+ONSemi_SO-8FL_488AA
+ON Semi DFN5 5x6mm 1.27P SO-8FL CASE 488A https://www.onsemi.com/pub/Collateral/488AA.PDF
+ON Semi DFN5 5x6mm 1.27P SO-8FL CASE 488A 
+0
+5
+5
+Package_SO
 OnSemi_Micro8
 ON Semiconductor Micro8 (Case846A-02): https://www.onsemi.com/pub/Collateral/846A-02.PDF
 micro8
@@ -62007,8 +62322,8 @@ SSOP 0.65
 8
 Package_SO
 TSSOP-8_4.4x3mm_P0.65mm
-8-Lead Plastic Thin Shrink Small Outline (ST)-4.4 mm Body [TSSOP] (see Microchip Packaging Specification 00000049BS.pdf)
-SSOP 0.65
+TSSOP, 8 Pin (JEDEC MO-153 Var AA https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 8
 8
@@ -62028,8 +62343,8 @@ SSOP 0.65 exposed pad
 15
 Package_SO
 TSSOP-14_4.4x5mm_P0.65mm
-14-Lead Plastic Thin Shrink Small Outline (ST)-4.4 mm Body [TSSOP] (see Microchip Packaging Specification 00000049BS.pdf)
-SSOP 0.65
+TSSOP, 14 Pin (JEDEC MO-153 Var AB-1 https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 14
 14
@@ -62042,22 +62357,50 @@ SSOP 0.65
 17
 Package_SO
 TSSOP-16_4.4x5mm_P0.65mm
-16-Lead Plastic Thin Shrink Small Outline (ST)-4.4 mm Body [TSSOP] (see Microchip Packaging Specification 00000049BS.pdf)
-SSOP 0.65
+TSSOP, 16 Pin (JEDEC MO-153 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 16
 16
+Package_SO
+TSSOP-20_4.4x5mm_P0.5mm
+TSSOP, 20 Pin (JEDEC MO-153 Var BA https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+20
+20
 Package_SO
 TSSOP-20_4.4x6.5mm_P0.65mm
-20-Lead Plastic Thin Shrink Small Outline (ST)-4.4 mm Body [TSSOP] (see Microchip Packaging Specification 00000049BS.pdf)
-SSOP 0.65
+TSSOP, 20 Pin (JEDEC MO-153 Var AC https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 20
 20
 Package_SO
+TSSOP-24_4.4x5mm_P0.4mm
+TSSOP, 24 Pin (JEDEC MO-153 Var CA https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+24
+24
+Package_SO
+TSSOP-24_4.4x6.5mm_P0.5mm
+TSSOP, 24 Pin (JEDEC MO-153 Var BB https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+24
+24
+Package_SO
 TSSOP-24_4.4x7.8mm_P0.65mm
-TSSOP24: plastic thin shrink small outline package; 24 leads; body width 4.4 mm; (see NXP SSOP-TSSOP-VSO-REFLOW.pdf and sot355-1_po.pdf)
-SSOP 0.65
+TSSOP, 24 Pin (JEDEC MO-153 Var AD https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+24
+24
+Package_SO
+TSSOP-24_6.1x7.8mm_P0.65mm
+TSSOP, 24 Pin (JEDEC MO-153 Var DA https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 24
 24
@@ -62069,40 +62412,166 @@ SSOP 0.65
 36
 29
 Package_SO
+TSSOP-28_4.4x7.8mm_P0.5mm
+TSSOP, 28 Pin (JEDEC MO-153 Var BC https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+28
+28
+Package_SO
 TSSOP-28_4.4x9.7mm_P0.65mm
-TSSOP28: plastic thin shrink small outline package; 28 leads; body width 4.4 mm; (see NXP SSOP-TSSOP-VSO-REFLOW.pdf and sot361-1_po.pdf)
-SSOP 0.65
+TSSOP, 28 Pin (JEDEC MO-153 Var AE https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+28
+28
+Package_SO
+TSSOP-28_6.1x7.8mm_P0.5mm
+TSSOP, 28 Pin (JEDEC MO-153 Var EA https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+28
+28
+Package_SO
+TSSOP-28_6.1x9.7mm_P0.65mm
+TSSOP, 28 Pin (JEDEC MO-153 Var DB https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+28
+28
+Package_SO
+TSSOP-28_8x9.7mm_P0.65mm
+TSSOP, 28 Pin (JEDEC MO-153 Var GA https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 28
 28
 Package_SO
 TSSOP-30_4.4x7.8mm_P0.5mm
-TSSOP30: plastic thin shrink small outline package; 30 leads; body width 4.4 mm (http://www.ti.com/lit/ds/symlink/bq78350.pdf)
-SSOP 0.5
+TSSOP, 30 Pin (JEDEC MO-153 Var BC-1 https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 30
 30
+Package_SO
+TSSOP-30_6.1x9.7mm_P0.65mm
+TSSOP, 30 Pin (JEDEC MO-153 Var DB-1 https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+30
+30
+Package_SO
+TSSOP-32_4.4x6.5mm_P0.4mm
+TSSOP, 32 Pin (JEDEC MO-153 Var CB https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+32
+32
 Package_SO
 TSSOP-32_6.1x11mm_P0.65mm
-TSSOP32: plastic thin shrink small outline package; 32 leads; body width 6.1 mm; lead pitch 0.65 mm (see NXP SSOP-TSSOP-VSO-REFLOW.pdf and sot487-1_po.pdf)
-SSOP 0.65
+TSSOP, 32 Pin (JEDEC MO-153 Var DC https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 32
 32
 Package_SO
+TSSOP-32_8x11mm_P0.65mm
+TSSOP, 32 Pin (JEDEC MO-153 Var GB https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+32
+32
+Package_SO
+TSSOP-36_4.4x7.8mm_P0.4mm
+TSSOP, 36 Pin (JEDEC MO-153 Var CC https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+36
+36
+Package_SO
+TSSOP-36_4.4x9.7mm_P0.5mm
+TSSOP, 36 Pin (JEDEC MO-153 Var BD https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+36
+36
+Package_SO
+TSSOP-36_6.1x7.8mm_P0.4mm
+TSSOP, 36 Pin (JEDEC MO-153 Var FA https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+36
+36
+Package_SO
+TSSOP-36_6.1x9.7mm_P0.5mm
+TSSOP, 36 Pin (JEDEC MO-153 Var EB https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+36
+36
+Package_SO
+TSSOP-36_6.1x12.5mm_P0.65mm
+TSSOP, 36 Pin (JEDEC MO-153 Var DD https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+36
+36
+Package_SO
+TSSOP-36_8x9.7mm_P0.5mm
+TSSOP, 36 Pin (JEDEC MO-153 Var HA https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+36
+36
+Package_SO
+TSSOP-36_8x12.5mm_P0.65mm
+TSSOP, 36 Pin (JEDEC MO-153 Var GC https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+36
+36
+Package_SO
 TSSOP-38_4.4x9.7mm_P0.5mm
-TSSOP38: plastic thin shrink small outline package; 38 leads; body width 4.4 mm (see NXP SSOP-TSSOP-VSO-REFLOW.pdf and sot510-1_po.pdf)
-SSOP 0.5
+TSSOP, 38 Pin (JEDEC MO-153 Var BD https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 38
 38
 Package_SO
 TSSOP-38_6.1x12.5mm_P0.65mm
-TSSOP38: plastic thin shrink small outline package; 38 leads; body width 6.1 mm (http://www.ti.com/lit/ds/symlink/msp430g2744.pdf)
-SSOP 0.65
+TSSOP, 38 Pin (JEDEC MO-153 Var DD-1 https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 38
 38
+Package_SO
+TSSOP-40_6.1x11mm_P0.5mm
+TSSOP, 40 Pin (JEDEC MO-153 Var EC https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+40
+40
+Package_SO
+TSSOP-40_6.1x14mm_P0.65mm
+TSSOP, 40 Pin (JEDEC MO-153 Var DE https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+40
+40
+Package_SO
+TSSOP-40_8x11mm_P0.5mm
+TSSOP, 40 Pin (JEDEC MO-153 Var HB https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+40
+40
+Package_SO
+TSSOP-40_8x14mm_P0.65mm
+TSSOP, 40 Pin (JEDEC MO-153 Var GD https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+40
+40
 Package_SO
 TSSOP-44_4.4x11.2mm_P0.5mm
 TSSOP44: plastic thin shrink small outline package; 44 leads; body width 4.4 mm (see NXP SSOP-TSSOP-VSO-REFLOW.pdf and sot510-1_po.pdf)
@@ -62111,19 +62580,145 @@ SSOP 0.5
 44
 44
 Package_SO
-TSSOP-48_6.1x12.5mm_P0.5mm
-TSSOP48: plastic thin shrink small outline package; 48 leads; body width 6.1 mm (see NXP SSOP-TSSOP-VSO-REFLOW.pdf and sot362-1_po.pdf)
-SSOP 0.5
+TSSOP-44_4.4x11mm_P0.5mm
+TSSOP, 44 Pin (JEDEC MO-153 Var BE https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+44
+44
+Package_SO
+TSSOP-44_6.1x11mm_P0.5mm
+TSSOP, 44 Pin (JEDEC MO-153 Var EC-1 https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+44
+44
+Package_SO
+TSSOP-48_4.4x9.7mm_P0.4mm
+TSSOP, 48 Pin (JEDEC MO-153 Var CD https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 48
 48
 Package_SO
-TSSOP-56_6.1x14mm_P0.5mm
-TSSOP56: plastic thin shrink small outline package; 56 leads; body width 6.1 mm (see NXP SSOP-TSSOP-VSO-REFLOW.pdf and sot364-1_po.pdf)
-SSOP 0.5
+TSSOP-48_6.1x9.7mm_P0.4mm
+TSSOP, 48 Pin (JEDEC MO-153 Var FB https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+48
+48
+Package_SO
+TSSOP-48_6.1x12.5mm_P0.5mm
+TSSOP, 48 Pin (JEDEC MO-153 Var ED https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+48
+48
+Package_SO
+TSSOP-48_8x9.7mm_P0.4mm
+TSSOP, 48 Pin (JEDEC MO-153 Var JA https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+48
+48
+Package_SO
+TSSOP-48_8x12.5mm_P0.5mm
+TSSOP, 48 Pin (JEDEC MO-153 Var HC https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+48
+48
+Package_SO
+TSSOP-50_4.4x12.5mm_P0.5mm
+TSSOP, 50 Pin (JEDEC MO-153 Var BF https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+50
+50
+Package_SO
+TSSOP-52_6.1x11mm_P0.4mm
+TSSOP, 52 Pin (JEDEC MO-153 Var FC https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+52
+52
+Package_SO
+TSSOP-52_8x11mm_P0.4mm
+TSSOP, 52 Pin (JEDEC MO-153 Var JB https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+52
+52
+Package_SO
+TSSOP-56_6.1x12.5mm_P0.4mm
+TSSOP, 56 Pin (JEDEC MO-153 Var FD https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
 0
 56
 56
+Package_SO
+TSSOP-56_6.1x14mm_P0.5mm
+TSSOP, 56 Pin (JEDEC MO-153 Var EE https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+56
+56
+Package_SO
+TSSOP-56_8x12.5mm_P0.4mm
+TSSOP, 56 Pin (JEDEC MO-153 Var JC https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+56
+56
+Package_SO
+TSSOP-56_8x14mm_P0.5mm
+TSSOP, 56 Pin (JEDEC MO-153 Var HD https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+56
+56
+Package_SO
+TSSOP-60_8x12.5mm_P0.4mm
+TSSOP, 60 Pin (JEDEC MO-153 Var JC-1 https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+60
+60
+Package_SO
+TSSOP-64_6.1x14mm_P0.4mm
+TSSOP, 64 Pin (JEDEC MO-153 Var FE https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+64
+64
+Package_SO
+TSSOP-64_6.1x17mm_P0.5mm
+TSSOP, 64 Pin (JEDEC MO-153 Var EF https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+64
+64
+Package_SO
+TSSOP-64_8x14mm_P0.4mm
+TSSOP, 64 Pin (JEDEC MO-153 Var JD https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+64
+64
+Package_SO
+TSSOP-68_8x14mm_P0.4mm
+TSSOP, 68 Pin (JEDEC MO-153 Var JD-1 https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+68
+68
+Package_SO
+TSSOP-80_6.1x17mm_P0.4mm
+TSSOP, 80 Pin (JEDEC MO-153 Var FF https://www.jedec.org/document_search?search_api_views_fulltext=MO-153), generated with kicad-footprint-generator ipc_gullwing_generator.py
+TSSOP SO
+0
+80
+80
 Package_SO
 Texas_HSOP-8-1EP_3.9x4.9mm_P1.27mm
 Texas Instruments HSOP 9, 1.27mm pitch, 3.9x4.9mm body, exposed pad, DDA0008J (http://www.ti.com/lit/ds/symlink/tps5430.pdf)
@@ -62593,6 +63188,20 @@ WSON8_4x4mm_P0.8mm
 0
 9
 9
+Package_SON
+WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm
+WSON, 10 Pin (http://www.ti.com/lit/gpn/tps63030#page=24), generated with kicad-footprint-generator ipc_noLead_generator.py
+WSON NoLead
+0
+15
+11
+Package_SON
+WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm_ThermalVias
+WSON, 10 Pin (http://www.ti.com/lit/gpn/tps63030#page=24), generated with kicad-footprint-generator ipc_noLead_generator.py
+WSON NoLead
+0
+22
+11
 Package_SON
 WSON-10-1EP_2x3mm_P0.5mm_EP0.84x2.4mm
 WSON-10 package 2x3mm body, pitch 0.5mm, see http://www.ti.com/lit/ds/symlink/tps62177.pdf
@@ -63073,6 +63682,13 @@ Package_TO_SOT_SMD
 SOT-416
 SOT-416, https://www.nxp.com/docs/en/package-information/SOT416.pdf
 SOT-416
+0
+3
+3
+Package_TO_SOT_SMD
+SOT-523
+SOT523, https://www.diodes.com/assets/Package-Files/SOT523.pdf
+SOT-523
 0
 3
 3
@@ -66062,6 +66678,20 @@ RF_Antenna
 Coilcraft_MA5532-AE_RFID
 RFID Transponder Coil
 antenna rfid coilcraft
+0
+2
+2
+RF_Antenna
+Johanson_2450AT18x100
+Johanson 2450AT43F0100 SMD antenna 2400-2500Mhz, -0.5dBi, https://www.johansontechnology.com/datasheets/2450AT18A100/2450AT18A100.pdf
+antenna
+0
+2
+2
+RF_Antenna
+Johanson_2450AT43F0100
+Johanson 2450AT43F0100 SMD antenna 2400-2500Mhz, 1dBi, https://www.johansontechnology.com/datasheets/2450AT43F0100/2450AT43F0100.pdf
+antenna
 0
 2
 2

@@ -4,35 +4,24 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "Carte étudiant"
+Date "2020-03-10"
+Rev "1.1"
+Comp "INSA GEI"
 Comment1 ""
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector_Generic:Conn_02x15_Odd_Even J1
-U 1 1 5E47CF68
-P 8500 5450
-F 0 "J1" V 8550 4662 50  0000 R CNN
-F 1 "Conn_02x15_Odd_Even" V 8505 4662 50  0001 R CNN
-F 2 "Insa:TE 5530841-2 PCB Edge" H 8500 5450 50  0001 C CNN
-F 3 "~" H 8500 5450 50  0001 C CNN
-	1    8500 5450
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x14 J2
+L Connector_Generic:Conn_01x16 J2
 U 1 1 5E4851B3
-P 8400 3500
-F 0 "J2" V 8400 2600 50  0000 L CNN
-F 1 "Conn_01x14" H 8480 3401 50  0001 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x14_P2.54mm_Vertical" H 8400 3500 50  0001 C CNN
-F 3 "~" H 8400 3500 50  0001 C CNN
-	1    8400 3500
+P 7350 2450
+F 0 "J2" V 7350 3250 50  0000 L CNN
+F 1 "Conn_01x14" H 7430 2351 50  0001 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical" H 7350 2450 50  0001 C CNN
+F 3 "~" H 7350 2450 50  0001 C CNN
+	1    7350 2450
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -44,17 +33,6 @@ F 1 "NUCLEO64-F103RB" H 2850 5200 50  0000 C CNN
 F 2 "Insa:ST_Morpho_Connector_64" H 4550 1350 50  0001 L CNN
 F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00105918.pdf" H 3100 1850 50  0001 C CNN
 	1    4000 3250
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0101
-U 1 1 5E494340
-P 10750 1050
-F 0 "#PWR0101" H 10750 900 50  0001 C CNN
-F 1 "+3V3" H 10765 1223 50  0000 C CNN
-F 2 "" H 10750 1050 50  0001 C CNN
-F 3 "" H 10750 1050 50  0001 C CNN
-	1    10750 1050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -94,51 +72,21 @@ Wire Wire Line
 	10250 1050 10750 1050
 Wire Wire Line
 	10750 1300 10250 1300
-$Comp
-L power:+3V3 #PWR0103
-U 1 1 5E4971FE
-P 3700 1000
-F 0 "#PWR0103" H 3700 850 50  0001 C CNN
-F 1 "+3V3" H 3715 1173 50  0000 C CNN
-F 2 "" H 3700 1000 50  0001 C CNN
-F 3 "" H 3700 1000 50  0001 C CNN
-	1    3700 1000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	7900 5150 7800 5150
+	6550 5150 6550 5050
 Wire Wire Line
-	7800 5150 7600 5150
+	6350 5150 6350 5100
 Wire Wire Line
-	7600 5150 7600 5050
-Connection ~ 7800 5150
-Wire Wire Line
-	8000 5150 8100 5150
-Wire Wire Line
-	8100 5150 8100 4750
-Wire Wire Line
-	8100 4750 8000 4750
-Connection ~ 8100 5150
+	6350 4750 6250 4750
 $Comp
 L power:GND #PWR?
 U 1 1 5E4A3E36
-P 8000 4750
-F 0 "#PWR?" H 8000 4500 50  0001 C CNN
-F 1 "GND" H 8005 4577 50  0000 C CNN
-F 2 "" H 8000 4750 50  0001 C CNN
-F 3 "" H 8000 4750 50  0001 C CNN
-	1    8000 4750
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR?
-U 1 1 5E4A4523
-P 7600 5050
-F 0 "#PWR?" H 7600 4900 50  0001 C CNN
-F 1 "+3V3" H 7615 5223 50  0000 C CNN
-F 2 "" H 7600 5050 50  0001 C CNN
-F 3 "" H 7600 5050 50  0001 C CNN
-	1    7600 5050
+P 6250 4750
+F 0 "#PWR?" H 6250 4500 50  0001 C CNN
+F 1 "GND" H 6255 4577 50  0000 C CNN
+F 2 "" H 6250 4750 50  0001 C CNN
+F 3 "" H 6250 4750 50  0001 C CNN
+	1    6250 4750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -152,8 +100,6 @@ F 3 "" H 3700 5350 50  0001 C CNN
 	1    3700 5350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3700 1000 3700 1250
 Wire Wire Line
 	3400 5250 3500 5250
 Connection ~ 3500 5250
@@ -176,7 +122,7 @@ Wire Wire Line
 NoConn ~ 3400 1250
 NoConn ~ 3500 1250
 NoConn ~ 3600 1250
-NoConn ~ 3800 1250
+NoConn ~ 3700 1250
 NoConn ~ 3900 1250
 NoConn ~ 4000 1250
 NoConn ~ 4100 1250
@@ -234,110 +180,223 @@ NoConn ~ 5100 1950
 NoConn ~ 5100 1850
 NoConn ~ 5100 1750
 NoConn ~ 5100 1650
-NoConn ~ 7800 5650
-NoConn ~ 7900 5650
-NoConn ~ 8000 5650
-NoConn ~ 8100 5650
-NoConn ~ 8200 5650
-NoConn ~ 8300 5650
-NoConn ~ 8400 5650
-NoConn ~ 8500 5650
-NoConn ~ 8600 5650
-NoConn ~ 8700 5650
-NoConn ~ 8800 5650
-NoConn ~ 8900 5650
-NoConn ~ 9000 5650
-NoConn ~ 9100 5650
-NoConn ~ 9200 5650
+NoConn ~ 6550 5650
+NoConn ~ 6650 5650
+NoConn ~ 6750 5650
+NoConn ~ 6850 5650
+NoConn ~ 6950 5650
+NoConn ~ 7050 5650
+NoConn ~ 7150 5650
+NoConn ~ 7250 5650
+NoConn ~ 7350 5650
+NoConn ~ 7450 5650
+NoConn ~ 7550 5650
+NoConn ~ 7650 5650
+NoConn ~ 7750 5650
+NoConn ~ 7850 5650
+NoConn ~ 7950 5650
+$Comp
+L Connector_Generic:Conn_02x20_Odd_Even J1
+U 1 1 5E47CF68
+P 7250 5450
+F 0 "J1" V 7300 6500 50  0000 R CNN
+F 1 "Conn_02x15_Odd_Even" V 7255 4662 50  0001 R CNN
+F 2 "Insa:5-5530843-4-PCB" H 7250 5450 50  0001 C CNN
+F 3 "~" H 7250 5450 50  0001 C CNN
+	1    7250 5450
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 8250 5650
+NoConn ~ 8150 5650
+NoConn ~ 8050 5650
+NoConn ~ 6450 5650
+NoConn ~ 6350 5650
+NoConn ~ 8250 5150
 Wire Wire Line
-	8200 4650 7800 4650
+	6650 2750 9700 2750
 Wire Wire Line
-	7800 4650 7800 3700
+	6750 2900 9700 2900
 Wire Wire Line
-	8200 4650 8200 5150
+	6850 3050 9700 3050
 Wire Wire Line
-	7900 3700 7900 4600
+	6950 3200 9700 3200
 Wire Wire Line
-	7900 4600 8300 4600
+	7050 3350 9700 3350
 Wire Wire Line
-	8300 4600 8300 5150
+	7150 3500 9700 3500
 Wire Wire Line
-	8400 5150 8400 4550
+	7250 3650 9700 3650
 Wire Wire Line
-	8400 4550 8000 4550
+	7350 3800 9700 3800
 Wire Wire Line
-	8000 4550 8000 3700
+	7450 3950 9700 3950
 Wire Wire Line
-	8100 3700 8100 4500
+	7550 4100 9700 4100
 Wire Wire Line
-	8100 4500 8500 4500
+	7650 4250 9700 4250
 Wire Wire Line
-	8500 4500 8500 5150
+	7750 4400 9700 4400
 Wire Wire Line
-	8600 5150 8600 4450
+	7850 4550 9700 4550
 Wire Wire Line
-	8600 4450 8200 4450
+	7950 4700 9700 4700
+Connection ~ 6650 2750
 Wire Wire Line
-	8200 4450 8200 3700
+	6650 2750 6650 5150
+Connection ~ 6750 2900
 Wire Wire Line
-	8300 3700 8300 4400
+	6750 2900 6750 5150
+Connection ~ 6850 3050
 Wire Wire Line
-	8300 4400 8700 4400
+	6850 3050 6850 5150
+Connection ~ 6950 3200
 Wire Wire Line
-	8700 4400 8700 5150
+	6950 3200 6950 5150
+Connection ~ 7050 3350
 Wire Wire Line
-	8800 5150 8800 4350
+	7050 3350 7050 5150
+Connection ~ 7150 3500
 Wire Wire Line
-	8800 4350 8400 4350
+	7150 3500 7150 5150
+Connection ~ 7250 3650
 Wire Wire Line
-	8400 4350 8400 3700
+	7250 3650 7250 5150
+Connection ~ 7350 3800
 Wire Wire Line
-	8500 3700 8500 4300
+	7350 3800 7350 5150
+Connection ~ 7450 3950
 Wire Wire Line
-	8500 4300 8900 4300
+	7450 3950 7450 5150
+Connection ~ 7550 4100
 Wire Wire Line
-	8900 4300 8900 5150
+	7550 4100 7550 5150
+Connection ~ 7650 4250
 Wire Wire Line
-	9000 5150 9000 4250
+	7650 4250 7650 5150
+Connection ~ 7750 4400
 Wire Wire Line
-	9000 4250 8600 4250
+	7750 4400 7750 5150
+Connection ~ 7850 4550
 Wire Wire Line
-	8600 4250 8600 3700
+	7850 4550 7850 5150
+Connection ~ 7950 4700
 Wire Wire Line
-	8700 3700 8700 4200
+	7950 4700 7950 5150
 Wire Wire Line
-	8700 4200 9100 4200
+	6650 2650 6650 2750
 Wire Wire Line
-	9100 4200 9100 5150
+	6750 2650 6750 2900
 Wire Wire Line
-	9200 5150 9200 4150
+	6850 2650 6850 3050
 Wire Wire Line
-	9200 4150 8800 4150
+	6950 2650 6950 3200
 Wire Wire Line
-	8800 4150 8800 3700
-NoConn ~ 8900 3700
-NoConn ~ 9000 3700
-NoConn ~ 9100 3700
-Text Notes 7800 3400 1    50   ~ 0
-Moteur PWM
-Text Notes 7900 3400 1    50   ~ 0
-Moteur Direction
-Text Notes 8000 3400 1    50   ~ 0
-Girouette PH-A
-Text Notes 8100 3400 1    50   ~ 0
-Girouette PH-B
-Text Notes 8200 3400 1    50   ~ 0
-Girouette Index
-Text Notes 8300 3400 1    50   ~ 0
-Servo PWM
-Text Notes 8400 3400 1    50   ~ 0
-Tension Batterie
-Text Notes 8500 3400 1    50   ~ 0
-I2C SDA
-Text Notes 8600 3400 1    50   ~ 0
-I2C SCL
-Text Notes 8700 3400 1    50   ~ 0
-XBEE RX
-Text Notes 8800 3400 1    50   ~ 0
-XBEE TX
+	7050 2650 7050 3350
+Wire Wire Line
+	7150 2650 7150 3500
+Wire Wire Line
+	7250 2650 7250 3650
+Wire Wire Line
+	7350 2650 7350 3800
+Wire Wire Line
+	7450 2650 7450 3950
+Wire Wire Line
+	7550 2650 7550 4100
+Wire Wire Line
+	7650 2650 7650 4250
+Wire Wire Line
+	7750 2650 7750 4400
+Wire Wire Line
+	7850 2650 7850 4550
+Wire Wire Line
+	7950 2650 7950 4700
+Wire Wire Line
+	8050 2650 8050 4850
+Text Label 9700 2750 2    50   ~ 0
+CAPTEUR_SPI_MOSI
+Text Label 9700 2900 2    50   ~ 0
+CAPTEUR_SPI_MISO
+Text Label 9700 3050 2    50   ~ 0
+CAPTEUR_SPI_CLK
+Text Label 9700 3200 2    50   ~ 0
+CAPTEUR_SPI_CS
+Text Label 9700 3350 2    50   ~ 0
+PLATEAU_DIRECTION
+Text Label 9700 3500 2    50   ~ 0
+SERVO_VOILE_PWM
+Text Label 9700 3650 2    50   ~ 0
+PLATEAU_PWM
+Text Label 9700 3800 2    50   ~ 0
+XBEE_UART_TX
+Text Label 9700 3950 2    50   ~ 0
+XBEE_UART_RX
+Text Label 9700 4100 2    50   ~ 0
+CAPTEUR_I2C_SCL
+Text Label 9700 4250 2    50   ~ 0
+CAPTEUR_I2C_SDA
+Text Label 9700 4400 2    50   ~ 0
+GIROUETTE_PHB
+Text Label 9700 4550 2    50   ~ 0
+GIROUETTE_PHA
+Text Label 9700 4700 2    50   ~ 0
+GIROUETTE_INDEX
+Text Label 9700 4850 2    50   ~ 0
+TENSION_BATTERIE
+Wire Wire Line
+	8050 5150 8050 5100
+Wire Wire Line
+	8050 5100 6450 5100
+Connection ~ 6350 5100
+Wire Wire Line
+	6350 5100 6350 4750
+Wire Wire Line
+	6450 5100 6450 5150
+Connection ~ 6450 5100
+Wire Wire Line
+	6450 5100 6350 5100
+NoConn ~ 8150 2650
+Wire Wire Line
+	8050 4850 9700 4850
+Wire Wire Line
+	8050 4850 8050 4950
+Wire Wire Line
+	8050 4950 8150 4950
+Wire Wire Line
+	8150 4950 8150 5150
+Connection ~ 8050 4850
+Wire Wire Line
+	3800 1250 3800 950 
+$Comp
+L power:+5V #PWR?
+U 1 1 5E77E45F
+P 3800 950
+F 0 "#PWR?" H 3800 800 50  0001 C CNN
+F 1 "+5V" H 3815 1123 50  0000 C CNN
+F 2 "" H 3800 950 50  0001 C CNN
+F 3 "" H 3800 950 50  0001 C CNN
+	1    3800 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5E77F67D
+P 10750 1050
+F 0 "#PWR?" H 10750 900 50  0001 C CNN
+F 1 "+5V" H 10765 1223 50  0000 C CNN
+F 2 "" H 10750 1050 50  0001 C CNN
+F 3 "" H 10750 1050 50  0001 C CNN
+	1    10750 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5E780E0F
+P 6550 5050
+F 0 "#PWR?" H 6550 4900 50  0001 C CNN
+F 1 "+5V" H 6565 5223 50  0000 C CNN
+F 2 "" H 6550 5050 50  0001 C CNN
+F 3 "" H 6550 5050 50  0001 C CNN
+	1    6550 5050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
