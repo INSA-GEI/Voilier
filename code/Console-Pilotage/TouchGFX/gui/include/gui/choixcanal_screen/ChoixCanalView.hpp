@@ -11,7 +11,11 @@ public:
     virtual ~ChoixCanalView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void buttonConnectClicked();
+    virtual void buttonUpClicked();
+    virtual void buttonDownClicked();
 protected:
+    int canalVoilier=0;
 };
 
 #endif // CHOIXCANALVIEW_HPP

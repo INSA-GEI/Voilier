@@ -8,11 +8,19 @@
 #include <common/Partition.hpp>
 #include <mvp/MVPHeap.hpp>
 #include <touchgfx/transitions/NoTransition.hpp>
+
+
+
+
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
 #include <gui/choixcanal_screen/ChoixCanalView.hpp>
 #include <gui/choixcanal_screen/ChoixCanalPresenter.hpp>
+#include <gui/rotationvoilier_screen/RotationVoilierView.hpp>
+#include <gui/rotationvoilier_screen/RotationVoilierPresenter.hpp>
+#include <gui/messages_screen/MessagesView.hpp>
+#include <gui/messages_screen/MessagesPresenter.hpp>
 
 
 /**
@@ -36,7 +44,9 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< ChoixCanalView,
-            touchgfx::meta::Nil
+            touchgfx::meta::TypeList< RotationVoilierView,
+            touchgfx::meta::TypeList< MessagesView,
+            touchgfx::meta::Nil > >
             > GeneratedViewTypes;
 
     /**
@@ -49,7 +59,9 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< ChoixCanalPresenter,
-            touchgfx::meta::Nil
+            touchgfx::meta::TypeList< RotationVoilierPresenter,
+            touchgfx::meta::TypeList< MessagesPresenter,
+            touchgfx::meta::Nil > >
             > GeneratedPresenterTypes;
 
     /**

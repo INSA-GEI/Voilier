@@ -172,6 +172,30 @@
     <Filter Include="Header Files\generated\gui_generated\choixcanal_screen">
       <UniqueIdentifier>EDAE0A6D-89AB-B673-A942-07E5AB8505DE</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\rotationvoilier_screen">
+      <UniqueIdentifier>2E336578-22A8-243A-EFBA-059E0F3C9A53</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\messages_screen">
+      <UniqueIdentifier>69C72A93-2B8E-161C-7E43-786B2A8586C1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\messages_screen">
+      <UniqueIdentifier>3AEC7449-A4C0-EF2D-4111-BBF6E471612A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\rotationvoilier_screen">
+      <UniqueIdentifier>1656417E-4D05-7266-4BA8-92E6760EB1BC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\rotationvoilier_screen">
+      <UniqueIdentifier>3EA01742-5CE2-49EC-B55D-0F5344CF7BFC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\messages_screen">
+      <UniqueIdentifier>B2626DDB-3AA5-81A5-AC84-F59B3F3009B5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\rotationvoilier_screen">
+      <UniqueIdentifier>F32D27A4-72F1-C0D7-F05B-F7E1816DE56B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\messages_screen">
+      <UniqueIdentifier>E23CA7F3-85A0-9B1D-852E-57FDA27023A3</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -209,6 +233,24 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\choixcanal_screen\ChoixCanalViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\choixcanal_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\messages_screen\MessagesPresenter.cpp">
+      <Filter>Source Files\gui\messages_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\messages_screen\MessagesView.cpp">
+      <Filter>Source Files\gui\messages_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\messages_screen\MessagesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\messages_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationvoilier_screen\RotationVoilierPresenter.cpp">
+      <Filter>Source Files\gui\rotationvoilier_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationvoilier_screen\RotationVoilierView.cpp">
+      <Filter>Source Files\gui\rotationvoilier_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationvoilier_screen\RotationVoilierViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\rotationvoilier_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -651,6 +693,24 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\choixcanal_screen\ChoixCanalViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\choixcanal_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\messages_screen\MessagesPresenter.hpp">
+      <Filter>Header Files\gui\messages_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\messages_screen\MessagesView.hpp">
+      <Filter>Header Files\gui\messages_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\messages_screen\MessagesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\messages_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationvoilier_screen\RotationVoilierPresenter.hpp">
+      <Filter>Header Files\gui\rotationvoilier_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationvoilier_screen\RotationVoilierView.hpp">
+      <Filter>Header Files\gui\rotationvoilier_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationvoilier_screen\RotationVoilierViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\rotationvoilier_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

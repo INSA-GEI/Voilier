@@ -18,6 +18,12 @@ public:
     // ChoixCanal
     void gotoChoixCanalScreenNoTransition();
 
+    // RotationVoilier
+    void gotoRotationVoilierScreenNoTransition();
+
+    // Messages
+    void gotoMessagesScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -25,6 +31,12 @@ protected:
 
     // ChoixCanal
     void gotoChoixCanalScreenNoTransitionImpl();
+
+    // RotationVoilier
+    void gotoRotationVoilierScreenNoTransitionImpl();
+
+    // Messages
+    void gotoMessagesScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

@@ -9,9 +9,10 @@
 #include <gui/choixcanal_screen/ChoixCanalPresenter.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/Button.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/mixins/MoveAnimator.hpp>
 
 class ChoixCanalViewBase : public touchgfx::View<ChoixCanalPresenter>
 {
@@ -19,6 +20,24 @@ public:
     ChoixCanalViewBase();
     virtual ~ChoixCanalViewBase() {}
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void buttonConnectClicked()
+    {
+        // Override and implement this function in ChoixCanal
+    }
+
+    virtual void buttonUpClicked()
+    {
+        // Override and implement this function in ChoixCanal
+    }
+
+    virtual void buttonDownClicked()
+    {
+        // Override and implement this function in ChoixCanal
+    }
 
 protected:
     FrontendApplication& application() {
@@ -29,12 +48,12 @@ protected:
      * Member Declarations
      */
     touchgfx::Image imageBg;
-    touchgfx::Button buttonUp;
-    touchgfx::Button buttonDown;
-    touchgfx::Image imageBgCanal;
-    touchgfx::ButtonWithLabel buttonConnect;
-    touchgfx::TextArea textArea1;
-    touchgfx::TextAreaWithOneWildcard textCanalVoilier;
+    touchgfx::MoveAnimator< touchgfx::Button > buttonUp;
+    touchgfx::MoveAnimator< touchgfx::Button > buttonDown;
+    touchgfx::MoveAnimator< touchgfx::Image > imageBgCanal;
+    touchgfx::MoveAnimator< touchgfx::TextArea > textArea1;
+    touchgfx::MoveAnimator< touchgfx::TextAreaWithOneWildcard > textCanalVoilier;
+    touchgfx::MoveAnimator< touchgfx::Button > buttonConnect;
 
     /*
      * Wildcard Buffers
@@ -43,6 +62,26 @@ protected:
     touchgfx::Unicode::UnicodeChar textCanalVoilierBuffer[TEXTCANALVOILIER_SIZE];
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<ChoixCanalViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    /*
+     * Interaction Callback Declarations
+     */
+    touchgfx::Callback < ChoixCanalViewBase, const touchgfx::MoveAnimator<touchgfx::Button>& > interactionButtonConnectMoveEndedCallback;
+
+
+    /*
+     * Interaction Handlers
+     */
+    void interactionButtonConnectMoveEndedCallbackHandler(const touchgfx::MoveAnimator<touchgfx::Button>& comp);
 
 };
 

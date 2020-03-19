@@ -23,6 +23,12 @@
     <ClCompile Include="..\..\gui\src\choixcanal_screen\ChoixCanalPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\choixcanal_screen\ChoixCanalView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\choixcanal_screen\ChoixCanalViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\messages_screen\MessagesPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\messages_screen\MessagesView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\messages_screen\MessagesViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\rotationvoilier_screen\RotationVoilierPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\rotationvoilier_screen\RotationVoilierView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationvoilier_screen\RotationVoilierViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xlsx"/>
@@ -173,6 +179,12 @@
     <ClInclude Include="..\..\gui\include\gui\choixcanal_screen\ChoixCanalPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\choixcanal_screen\ChoixCanalView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\choixcanal_screen\ChoixCanalViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\messages_screen\MessagesPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\messages_screen\MessagesView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\messages_screen\MessagesViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\rotationvoilier_screen\RotationVoilierPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\rotationvoilier_screen\RotationVoilierView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationvoilier_screen\RotationVoilierViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

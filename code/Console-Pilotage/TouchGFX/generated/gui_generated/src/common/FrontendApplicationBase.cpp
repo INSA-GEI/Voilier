@@ -11,6 +11,10 @@
 #include<platform/driver/lcd/LCD24bpp.hpp>
 #include <gui/choixcanal_screen/ChoixCanalView.hpp>
 #include <gui/choixcanal_screen/ChoixCanalPresenter.hpp>
+#include <gui/rotationvoilier_screen/RotationVoilierView.hpp>
+#include <gui/rotationvoilier_screen/RotationVoilierPresenter.hpp>
+#include <gui/messages_screen/MessagesView.hpp>
+#include <gui/messages_screen/MessagesPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -40,4 +44,30 @@ void FrontendApplicationBase::gotoChoixCanalScreenNoTransition()
 void FrontendApplicationBase::gotoChoixCanalScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<ChoixCanalView, ChoixCanalPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// RotationVoilier
+
+void FrontendApplicationBase::gotoRotationVoilierScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoRotationVoilierScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoRotationVoilierScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<RotationVoilierView, RotationVoilierPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Messages
+
+void FrontendApplicationBase::gotoMessagesScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoMessagesScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoMessagesScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<MessagesView, MessagesPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

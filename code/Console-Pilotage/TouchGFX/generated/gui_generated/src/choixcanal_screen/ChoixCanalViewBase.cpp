@@ -6,28 +6,26 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Color.hpp>
 
-ChoixCanalViewBase::ChoixCanalViewBase()
+ChoixCanalViewBase::ChoixCanalViewBase() :
+    buttonCallback(this, &ChoixCanalViewBase::buttonCallbackHandler),
+    interactionButtonConnectMoveEndedCallback(this, &ChoixCanalViewBase::interactionButtonConnectMoveEndedCallbackHandler)
 {
 
     imageBg.setXY(0, 0);
     imageBg.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_ID));
 
-    buttonUp.setXY(81, 71);
+    buttonUp.setXY(272, 12);
     buttonUp.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_UP_RELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTON_UP_PRESSED_ID));
+    buttonUp.setAction(buttonCallback);
 
-    buttonDown.setXY(81, 145);
+    buttonDown.setXY(272, 205);
     buttonDown.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_DOWN_RELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTON_DOWN_PRESSED_ID));
+    buttonDown.setAction(buttonCallback);
 
-    imageBgCanal.setXY(261, 59);
-    imageBgCanal.setBitmap(touchgfx::Bitmap(BITMAP_COUNTER_BOX_ID));
+    imageBgCanal.setXY(277, 75);
+    imageBgCanal.setBitmap(touchgfx::Bitmap(BITMAP_COUNTER_BOX_120X122_ID));
 
-    buttonConnect.setXY(61, 212);
-    buttonConnect.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    buttonConnect.setLabelText(touchgfx::TypedText(T_SINGLEUSEID1));
-    buttonConnect.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    buttonConnect.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-
-    textArea1.setXY(136, 12);
+    textArea1.setXY(81, 50);
     textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(250, 160, 50));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID2));
@@ -39,16 +37,90 @@ ChoixCanalViewBase::ChoixCanalViewBase()
     textCanalVoilier.setWildcard(textCanalVoilierBuffer);
     textCanalVoilier.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
 
+    buttonConnect.setXY(65, 130);
+    buttonConnect.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_CONNECT_RELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTON_CONNECT_PRESSED_ID));
+    buttonConnect.setAction(buttonCallback);
+
     add(imageBg);
     add(buttonUp);
     add(buttonDown);
     add(imageBgCanal);
-    add(buttonConnect);
     add(textArea1);
     add(textCanalVoilier);
+    add(buttonConnect);
 }
 
 void ChoixCanalViewBase::setupScreen()
 {
 
+}
+
+void ChoixCanalViewBase::interactionButtonConnectMoveEndedCallbackHandler(const touchgfx::MoveAnimator<touchgfx::Button>& comp)
+{
+    //InteractionChangeScreen
+    //When InteractionButtonConnectMove completed change screen to RotationVoilier
+    //Go to RotationVoilier with no screen transition
+    application().gotoRotationVoilierScreenNoTransition();
+}
+
+void ChoixCanalViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &buttonUp)
+    {
+        //InteractionButtonUpClicked
+        //When buttonUp clicked call virtual function
+        //Call buttonUpClicked
+        buttonUpClicked();
+    }
+    else if (&src == &buttonDown)
+    {
+        //InteractionButtonDownClicked
+        //When buttonDown clicked call virtual function
+        //Call buttonDownClicked
+        buttonDownClicked();
+    }
+    else if (&src == &buttonConnect)
+    {
+        //InteractionButtonConnectClicked
+        //When buttonConnect clicked call virtual function
+        //Call buttonConnectClicked
+        buttonConnectClicked();
+
+        //interactionButtonUpMoved
+        //When InteractionButtonConnectClicked completed move buttonUp
+        //Move buttonUp to x:600, y:12 with SineOut easing in 400 ms (24 Ticks)
+        buttonUp.clearMoveAnimationEndedAction();
+        buttonUp.startMoveAnimation(600, 12, 24, touchgfx::EasingEquations::sineEaseOut, touchgfx::EasingEquations::sineEaseOut);
+
+        //InteractionButtonDownMove
+        //When InteractionButtonConnectClicked completed move buttonDown
+        //Move buttonDown to x:600, y:205 with SineOut easing in 400 ms (24 Ticks)
+        buttonDown.clearMoveAnimationEndedAction();
+        buttonDown.startMoveAnimation(600, 205, 24, touchgfx::EasingEquations::sineEaseOut, touchgfx::EasingEquations::sineEaseOut);
+
+        //InteractionCanalMove
+        //When InteractionButtonConnectClicked completed move textCanalVoilier
+        //Move textCanalVoilier to x:600, y:87 with SineOut easing in 400 ms (24 Ticks)
+        textCanalVoilier.clearMoveAnimationEndedAction();
+        textCanalVoilier.startMoveAnimation(600, 87, 24, touchgfx::EasingEquations::sineEaseOut, touchgfx::EasingEquations::sineEaseOut);
+
+        //InteractionButtonConnectMove
+        //When InteractionButtonConnectClicked completed move buttonConnect
+        //Move buttonConnect to x:-160, y:130 with SineOut easing in 500 ms (30 Ticks)
+        buttonConnect.clearMoveAnimationEndedAction();
+        buttonConnect.startMoveAnimation(-160, 130, 30, touchgfx::EasingEquations::sineEaseOut, touchgfx::EasingEquations::sineEaseOut);
+        buttonConnect.setMoveAnimationEndedAction(interactionButtonConnectMoveEndedCallback);
+
+        //InteractionTextMove
+        //When InteractionButtonConnectClicked completed move textArea1
+        //Move textArea1 to x:-100, y:50 with SineOut easing in 400 ms (24 Ticks)
+        textArea1.clearMoveAnimationEndedAction();
+        textArea1.startMoveAnimation(-100, 50, 24, touchgfx::EasingEquations::sineEaseOut, touchgfx::EasingEquations::sineEaseOut);
+
+        //InteractionCanalBGMove
+        //When InteractionButtonConnectClicked completed move imageBgCanal
+        //Move imageBgCanal to x:600, y:75 with SineOut easing in 500 ms (30 Ticks)
+        imageBgCanal.clearMoveAnimationEndedAction();
+        imageBgCanal.startMoveAnimation(600, 75, 30, touchgfx::EasingEquations::sineEaseOut, touchgfx::EasingEquations::sineEaseOut);
+    }
 }
