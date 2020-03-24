@@ -373,7 +373,7 @@
             "ValueMin": 0,
             "InitValue": 50,
             "Name": "sliderRotation",
-            "X": 89,
+            "X": 500,
             "Y": 220,
             "Width": 350,
             "Height": 32,
@@ -394,17 +394,17 @@
             "CenterY": 100,
             "Radius": 95,
             "LineWidth": 7,
-            "StartAngle": 110,
-            "EndAngle": 250,
+            "StartAngle": 180,
+            "EndAngle": 180,
             "CapPrecision": "Round",
             "Alpha": 255,
             "Name": "circleRotation",
-            "X": 164,
+            "X": 500,
             "Y": 12,
             "Width": 200,
             "Height": 200,
             "Type": "Circle",
-            "Visible": true,
+            "Visible": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -414,7 +414,7 @@
             "RelativeFilename": "sailboat-2-large.png",
             "Alpha": 255,
             "Name": "imageRotBg",
-            "X": 214,
+            "X": 500,
             "Y": 84,
             "Width": 100,
             "Height": 100,
@@ -442,7 +442,7 @@
               "BufferSize": 10
             },
             "Name": "textRotationSpeed",
-            "X": 218,
+            "X": 500,
             "Y": 43,
             "Width": 92,
             "Height": 25,
@@ -457,7 +457,7 @@
             "RelativeFilename": "icons8-up-3-52.png",
             "Alpha": 255,
             "Name": "imageRotLeft",
-            "X": 123,
+            "X": 500,
             "Y": 180,
             "Width": 32,
             "Height": 32,
@@ -472,7 +472,7 @@
             "RelativeFilename": "icons8-up-2-52.png",
             "Alpha": 255,
             "Name": "imageRotRight",
-            "X": 374,
+            "X": 500,
             "Y": 180,
             "Width": 32,
             "Height": 32,
@@ -501,7 +501,7 @@
             "InteractionName": "InteractionChangeScreenMessage",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "InteractionToTriggerOn": "InteractionExitRotRight",
               "Type": "TriggerInteractionCompleted"
             },
             "Action": {
@@ -532,6 +532,204 @@
             "Action": {
               "FunctionName": "sliderRotationReleased",
               "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterCircle",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 164,
+              "Y": 12,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "circleRotation",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEntreSlider",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 89,
+              "Y": 220,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "sliderRotation",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterImageRotBg",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 214,
+              "Y": 84,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "imageRotBg",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterTextRotationSpeed",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 218,
+              "Y": 43,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "textRotationSpeed",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterRotLeft",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 123,
+              "Y": 180,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "imageRotLeft",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterRotRight",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 374,
+              "Y": 180,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "imageRotRight",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitSliderRotation",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 220,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "sliderRotation",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitCicleRotation",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 12,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "circleRotation",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitImageRotBg",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 84,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "imageRotBg",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionTextRotationSpeed",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 43,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "textRotationSpeed",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitRotLeft",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 180,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "imageRotLeft",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitRotRight",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 180,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 300,
+              "ActionComponent": "imageRotRight",
+              "Type": "ActionMove"
             }
           }
         ],
@@ -612,7 +810,7 @@
             "RelativeFilename": "counter_box_messages.png",
             "Alpha": 255,
             "Name": "imageMessageBoxBg",
-            "X": 81,
+            "X": 500,
             "Y": 14,
             "Width": 360,
             "Height": 200,
@@ -639,7 +837,7 @@
               "BufferSize": 1500
             },
             "Name": "textMessages",
-            "X": 81,
+            "X": 500,
             "Y": 14,
             "Width": 360,
             "Height": 200,
@@ -661,7 +859,7 @@
             "IconHeight": 32,
             "IconWidth": 32,
             "Name": "buttonWipe",
-            "X": 196,
+            "X": 500,
             "Y": 214,
             "Width": 130,
             "Height": 56,
@@ -682,7 +880,7 @@
               "Type": "TriggerClicked"
             },
             "Action": {
-              "FunctionName": "ButtonMessagesClicked",
+              "FunctionName": "buttonMessagesClicked",
               "Type": "ActionCustom"
             }
           },
@@ -690,7 +888,7 @@
             "InteractionName": "InteractionChangeScreenRotation",
             "HasCompletedTrigger": false,
             "Trigger": {
-              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "InteractionToTriggerOn": "InteractionExitButtonWipe",
               "Type": "TriggerInteractionCompleted"
             },
             "Action": {
@@ -709,6 +907,105 @@
             "Action": {
               "FunctionName": "buttonWipeClicked",
               "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterMessageBoxBg",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 81,
+              "Y": 14,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "imageMessageBoxBg",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionTextMessage",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 81,
+              "Y": 14,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "textMessages",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterButtonWipe",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 196,
+              "Y": 214,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "buttonWipe",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitMessageBoxBg",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 14,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "imageMessageBoxBg",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitTextMessages",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 14,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "textMessages",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitButtonWipe",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 214,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "buttonWipe",
+              "Type": "ActionMove"
             }
           }
         ],

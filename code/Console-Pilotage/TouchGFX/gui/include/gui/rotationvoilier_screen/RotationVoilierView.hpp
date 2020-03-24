@@ -18,6 +18,7 @@ public:
 protected:
     int rotationValue=0;
     int angleAdd=0;
+    int rotationAnimate=0;
 };
 
 #endif // ROTATIONVOILIERVIEW_HPP

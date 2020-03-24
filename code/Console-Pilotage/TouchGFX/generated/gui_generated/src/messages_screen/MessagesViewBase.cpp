@@ -7,7 +7,8 @@
 #include <touchgfx/Color.hpp>
 
 MessagesViewBase::MessagesViewBase() :
-    buttonCallback(this, &MessagesViewBase::buttonCallbackHandler)
+    buttonCallback(this, &MessagesViewBase::buttonCallbackHandler),
+    interactionExitButtonWipeEndedCallback(this, &MessagesViewBase::interactionExitButtonWipeEndedCallbackHandler)
 {
 
     imageBg.setXY(0, 0);
@@ -24,17 +25,17 @@ MessagesViewBase::MessagesViewBase() :
     imageMessagesIcon.setXY(9, 188);
     imageMessagesIcon.setBitmap(touchgfx::Bitmap(BITMAP_MESSAGES_ORANGE_LIGHT_ID));
 
-    imageMessageBoxBg.setXY(81, 14);
+    imageMessageBoxBg.setXY(500, 14);
     imageMessageBoxBg.setBitmap(touchgfx::Bitmap(BITMAP_COUNTER_BOX_MESSAGES_ID));
 
-    textMessages.setPosition(81, 14, 360, 200);
+    textMessages.setPosition(500, 14, 360, 200);
     textMessages.setColor(touchgfx::Color::getColorFrom24BitRGB(249, 186, 109));
     textMessages.setLinespacing(0);
     textMessagesBuffer[0] = 0;
     textMessages.setWildcard(textMessagesBuffer);
     textMessages.setTypedText(touchgfx::TypedText(T_SINGLEUSEID7));
 
-    buttonWipe.setXY(196, 214);
+    buttonWipe.setXY(500, 214);
     buttonWipe.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_EMPTY_RELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTON_EMPTY_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICONS8_BROOM_ORANGE_ID), touchgfx::Bitmap(BITMAP_ICONS8_BROOM_ORANGE_LIGHT_ID));
     buttonWipe.setIconXY(49, 12);
     buttonWipe.setAction(buttonCallback);
@@ -53,19 +54,63 @@ void MessagesViewBase::setupScreen()
 
 }
 
+//Called when the screen is done with transition/load
+void MessagesViewBase::afterTransition()
+{
+    //InteractionEnterMessageBoxBg
+    //When screen is entered move imageMessageBoxBg
+    //Move imageMessageBoxBg to x:81, y:14 with LinearIn easing in 250 ms (15 Ticks)
+    imageMessageBoxBg.clearMoveAnimationEndedAction();
+    imageMessageBoxBg.startMoveAnimation(81, 14, 15, touchgfx::EasingEquations::linearEaseIn, touchgfx::EasingEquations::linearEaseIn);
+
+    //InteractionTextMessage
+    //When screen is entered move textMessages
+    //Move textMessages to x:81, y:14 with LinearIn easing in 250 ms (15 Ticks)
+    textMessages.clearMoveAnimationEndedAction();
+    textMessages.startMoveAnimation(81, 14, 15, touchgfx::EasingEquations::linearEaseIn, touchgfx::EasingEquations::linearEaseIn);
+
+    //InteractionEnterButtonWipe
+    //When screen is entered move buttonWipe
+    //Move buttonWipe to x:196, y:214 with LinearOut easing in 250 ms (15 Ticks)
+    buttonWipe.clearMoveAnimationEndedAction();
+    buttonWipe.startMoveAnimation(196, 214, 15, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseOut);
+}
+
+void MessagesViewBase::interactionExitButtonWipeEndedCallbackHandler(const touchgfx::MoveAnimator<touchgfx::ButtonWithIcon>& comp)
+{
+    //InteractionChangeScreenRotation
+    //When InteractionExitButtonWipe completed change screen to RotationVoilier
+    //Go to RotationVoilier with no screen transition
+    application().gotoRotationVoilierScreenNoTransition();
+}
+
 void MessagesViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
     if (&src == &buttonRotation)
     {
         //InteractionButtonMessagesClicked
         //When buttonRotation clicked call virtual function
-        //Call ButtonMessagesClicked
-        ButtonMessagesClicked();
+        //Call buttonMessagesClicked
+        buttonMessagesClicked();
 
-        //InteractionChangeScreenRotation
-        //When InteractionButtonMessagesClicked completed change screen to RotationVoilier
-        //Go to RotationVoilier with no screen transition
-        application().gotoRotationVoilierScreenNoTransition();
+        //InteractionExitMessageBoxBg
+        //When InteractionButtonMessagesClicked completed move imageMessageBoxBg
+        //Move imageMessageBoxBg to x:500, y:14 with LinearOut easing in 250 ms (15 Ticks)
+        imageMessageBoxBg.clearMoveAnimationEndedAction();
+        imageMessageBoxBg.startMoveAnimation(500, 14, 15, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseOut);
+
+        //InteractionExitTextMessages
+        //When InteractionButtonMessagesClicked completed move textMessages
+        //Move textMessages to x:500, y:14 with LinearOut easing in 250 ms (15 Ticks)
+        textMessages.clearMoveAnimationEndedAction();
+        textMessages.startMoveAnimation(500, 14, 15, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseOut);
+
+        //InteractionExitButtonWipe
+        //When InteractionButtonMessagesClicked completed move buttonWipe
+        //Move buttonWipe to x:500, y:214 with LinearOut easing in 250 ms (15 Ticks)
+        buttonWipe.clearMoveAnimationEndedAction();
+        buttonWipe.startMoveAnimation(500, 214, 15, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseOut);
+        buttonWipe.setMoveAnimationEndedAction(interactionExitButtonWipeEndedCallback);
     }
     else if (&src == &buttonWipe)
     {

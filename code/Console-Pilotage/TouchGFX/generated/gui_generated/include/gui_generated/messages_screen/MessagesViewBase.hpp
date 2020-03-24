@@ -10,6 +10,8 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/mixins/MoveAnimator.hpp>
 
 class MessagesViewBase : public touchgfx::View<MessagesPresenter>
 {
@@ -17,11 +19,12 @@ public:
     MessagesViewBase();
     virtual ~MessagesViewBase() {}
     virtual void setupScreen();
+    virtual void afterTransition();
 
     /*
      * Virtual Action Handlers
      */
-    virtual void ButtonMessagesClicked()
+    virtual void buttonMessagesClicked()
     {
         // Override and implement this function in Messages
     }
@@ -43,9 +46,9 @@ protected:
     touchgfx::ButtonWithIcon buttonRotation;
     touchgfx::Image imageMessages;
     touchgfx::Image imageMessagesIcon;
-    touchgfx::Image imageMessageBoxBg;
-    touchgfx::TextAreaWithOneWildcard textMessages;
-    touchgfx::ButtonWithIcon buttonWipe;
+    touchgfx::MoveAnimator< touchgfx::Image > imageMessageBoxBg;
+    touchgfx::MoveAnimator< touchgfx::TextAreaWithOneWildcard > textMessages;
+    touchgfx::MoveAnimator< touchgfx::ButtonWithIcon > buttonWipe;
 
     /*
      * Wildcard Buffers
@@ -64,6 +67,16 @@ private:
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    /*
+     * Interaction Callback Declarations
+     */
+    touchgfx::Callback < MessagesViewBase, const touchgfx::MoveAnimator<touchgfx::ButtonWithIcon>& > interactionExitButtonWipeEndedCallback;
+
+
+    /*
+     * Interaction Handlers
+     */
+    void interactionExitButtonWipeEndedCallbackHandler(const touchgfx::MoveAnimator<touchgfx::ButtonWithIcon>& comp);
 
 };
 

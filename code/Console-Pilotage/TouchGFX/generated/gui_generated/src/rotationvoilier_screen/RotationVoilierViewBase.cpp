@@ -9,7 +9,8 @@
 RotationVoilierViewBase::RotationVoilierViewBase() :
     buttonCallback(this, &RotationVoilierViewBase::buttonCallbackHandler),
     sliderValueChangedCallback(this, &RotationVoilierViewBase::sliderValueChangedCallbackHandler),
-    sliderValueConfirmedCallback(this, &RotationVoilierViewBase::sliderValueConfirmedCallbackHandler)
+    sliderValueConfirmedCallback(this, &RotationVoilierViewBase::sliderValueConfirmedCallbackHandler),
+    interactionExitRotRightEndedCallback(this, &RotationVoilierViewBase::interactionExitRotRightEndedCallbackHandler)
 {
 
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
@@ -28,7 +29,7 @@ RotationVoilierViewBase::RotationVoilierViewBase() :
     imageRotationIcon.setXY(9, 52);
     imageRotationIcon.setBitmap(touchgfx::Bitmap(BITMAP_SAILBOAT_ORANGE_LIGHT_ID));
 
-    sliderRotation.setXY(89, 220);
+    sliderRotation.setXY(500, 220);
     sliderRotation.setBitmaps(touchgfx::Bitmap(BITMAP_SLIDER_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_SLIDER_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_SLIDER_KNOB_ID));
     sliderRotation.setupHorizontalSlider(0, 10, 0, 0, 318);
     sliderRotation.setValueRange(0, 100);
@@ -36,29 +37,30 @@ RotationVoilierViewBase::RotationVoilierViewBase() :
     sliderRotation.setNewValueCallback(sliderValueChangedCallback);
     sliderRotation.setStopValueCallback(sliderValueConfirmedCallback);
 
-    circleRotation.setPosition(164, 12, 200, 200);
+    circleRotation.setPosition(500, 12, 200, 200);
     circleRotation.setCenter(100, 100);
     circleRotation.setRadius(95);
     circleRotation.setLineWidth(7);
-    circleRotation.setArc(110, 250);
+    circleRotation.setArc(180, 180);
     circleRotation.setCapPrecision(10);
     circleRotationPainter.setColor(touchgfx::Color::getColorFrom24BitRGB(249, 186, 109));
     circleRotation.setPainter(circleRotationPainter);
+    circleRotation.setVisible(false);
 
-    imageRotBg.setXY(214, 84);
+    imageRotBg.setXY(500, 84);
     imageRotBg.setBitmap(touchgfx::Bitmap(BITMAP_SAILBOAT_2_LARGE_ID));
 
-    textRotationSpeed.setPosition(218, 43, 92, 25);
+    textRotationSpeed.setPosition(500, 43, 92, 25);
     textRotationSpeed.setColor(touchgfx::Color::getColorFrom24BitRGB(249, 186, 109));
     textRotationSpeed.setLinespacing(0);
     Unicode::snprintf(textRotationSpeedBuffer, TEXTROTATIONSPEED_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID6).getText());
     textRotationSpeed.setWildcard(textRotationSpeedBuffer);
     textRotationSpeed.setTypedText(touchgfx::TypedText(T_SINGLEUSEID5));
 
-    imageRotLeft.setXY(123, 180);
+    imageRotLeft.setXY(500, 180);
     imageRotLeft.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_UP_3_52_ID));
 
-    imageRotRight.setXY(374, 180);
+    imageRotRight.setXY(500, 180);
     imageRotRight.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_UP_2_52_ID));
 
     add(imageBg);
@@ -78,6 +80,54 @@ void RotationVoilierViewBase::setupScreen()
 
 }
 
+//Called when the screen is done with transition/load
+void RotationVoilierViewBase::afterTransition()
+{
+    //InteractionEnterCircle
+    //When screen is entered move circleRotation
+    //Move circleRotation to x:164, y:12 with LinearIn easing in 250 ms (15 Ticks)
+    circleRotation.clearMoveAnimationEndedAction();
+    circleRotation.startMoveAnimation(164, 12, 15, touchgfx::EasingEquations::linearEaseIn, touchgfx::EasingEquations::linearEaseIn);
+
+    //InteractionEntreSlider
+    //When screen is entered move sliderRotation
+    //Move sliderRotation to x:89, y:220 with LinearIn easing in 250 ms (15 Ticks)
+    sliderRotation.clearMoveAnimationEndedAction();
+    sliderRotation.startMoveAnimation(89, 220, 15, touchgfx::EasingEquations::linearEaseIn, touchgfx::EasingEquations::linearEaseIn);
+
+    //InteractionEnterImageRotBg
+    //When screen is entered move imageRotBg
+    //Move imageRotBg to x:214, y:84 with LinearIn easing in 250 ms (15 Ticks)
+    imageRotBg.clearMoveAnimationEndedAction();
+    imageRotBg.startMoveAnimation(214, 84, 15, touchgfx::EasingEquations::linearEaseIn, touchgfx::EasingEquations::linearEaseIn);
+
+    //InteractionEnterTextRotationSpeed
+    //When screen is entered move textRotationSpeed
+    //Move textRotationSpeed to x:218, y:43 with LinearIn easing in 250 ms (15 Ticks)
+    textRotationSpeed.clearMoveAnimationEndedAction();
+    textRotationSpeed.startMoveAnimation(218, 43, 15, touchgfx::EasingEquations::linearEaseIn, touchgfx::EasingEquations::linearEaseIn);
+
+    //InteractionEnterRotLeft
+    //When screen is entered move imageRotLeft
+    //Move imageRotLeft to x:123, y:180 with LinearIn easing in 250 ms (15 Ticks)
+    imageRotLeft.clearMoveAnimationEndedAction();
+    imageRotLeft.startMoveAnimation(123, 180, 15, touchgfx::EasingEquations::linearEaseIn, touchgfx::EasingEquations::linearEaseIn);
+
+    //InteractionEnterRotRight
+    //When screen is entered move imageRotRight
+    //Move imageRotRight to x:374, y:180 with LinearIn easing in 250 ms (15 Ticks)
+    imageRotRight.clearMoveAnimationEndedAction();
+    imageRotRight.startMoveAnimation(374, 180, 15, touchgfx::EasingEquations::linearEaseIn, touchgfx::EasingEquations::linearEaseIn);
+}
+
+void RotationVoilierViewBase::interactionExitRotRightEndedCallbackHandler(const touchgfx::MoveAnimator<touchgfx::Image>& comp)
+{
+    //InteractionChangeScreenMessage
+    //When InteractionExitRotRight completed change screen to Messages
+    //Go to Messages with no screen transition
+    application().gotoMessagesScreenNoTransition();
+}
+
 void RotationVoilierViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
     if (&src == &buttonMessages)
@@ -87,10 +137,42 @@ void RotationVoilierViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Call ButtonMessagesClicked
         ButtonMessagesClicked();
 
-        //InteractionChangeScreenMessage
-        //When InteractionButtonMessagesClicked completed change screen to Messages
-        //Go to Messages with no screen transition
-        application().gotoMessagesScreenNoTransition();
+        //InteractionExitSliderRotation
+        //When InteractionButtonMessagesClicked completed move sliderRotation
+        //Move sliderRotation to x:500, y:220 with LinearOut easing in 250 ms (15 Ticks)
+        sliderRotation.clearMoveAnimationEndedAction();
+        sliderRotation.startMoveAnimation(500, 220, 15, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseOut);
+
+        //InteractionExitCicleRotation
+        //When InteractionButtonMessagesClicked completed move circleRotation
+        //Move circleRotation to x:500, y:12 with LinearOut easing in 250 ms (15 Ticks)
+        circleRotation.clearMoveAnimationEndedAction();
+        circleRotation.startMoveAnimation(500, 12, 15, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseOut);
+
+        //InteractionExitImageRotBg
+        //When InteractionButtonMessagesClicked completed move imageRotBg
+        //Move imageRotBg to x:500, y:84 with LinearOut easing in 250 ms (15 Ticks)
+        imageRotBg.clearMoveAnimationEndedAction();
+        imageRotBg.startMoveAnimation(500, 84, 15, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseOut);
+
+        //InteractionTextRotationSpeed
+        //When InteractionButtonMessagesClicked completed move textRotationSpeed
+        //Move textRotationSpeed to x:500, y:43 with LinearOut easing in 250 ms (15 Ticks)
+        textRotationSpeed.clearMoveAnimationEndedAction();
+        textRotationSpeed.startMoveAnimation(500, 43, 15, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseOut);
+
+        //InteractionExitRotLeft
+        //When InteractionButtonMessagesClicked completed move imageRotLeft
+        //Move imageRotLeft to x:500, y:180 with LinearOut easing in 250 ms (15 Ticks)
+        imageRotLeft.clearMoveAnimationEndedAction();
+        imageRotLeft.startMoveAnimation(500, 180, 15, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseOut);
+
+        //InteractionExitRotRight
+        //When InteractionButtonMessagesClicked completed move imageRotRight
+        //Move imageRotRight to x:500, y:180 with LinearOut easing in 300 ms (18 Ticks)
+        imageRotRight.clearMoveAnimationEndedAction();
+        imageRotRight.startMoveAnimation(500, 180, 18, touchgfx::EasingEquations::linearEaseOut, touchgfx::EasingEquations::linearEaseOut);
+        imageRotRight.setMoveAnimationEndedAction(interactionExitRotRightEndedCallback);
     }
 }
 

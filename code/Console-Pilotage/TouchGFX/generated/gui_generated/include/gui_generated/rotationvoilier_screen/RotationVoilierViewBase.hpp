@@ -13,6 +13,8 @@
 #include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB888.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/mixins/MoveAnimator.hpp>
 
 class RotationVoilierViewBase : public touchgfx::View<RotationVoilierPresenter>
 {
@@ -20,6 +22,7 @@ public:
     RotationVoilierViewBase();
     virtual ~RotationVoilierViewBase() {}
     virtual void setupScreen();
+    virtual void afterTransition();
 
     /*
      * Virtual Action Handlers
@@ -51,13 +54,13 @@ protected:
     touchgfx::ButtonWithIcon buttonMessages;
     touchgfx::Image imageRotation;
     touchgfx::Image imageRotationIcon;
-    touchgfx::Slider sliderRotation;
-    touchgfx::Circle circleRotation;
+    touchgfx::MoveAnimator< touchgfx::Slider > sliderRotation;
+    touchgfx::MoveAnimator< touchgfx::Circle > circleRotation;
     touchgfx::PainterRGB888 circleRotationPainter;
-    touchgfx::Image imageRotBg;
-    touchgfx::TextAreaWithOneWildcard textRotationSpeed;
-    touchgfx::Image imageRotLeft;
-    touchgfx::Image imageRotRight;
+    touchgfx::MoveAnimator< touchgfx::Image > imageRotBg;
+    touchgfx::MoveAnimator< touchgfx::TextAreaWithOneWildcard > textRotationSpeed;
+    touchgfx::MoveAnimator< touchgfx::Image > imageRotLeft;
+    touchgfx::MoveAnimator< touchgfx::Image > imageRotRight;
 
     /*
      * Wildcard Buffers
@@ -80,6 +83,16 @@ private:
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
+    /*
+     * Interaction Callback Declarations
+     */
+    touchgfx::Callback < RotationVoilierViewBase, const touchgfx::MoveAnimator<touchgfx::Image>& > interactionExitRotRightEndedCallback;
+
+
+    /*
+     * Interaction Handlers
+     */
+    void interactionExitRotRightEndedCallbackHandler(const touchgfx::MoveAnimator<touchgfx::Image>& comp);
 
     /*
      * Canvas Buffer Size
