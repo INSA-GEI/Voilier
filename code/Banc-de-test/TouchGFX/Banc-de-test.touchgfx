@@ -1,0 +1,1184 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Green-Polygons-Background-480x272.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "wheel_selector_background-380.png",
+            "Alpha": 191,
+            "Name": "image1",
+            "X": 50,
+            "Y": 70,
+            "Width": 380,
+            "Height": 100,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "wheel_selector_overlay-380.png",
+            "Alpha": 215,
+            "Name": "image2",
+            "X": 180,
+            "Y": 60,
+            "Width": 120,
+            "Height": 120,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "SelectedItemOffset": 130,
+            "UseSelectedStyle": false,
+            "ExtraSizeBefore": 0,
+            "ExtraSizeAfter": 0,
+            "MarginBefore": 0,
+            "MarginAfter": 0,
+            "IsHorizontal": true,
+            "IsCircular": true,
+            "ItemTemplateName": "MenuContainer",
+            "NumberofItems": 7,
+            "InitialElement": 1,
+            "ItemMargin": 0,
+            "Easing": "Linear",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0,
+            "Name": "scrollWheel",
+            "X": 50,
+            "Y": 76,
+            "Width": 380,
+            "Height": 88,
+            "Type": "ScrollWheel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "button_empty_pressed.png",
+            "Released": "button_empty_released.png",
+            "Alpha": 255,
+            "IconPressed": "icons8-ok-60.png",
+            "IconReleased": "icons8-ok-60.png",
+            "IconX": 49,
+            "IconY": 12,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "buttonOk",
+            "X": 175,
+            "Y": 194,
+            "Width": 130,
+            "Height": 56,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId15",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea",
+            "X": 172,
+            "Y": 17,
+            "Width": 136,
+            "Height": 25,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionButtonOKClicked",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "buttonOk",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "ButtonOKClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionTestRotationPlateau",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TestRotationPlateau",
+              "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionTestUart",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TestUart",
+              "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionTestI2CSPI",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TestI2CSPI",
+              "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionOrientationVoile",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TestOrientationVoile",
+              "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionTestADC",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TestADC",
+              "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionTestComplet",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TestComplet",
+              "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionTestGirouette",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TestGirouette",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "Menu",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Green-Polygons-Background-480x272.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "slider_round_back.png",
+            "BackgroundSelected": "slider_round_back.png",
+            "Indicator": "slider_knob.png",
+            "BackgroundX": 0,
+            "BackgroundY": 10,
+            "IndicatorPos": 0,
+            "IndicatorMax": 318,
+            "IndicatorMin": 0,
+            "ValueMax": 100,
+            "ValueMin": 0,
+            "InitValue": 50,
+            "Name": "sliderRotation",
+            "X": 91,
+            "Y": 216,
+            "Width": 350,
+            "Height": 32,
+            "Type": "Slider",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 249,
+              "Green": 186,
+              "Blue": 109
+            },
+            "CenterX": 100,
+            "CenterY": 100,
+            "Radius": 95,
+            "LineWidth": 7,
+            "StartAngle": 180,
+            "EndAngle": 180,
+            "CapPrecision": "Round",
+            "Alpha": 255,
+            "Name": "circleRotation",
+            "X": 167,
+            "Y": 13,
+            "Width": 170,
+            "Height": 161,
+            "Type": "Circle",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "sailboat-2-large.png",
+            "Alpha": 255,
+            "Name": "imageRotBg",
+            "X": 202,
+            "Y": 43,
+            "Width": 100,
+            "Height": 100,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 249,
+              "Green": 186,
+              "Blue": 109
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId6",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textRotationSpeed",
+            "X": 206,
+            "Y": 18,
+            "Width": 92,
+            "Height": 25,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "icons8-up-3-52.png",
+            "Alpha": 255,
+            "Name": "imageRotLeft",
+            "X": 110,
+            "Y": 158,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "icons8-up-2-52.png",
+            "Alpha": 255,
+            "Name": "imageRotRight",
+            "X": 390,
+            "Y": 164,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "icons8-go-back-60.png",
+            "Released": "icons8-go-back-60.png",
+            "Alpha": 255,
+            "Name": "buttonReturn",
+            "X": 10,
+            "Y": 230,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionsliderRotationChanged",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "sliderRotation",
+              "Type": "TriggerSliderValueChanged"
+            },
+            "Action": {
+              "FunctionName": "sliderRotationChanged",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionRotationReleased",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "sliderRotation",
+              "Type": "TriggerSliderValueConfirmed"
+            },
+            "Action": {
+              "FunctionName": "sliderRotationReleased",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionbuttonReturnClicked",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "TriggerComponent": "buttonReturn",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonReturnClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionReturnToMenu",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionbuttonReturnClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Menu",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "TestRotationPlateau",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 7200
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Green-Polygons-Background-480x272.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "counter_box_messages.png",
+            "Alpha": 255,
+            "Name": "imageMessageBoxBg",
+            "X": 81,
+            "Y": 14,
+            "Width": 360,
+            "Height": 200,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "button_empty_pressed.png",
+            "Released": "button_empty_released.png",
+            "Alpha": 255,
+            "IconPressed": "icons8-broom-orange-light.png",
+            "IconReleased": "icons8-broom-orange.png",
+            "IconX": 49,
+            "IconY": 12,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "buttonWipe",
+            "X": 182,
+            "Y": 214,
+            "Width": 130,
+            "Height": 56,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 249,
+              "Green": 186,
+              "Blue": 109
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 1500
+            },
+            "Name": "textMessages",
+            "X": 81,
+            "Y": 14,
+            "Width": 360,
+            "Height": 200,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "icons8-go-back-60.png",
+            "Released": "icons8-go-back-60.png",
+            "Alpha": 255,
+            "Name": "buttonReturn",
+            "X": 10,
+            "Y": 230,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionButtonWipeClicked",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "buttonWipe",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonWipeClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionbuttonReturnClicked",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "TriggerComponent": "buttonReturn",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonReturnClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionReturnToMenu",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionbuttonReturnClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Menu",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "TestUart",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Green-Polygons-Background-480x272.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId10",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 194,
+            "Y": 111,
+            "Width": 92,
+            "Height": 50,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "icons8-go-back-60.png",
+            "Released": "icons8-go-back-60.png",
+            "Alpha": 255,
+            "Name": "buttonReturn",
+            "X": 10,
+            "Y": 230,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionbuttonReturnClicked",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "TriggerComponent": "buttonReturn",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonReturnClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionReturnToMenu",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionbuttonReturnClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Menu",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "TestI2CSPI",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Green-Polygons-Background-480x272.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId11",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 184,
+            "Y": 99,
+            "Width": 112,
+            "Height": 75,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "icons8-go-back-60.png",
+            "Released": "icons8-go-back-60.png",
+            "Alpha": 255,
+            "Name": "buttonReturn",
+            "X": 10,
+            "Y": 230,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionbuttonReturnClicked",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "TriggerComponent": "buttonReturn",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonReturnClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionReturnToMenu",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionbuttonReturnClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Menu",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "TestOrientationVoile",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Green-Polygons-Background-480x272.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId12",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 219,
+            "Y": 111,
+            "Width": 43,
+            "Height": 50,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "icons8-go-back-60.png",
+            "Released": "icons8-go-back-60.png",
+            "Alpha": 255,
+            "Name": "buttonReturn",
+            "X": 10,
+            "Y": 230,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionButtonReturnClicked",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "TriggerComponent": "buttonReturn",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonReturnClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionReturnToMenu",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonReturnClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Menu",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "TestADC",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Green-Polygons-Background-480x272.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId13",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 199,
+            "Y": 111,
+            "Width": 83,
+            "Height": 50,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "icons8-go-back-60.png",
+            "Released": "icons8-go-back-60.png",
+            "Alpha": 255,
+            "Name": "buttonReturn",
+            "X": 10,
+            "Y": 230,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionbuttonreturnClicked",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "TriggerComponent": "buttonReturn",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonreturnClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionReturnToMenu",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionbuttonreturnClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Menu",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "TestComplet",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Green-Polygons-Background-480x272.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId14",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 193,
+            "Y": 111,
+            "Width": 94,
+            "Height": 50,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "icons8-go-back-60.png",
+            "Released": "icons8-go-back-60.png",
+            "Alpha": 255,
+            "Name": "buttonReturn",
+            "X": 10,
+            "Y": 230,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionButtonReturnClicked",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "TriggerComponent": "buttonReturn",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonreturnClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionReturnToMenu",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonReturnClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Menu",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "TestGirouette",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Components": [
+          {
+            "RelativeFilename": "icons8-compass-48.png",
+            "Alpha": 255,
+            "Name": "image",
+            "X": 36,
+            "Y": 2,
+            "Width": 48,
+            "Height": 48,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId9",
+              "UseBuffer": true,
+              "BufferSize": 40
+            },
+            "Name": "textArea",
+            "X": 0,
+            "Y": 50,
+            "Width": 120,
+            "Height": 38,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [],
+        "Name": "MenuContainer",
+        "X": 0,
+        "Y": 0,
+        "Width": 120,
+        "Height": 88
+      }
+    ],
+    "TextEntries": [
+      {
+        "TextEntryId": "SingleUseId5",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId6",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId7",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId8",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId9",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId10",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId11",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId12",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId13",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId14",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId15",
+        "IsResource": false
+      }
+    ],
+    "Name": "Banc-de-test",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 24,
+    "StartupScreenName": "Menu",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      24
+    ],
+    "AvailableLCDs": {
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD24bpp": {
+        "Id": "LCD24bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project --project-file=../Banc-de-test.ioc --platform=m7",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape"
+  },
+  "Version": "4.13.0"
+}
