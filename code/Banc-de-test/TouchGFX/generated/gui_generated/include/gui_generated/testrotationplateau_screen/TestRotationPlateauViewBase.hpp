@@ -13,6 +13,7 @@
 #include <touchgfx/widgets/canvas/PainterRGB888.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class TestRotationPlateauViewBase : public touchgfx::View<TestRotationPlateauPresenter>
 {
@@ -56,6 +57,7 @@ protected:
     touchgfx::Image imageRotLeft;
     touchgfx::Image imageRotRight;
     touchgfx::Button buttonReturn;
+    touchgfx::TextArea textArea1;
 
     /*
      * Wildcard Buffers

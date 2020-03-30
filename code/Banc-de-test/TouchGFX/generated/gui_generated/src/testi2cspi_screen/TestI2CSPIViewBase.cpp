@@ -13,8 +13,8 @@ TestI2CSPIViewBase::TestI2CSPIViewBase() :
     imageBg.setXY(0, 0);
     imageBg.setBitmap(touchgfx::Bitmap(BITMAP_GREEN_POLYGONS_BACKGROUND_480X272_ID));
 
-    textArea1.setXY(194, 111);
-    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea1.setXY(20, 20);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID10));
 
@@ -22,9 +22,15 @@ TestI2CSPIViewBase::TestI2CSPIViewBase() :
     buttonReturn.setBitmaps(touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID), touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID));
     buttonReturn.setAction(buttonCallback);
 
+    textArea2.setXY(70, 111);
+    textArea2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID16));
+
     add(imageBg);
     add(textArea1);
     add(buttonReturn);
+    add(textArea2);
 }
 
 void TestI2CSPIViewBase::setupScreen()

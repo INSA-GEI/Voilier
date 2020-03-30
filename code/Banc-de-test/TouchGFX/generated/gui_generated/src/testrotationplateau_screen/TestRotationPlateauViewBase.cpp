@@ -55,6 +55,11 @@ TestRotationPlateauViewBase::TestRotationPlateauViewBase() :
     buttonReturn.setBitmaps(touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID), touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID));
     buttonReturn.setAction(buttonCallback);
 
+    textArea1.setXY(20, 20);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID26));
+
     add(imageBg);
     add(sliderRotation);
     add(circleRotation);
@@ -63,6 +68,7 @@ TestRotationPlateauViewBase::TestRotationPlateauViewBase() :
     add(imageRotLeft);
     add(imageRotRight);
     add(buttonReturn);
+    add(textArea1);
 }
 
 void TestRotationPlateauViewBase::setupScreen()

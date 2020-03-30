@@ -13,15 +13,12 @@ TestUartViewBase::TestUartViewBase() :
     imageBg.setXY(0, 0);
     imageBg.setBitmap(touchgfx::Bitmap(BITMAP_GREEN_POLYGONS_BACKGROUND_480X272_ID));
 
-    imageMessageBoxBg.setXY(81, 14);
-    imageMessageBoxBg.setBitmap(touchgfx::Bitmap(BITMAP_COUNTER_BOX_MESSAGES_ID));
-
-    buttonWipe.setXY(182, 214);
+    buttonWipe.setXY(175, 213);
     buttonWipe.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_EMPTY_RELEASED_ID), touchgfx::Bitmap(BITMAP_BUTTON_EMPTY_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICONS8_BROOM_ORANGE_ID), touchgfx::Bitmap(BITMAP_ICONS8_BROOM_ORANGE_LIGHT_ID));
     buttonWipe.setIconXY(49, 12);
     buttonWipe.setAction(buttonCallback);
 
-    textMessages.setPosition(81, 14, 360, 200);
+    textMessages.setPosition(60, 44, 360, 163);
     textMessages.setColor(touchgfx::Color::getColorFrom24BitRGB(249, 186, 109));
     textMessages.setLinespacing(0);
     textMessagesBuffer[0] = 0;
@@ -32,11 +29,16 @@ TestUartViewBase::TestUartViewBase() :
     buttonReturn.setBitmaps(touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID), touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID));
     buttonReturn.setAction(buttonCallback);
 
+    textArea1.setXY(10, 10);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID25));
+
     add(imageBg);
-    add(imageMessageBoxBg);
     add(buttonWipe);
     add(textMessages);
     add(buttonReturn);
+    add(textArea1);
 }
 
 void TestUartViewBase::setupScreen()

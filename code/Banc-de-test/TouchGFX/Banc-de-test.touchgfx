@@ -19,8 +19,8 @@
             "Moveable": false
           },
           {
-            "RelativeFilename": "wheel_selector_background-380.png",
-            "Alpha": 191,
+            "RelativeFilename": "wheel_selector_background-380-green.png",
+            "Alpha": 255,
             "Name": "image1",
             "X": 50,
             "Y": 70,
@@ -34,8 +34,8 @@
             "Moveable": false
           },
           {
-            "RelativeFilename": "wheel_selector_overlay-380.png",
-            "Alpha": 215,
+            "RelativeFilename": "wheel_selector_overlay-380-green.png",
+            "Alpha": 255,
             "Name": "image2",
             "X": 180,
             "Y": 60,
@@ -388,6 +388,29 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId26",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 20,
+            "Y": 20,
+            "Width": 84,
+            "Height": 50,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -464,21 +487,6 @@
             "Moveable": false
           },
           {
-            "RelativeFilename": "counter_box_messages.png",
-            "Alpha": 255,
-            "Name": "imageMessageBoxBg",
-            "X": 81,
-            "Y": 14,
-            "Width": 360,
-            "Height": 200,
-            "Type": "Image",
-            "Visible": true,
-            "Draggable": false,
-            "Clickable": false,
-            "Fadeable": false,
-            "Moveable": false
-          },
-          {
             "Pressed": "button_empty_pressed.png",
             "Released": "button_empty_released.png",
             "Alpha": 255,
@@ -489,8 +497,8 @@
             "IconHeight": 32,
             "IconWidth": 32,
             "Name": "buttonWipe",
-            "X": 182,
-            "Y": 214,
+            "X": 175,
+            "Y": 213,
             "Width": 130,
             "Height": 56,
             "Type": "ButtonWithIcon",
@@ -516,10 +524,10 @@
               "BufferSize": 1500
             },
             "Name": "textMessages",
-            "X": 81,
-            "Y": 14,
+            "X": 60,
+            "Y": 44,
             "Width": 360,
-            "Height": 200,
+            "Height": 163,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -537,6 +545,29 @@
             "Width": 32,
             "Height": 32,
             "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId25",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 10,
+            "Y": 10,
+            "Width": 156,
+            "Height": 25,
+            "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -609,18 +640,18 @@
             "TextId": "SingleUseId10",
             "TextRotation": "0",
             "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textArea1",
-            "X": 194,
-            "Y": 111,
+            "X": 20,
+            "Y": 20,
             "Width": 92,
-            "Height": 50,
+            "Height": 25,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -638,6 +669,29 @@
             "Width": 32,
             "Height": 32,
             "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId16",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea2",
+            "X": 70,
+            "Y": 111,
+            "Width": 352,
+            "Height": 100,
+            "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -698,18 +752,18 @@
             "TextId": "SingleUseId11",
             "TextRotation": "0",
             "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textArea1",
-            "X": 184,
-            "Y": 99,
-            "Width": 112,
-            "Height": 75,
+            "X": 10,
+            "Y": 10,
+            "Width": 222,
+            "Height": 25,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -727,6 +781,197 @@
             "Width": 32,
             "Height": 32,
             "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "icons8-wind-48.png",
+            "Alpha": 255,
+            "Name": "image1",
+            "X": 50,
+            "Y": 104,
+            "Width": 48,
+            "Height": 48,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "StartX": 80,
+            "StartY": 80,
+            "EndX": 156,
+            "EndY": 80,
+            "LineWidth": 4,
+            "LineEndingStyle": "Round",
+            "Name": "lineSail",
+            "X": 160,
+            "Y": 48,
+            "Width": 160,
+            "Height": 160,
+            "Type": "Line",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_back.png",
+            "BackgroundSelected": "__designer\\Blue_Slider_Horizontal_Small_slider_horizontal_small_fill.png",
+            "Indicator": "__designer\\Blue_Slider_Horizontal_Small_Indicators_slider_horizontal_small_square_knob.png",
+            "BackgroundX": 3,
+            "BackgroundY": 7,
+            "IndicatorPos": 0,
+            "IndicatorMax": 120,
+            "IndicatorMin": 0,
+            "ValueMax": 100,
+            "ValueMin": 0,
+            "InitValue": 50,
+            "Name": "slider1",
+            "X": 262,
+            "Y": 236,
+            "Width": 175,
+            "Height": 34,
+            "Type": "Slider",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId17",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea",
+            "X": 58,
+            "Y": 239,
+            "Width": 204,
+            "Height": 25,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId18",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea2",
+            "X": 383,
+            "Y": 98,
+            "Width": 58,
+            "Height": 25,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId19",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId20",
+              "UseBuffer": true,
+              "BufferSize": 20
+            },
+            "Name": "textArea3",
+            "X": 349,
+            "Y": 129,
+            "Width": 129,
+            "Height": 29,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 112,
+              "Green": 148,
+              "Blue": 107
+            },
+            "CenterX": 90,
+            "CenterY": 90,
+            "Radius": 86,
+            "LineWidth": 4,
+            "StartAngle": 0,
+            "EndAngle": 360,
+            "CapPrecision": "Round",
+            "Alpha": 255,
+            "Name": "circleBg",
+            "X": 150,
+            "Y": 38,
+            "Width": 180,
+            "Height": 180,
+            "Type": "Circle",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 222,
+              "Green": 58,
+              "Blue": 16
+            },
+            "CenterX": 90,
+            "CenterY": 90,
+            "Radius": 86,
+            "LineWidth": 6,
+            "StartAngle": 260,
+            "EndAngle": 280,
+            "CapPrecision": "Round",
+            "Alpha": 255,
+            "Name": "circleBoat",
+            "X": 150,
+            "Y": 38,
+            "Width": 180,
+            "Height": 180,
+            "Type": "Circle",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -764,7 +1009,7 @@
         ],
         "Name": "TestOrientationVoile",
         "OverrideDefaultBufferSize": false,
-        "CanvasBufferSize": 0
+        "CanvasBufferSize": 7200
       },
       {
         "Components": [
@@ -787,18 +1032,18 @@
             "TextId": "SingleUseId12",
             "TextRotation": "0",
             "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textArea1",
-            "X": 219,
-            "Y": 111,
-            "Width": 43,
-            "Height": 50,
+            "X": 10,
+            "Y": 10,
+            "Width": 161,
+            "Height": 25,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -816,6 +1061,60 @@
             "Width": 32,
             "Height": 32,
             "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "IsHorizontalSlider": false,
+            "BackgroundUnselected": "__designer\\Blue_Slider_Vertical_Small_Slider3_Vertical_Round_back.png",
+            "BackgroundSelected": "__designer\\Blue_Slider_Vertical_Small_Slider3_Vertical_Round_fill.png",
+            "Indicator": "__designer\\Blue_Slider_Vertical_Small_Indicators_Slider3_Vertical_Round_nob.png",
+            "BackgroundX": 7,
+            "BackgroundY": 3,
+            "IndicatorPos": 0,
+            "IndicatorMax": 125,
+            "IndicatorMin": 0,
+            "ValueMax": 100,
+            "ValueMin": 0,
+            "InitValue": 0,
+            "Style": "Style1",
+            "Name": "sliderVoltage",
+            "X": 152,
+            "Y": 67,
+            "Width": 34,
+            "Height": 179,
+            "Type": "Slider",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId21",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId22",
+              "UseBuffer": true,
+              "BufferSize": 27
+            },
+            "Name": "textAreaVoltage",
+            "X": 240,
+            "Y": 104,
+            "Width": 183,
+            "Height": 105,
+            "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -876,18 +1175,18 @@
             "TextId": "SingleUseId13",
             "TextRotation": "0",
             "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textArea1",
-            "X": 199,
-            "Y": 111,
-            "Width": 83,
-            "Height": 50,
+            "X": 20,
+            "Y": 20,
+            "Width": 131,
+            "Height": 25,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -965,18 +1264,18 @@
             "TextId": "SingleUseId14",
             "TextRotation": "0",
             "Color": {
-              "Red": 0,
-              "Green": 0,
-              "Blue": 0
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "textArea1",
-            "X": 193,
-            "Y": 111,
+            "X": 10,
+            "Y": 10,
             "Width": 94,
-            "Height": 50,
+            "Height": 25,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -994,6 +1293,112 @@
             "Width": 32,
             "Height": 32,
             "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId23",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId24",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textAreaGirouette",
+            "X": 187,
+            "Y": 92,
+            "Width": 107,
+            "Height": 49,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 148,
+              "Green": 148,
+              "Blue": 148
+            },
+            "CenterX": 90,
+            "CenterY": 90,
+            "Radius": 85,
+            "LineWidth": 4,
+            "StartAngle": 0,
+            "EndAngle": 360,
+            "CapPrecision": "Round",
+            "Alpha": 255,
+            "Name": "circleBg",
+            "X": 150,
+            "Y": 26,
+            "Width": 180,
+            "Height": 180,
+            "Type": "Circle",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 240,
+              "Green": 12,
+              "Blue": 12
+            },
+            "CenterX": 90,
+            "CenterY": 90,
+            "Radius": 85,
+            "LineWidth": 6,
+            "StartAngle": 260,
+            "EndAngle": 280,
+            "CapPrecision": "Round",
+            "Alpha": 255,
+            "Name": "circleGirouette",
+            "X": 150,
+            "Y": 26,
+            "Width": 180,
+            "Height": 180,
+            "Type": "Circle",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__designer\\Blue_Slider_Horizontal_Medium_Slider2_Round_back.png",
+            "BackgroundSelected": "__designer\\Blue_Slider_Horizontal_Medium_Slider2_Round_fill.png",
+            "Indicator": "__designer\\Blue_Slider_Horizontal_Medium_Indicators_Slider2_Round_nob.png",
+            "BackgroundX": 2,
+            "BackgroundY": 6,
+            "IndicatorPos": 0,
+            "IndicatorMax": 284,
+            "IndicatorMin": 0,
+            "ValueMax": 100,
+            "ValueMin": 0,
+            "InitValue": 0,
+            "Style": "Style10",
+            "Name": "sliderGirouette",
+            "X": 87,
+            "Y": 217,
+            "Width": 338,
+            "Height": 34,
+            "Type": "Slider",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -1031,7 +1436,7 @@
         ],
         "Name": "TestGirouette",
         "OverrideDefaultBufferSize": false,
-        "CanvasBufferSize": 0
+        "CanvasBufferSize": 7200
       }
     ],
     "CustomContainerDefinitions": [
@@ -1132,6 +1537,50 @@
       },
       {
         "TextEntryId": "SingleUseId15",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId16",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId17",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId18",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId19",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId20",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId21",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId22",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId23",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId24",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId25",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId26",
         "IsResource": false
       }
     ],

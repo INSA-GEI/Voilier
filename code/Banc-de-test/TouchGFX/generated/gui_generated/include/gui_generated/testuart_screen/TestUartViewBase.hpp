@@ -11,6 +11,7 @@
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class TestUartViewBase : public touchgfx::View<TestUartPresenter>
 {
@@ -41,10 +42,10 @@ protected:
      * Member Declarations
      */
     touchgfx::Image imageBg;
-    touchgfx::Image imageMessageBoxBg;
     touchgfx::ButtonWithIcon buttonWipe;
     touchgfx::TextAreaWithOneWildcard textMessages;
     touchgfx::Button buttonReturn;
+    touchgfx::TextArea textArea1;
 
     /*
      * Wildcard Buffers

@@ -10,11 +10,13 @@ TestGirouetteViewBase::TestGirouetteViewBase() :
     buttonCallback(this, &TestGirouetteViewBase::buttonCallbackHandler)
 {
 
+    touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
+
     imageBg.setXY(0, 0);
     imageBg.setBitmap(touchgfx::Bitmap(BITMAP_GREEN_POLYGONS_BACKGROUND_480X272_ID));
 
-    textArea1.setXY(193, 111);
-    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea1.setXY(10, 10);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID14));
 
@@ -22,9 +24,44 @@ TestGirouetteViewBase::TestGirouetteViewBase() :
     buttonReturn.setBitmaps(touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID), touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID));
     buttonReturn.setAction(buttonCallback);
 
+    textAreaGirouette.setPosition(187, 92, 107, 49);
+    textAreaGirouette.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textAreaGirouette.setLinespacing(0);
+    Unicode::snprintf(textAreaGirouetteBuffer, TEXTAREAGIROUETTE_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID24).getText());
+    textAreaGirouette.setWildcard(textAreaGirouetteBuffer);
+    textAreaGirouette.setTypedText(touchgfx::TypedText(T_SINGLEUSEID23));
+
+    circleBg.setPosition(150, 26, 180, 180);
+    circleBg.setCenter(90, 90);
+    circleBg.setRadius(85);
+    circleBg.setLineWidth(4);
+    circleBg.setArc(0, 360);
+    circleBg.setCapPrecision(10);
+    circleBgPainter.setColor(touchgfx::Color::getColorFrom24BitRGB(148, 148, 148));
+    circleBg.setPainter(circleBgPainter);
+
+    circleGirouette.setPosition(150, 26, 180, 180);
+    circleGirouette.setCenter(90, 90);
+    circleGirouette.setRadius(85);
+    circleGirouette.setLineWidth(6);
+    circleGirouette.setArc(260, 280);
+    circleGirouette.setCapPrecision(10);
+    circleGirouettePainter.setColor(touchgfx::Color::getColorFrom24BitRGB(240, 12, 12));
+    circleGirouette.setPainter(circleGirouettePainter);
+
+    sliderGirouette.setXY(87, 217);
+    sliderGirouette.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_SLIDER2_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_MEDIUM_INDICATORS_SLIDER2_ROUND_NOB_ID));
+    sliderGirouette.setupHorizontalSlider(2, 6, 0, 0, 284);
+    sliderGirouette.setValueRange(0, 100);
+    sliderGirouette.setValue(0);
+
     add(imageBg);
     add(textArea1);
     add(buttonReturn);
+    add(textAreaGirouette);
+    add(circleBg);
+    add(circleGirouette);
+    add(sliderGirouette);
 }
 
 void TestGirouetteViewBase::setupScreen()

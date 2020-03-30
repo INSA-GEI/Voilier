@@ -37,6 +37,7 @@ protected:
     touchgfx::Image imageBg;
     touchgfx::TextArea textArea1;
     touchgfx::Button buttonReturn;
+    touchgfx::TextArea textArea2;
 
 private:
 

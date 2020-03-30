@@ -15,12 +15,10 @@ MenuViewBase::MenuViewBase() :
     imageBg.setBitmap(touchgfx::Bitmap(BITMAP_GREEN_POLYGONS_BACKGROUND_480X272_ID));
 
     image1.setXY(50, 70);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_WHEEL_SELECTOR_BACKGROUND_380_ID));
-    image1.setAlpha(191);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_WHEEL_SELECTOR_BACKGROUND_380_GREEN_ID));
 
     image2.setXY(180, 60);
-    image2.setBitmap(touchgfx::Bitmap(BITMAP_WHEEL_SELECTOR_OVERLAY_380_ID));
-    image2.setAlpha(215);
+    image2.setBitmap(touchgfx::Bitmap(BITMAP_WHEEL_SELECTOR_OVERLAY_380_GREEN_ID));
 
     scrollWheel.setPosition(50, 76, 380, 88);
     scrollWheel.setHorizontal(true);

@@ -10,6 +10,11 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/canvas/Line.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB888.hpp>
+#include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/canvas/Circle.hpp>
 
 class TestOrientationVoileViewBase : public touchgfx::View<TestOrientationVoilePresenter>
 {
@@ -37,6 +42,23 @@ protected:
     touchgfx::Image imageBg;
     touchgfx::TextArea textArea1;
     touchgfx::Button buttonReturn;
+    touchgfx::Image image1;
+    touchgfx::Line lineSail;
+    touchgfx::PainterRGB888 lineSailPainter;
+    touchgfx::Slider slider1;
+    touchgfx::TextArea textArea;
+    touchgfx::TextArea textArea2;
+    touchgfx::TextAreaWithOneWildcard textArea3;
+    touchgfx::Circle circleBg;
+    touchgfx::PainterRGB888 circleBgPainter;
+    touchgfx::Circle circleBoat;
+    touchgfx::PainterRGB888 circleBoatPainter;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREA3_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar textArea3Buffer[TEXTAREA3_SIZE];
 
 private:
 
@@ -50,6 +72,11 @@ private:
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint16_t CANVAS_BUFFER_SIZE = 7200;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 };
 
 #endif // TESTORIENTATIONVOILEVIEWBASE_HPP

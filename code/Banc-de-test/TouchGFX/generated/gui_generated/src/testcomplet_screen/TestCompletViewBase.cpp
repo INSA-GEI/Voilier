@@ -13,8 +13,8 @@ TestCompletViewBase::TestCompletViewBase() :
     imageBg.setXY(0, 0);
     imageBg.setBitmap(touchgfx::Bitmap(BITMAP_GREEN_POLYGONS_BACKGROUND_480X272_ID));
 
-    textArea1.setXY(199, 111);
-    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea1.setXY(20, 20);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID13));
 

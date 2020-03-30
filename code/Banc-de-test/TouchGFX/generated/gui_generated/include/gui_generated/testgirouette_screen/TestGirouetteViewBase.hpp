@@ -10,6 +10,10 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/canvas/Circle.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB888.hpp>
+#include <touchgfx/containers/Slider.hpp>
 
 class TestGirouetteViewBase : public touchgfx::View<TestGirouettePresenter>
 {
@@ -37,6 +41,18 @@ protected:
     touchgfx::Image imageBg;
     touchgfx::TextArea textArea1;
     touchgfx::Button buttonReturn;
+    touchgfx::TextAreaWithOneWildcard textAreaGirouette;
+    touchgfx::Circle circleBg;
+    touchgfx::PainterRGB888 circleBgPainter;
+    touchgfx::Circle circleGirouette;
+    touchgfx::PainterRGB888 circleGirouettePainter;
+    touchgfx::Slider sliderGirouette;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREAGIROUETTE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaGirouetteBuffer[TEXTAREAGIROUETTE_SIZE];
 
 private:
 
@@ -50,6 +66,11 @@ private:
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint16_t CANVAS_BUFFER_SIZE = 7200;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 };
 
 #endif // TESTGIROUETTEVIEWBASE_HPP

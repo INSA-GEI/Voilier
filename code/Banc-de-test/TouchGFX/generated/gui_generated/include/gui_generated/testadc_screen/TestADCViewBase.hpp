@@ -10,6 +10,8 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class TestADCViewBase : public touchgfx::View<TestADCPresenter>
 {
@@ -37,6 +39,14 @@ protected:
     touchgfx::Image imageBg;
     touchgfx::TextArea textArea1;
     touchgfx::Button buttonReturn;
+    touchgfx::Slider sliderVoltage;
+    touchgfx::TextAreaWithOneWildcard textAreaVoltage;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREAVOLTAGE_SIZE = 27;
+    touchgfx::Unicode::UnicodeChar textAreaVoltageBuffer[TEXTAREAVOLTAGE_SIZE];
 
 private:
 

@@ -10,11 +10,13 @@ TestOrientationVoileViewBase::TestOrientationVoileViewBase() :
     buttonCallback(this, &TestOrientationVoileViewBase::buttonCallbackHandler)
 {
 
+    touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
+
     imageBg.setXY(0, 0);
     imageBg.setBitmap(touchgfx::Bitmap(BITMAP_GREEN_POLYGONS_BACKGROUND_480X272_ID));
 
-    textArea1.setXY(184, 99);
-    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea1.setXY(10, 10);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID11));
 
@@ -22,9 +24,69 @@ TestOrientationVoileViewBase::TestOrientationVoileViewBase() :
     buttonReturn.setBitmaps(touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID), touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID));
     buttonReturn.setAction(buttonCallback);
 
+    image1.setXY(50, 104);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_WIND_48_ID));
+
+    lineSail.setPosition(160, 48, 160, 160);
+    lineSailPainter.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    lineSail.setPainter(lineSailPainter);
+    lineSail.setStart(80, 80);
+    lineSail.setEnd(156, 80);
+    lineSail.setLineWidth(4);
+    lineSail.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+
+    slider1.setXY(262, 236);
+    slider1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_SLIDER_HORIZONTAL_SMALL_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_SMALL_INDICATORS_SLIDER_HORIZONTAL_SMALL_SQUARE_KNOB_ID));
+    slider1.setupHorizontalSlider(3, 7, 0, 0, 120);
+    slider1.setValueRange(0, 100);
+    slider1.setValue(50);
+
+    textArea.setXY(58, 239);
+    textArea.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textArea.setLinespacing(0);
+    textArea.setTypedText(touchgfx::TypedText(T_SINGLEUSEID17));
+
+    textArea2.setXY(383, 98);
+    textArea2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID18));
+
+    textArea3.setPosition(349, 129, 129, 29);
+    textArea3.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea3.setLinespacing(0);
+    Unicode::snprintf(textArea3Buffer, TEXTAREA3_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID20).getText());
+    textArea3.setWildcard(textArea3Buffer);
+    textArea3.setTypedText(touchgfx::TypedText(T_SINGLEUSEID19));
+
+    circleBg.setPosition(150, 38, 180, 180);
+    circleBg.setCenter(90, 90);
+    circleBg.setRadius(86);
+    circleBg.setLineWidth(4);
+    circleBg.setArc(0, 360);
+    circleBg.setCapPrecision(10);
+    circleBgPainter.setColor(touchgfx::Color::getColorFrom24BitRGB(112, 148, 107));
+    circleBg.setPainter(circleBgPainter);
+
+    circleBoat.setPosition(150, 38, 180, 180);
+    circleBoat.setCenter(90, 90);
+    circleBoat.setRadius(86);
+    circleBoat.setLineWidth(6);
+    circleBoat.setArc(260, 280);
+    circleBoat.setCapPrecision(10);
+    circleBoatPainter.setColor(touchgfx::Color::getColorFrom24BitRGB(222, 58, 16));
+    circleBoat.setPainter(circleBoatPainter);
+
     add(imageBg);
     add(textArea1);
     add(buttonReturn);
+    add(image1);
+    add(lineSail);
+    add(slider1);
+    add(textArea);
+    add(textArea2);
+    add(textArea3);
+    add(circleBg);
+    add(circleBoat);
 }
 
 void TestOrientationVoileViewBase::setupScreen()

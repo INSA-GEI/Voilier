@@ -13,8 +13,8 @@ TestADCViewBase::TestADCViewBase() :
     imageBg.setXY(0, 0);
     imageBg.setBitmap(touchgfx::Bitmap(BITMAP_GREEN_POLYGONS_BACKGROUND_480X272_ID));
 
-    textArea1.setXY(219, 111);
-    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textArea1.setXY(10, 10);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID12));
 
@@ -22,9 +22,24 @@ TestADCViewBase::TestADCViewBase() :
     buttonReturn.setBitmaps(touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID), touchgfx::Bitmap(BITMAP_ICONS8_GO_BACK_60_ID));
     buttonReturn.setAction(buttonCallback);
 
+    sliderVoltage.setXY(152, 67);
+    sliderVoltage.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_SLIDER3_VERTICAL_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_VERTICAL_SMALL_INDICATORS_SLIDER3_VERTICAL_ROUND_NOB_ID));
+    sliderVoltage.setupVerticalSlider(7, 3, 0, 0, 125);
+    sliderVoltage.setValueRange(0, 100);
+    sliderVoltage.setValue(0);
+
+    textAreaVoltage.setPosition(240, 104, 183, 105);
+    textAreaVoltage.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textAreaVoltage.setLinespacing(0);
+    Unicode::snprintf(textAreaVoltageBuffer, TEXTAREAVOLTAGE_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID22).getText());
+    textAreaVoltage.setWildcard(textAreaVoltageBuffer);
+    textAreaVoltage.setTypedText(touchgfx::TypedText(T_SINGLEUSEID21));
+
     add(imageBg);
     add(textArea1);
     add(buttonReturn);
+    add(sliderVoltage);
+    add(textAreaVoltage);
 }
 
 void TestADCViewBase::setupScreen()
