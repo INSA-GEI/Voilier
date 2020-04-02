@@ -76,6 +76,7 @@ SDRAM_HandleTypeDef hsdram1;
 osThreadId defaultTaskHandHandle;
 /* USER CODE BEGIN PV */
 static FMC_SDRAM_CommandTypeDef Command;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
