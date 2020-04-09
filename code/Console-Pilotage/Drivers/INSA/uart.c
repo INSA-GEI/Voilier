@@ -6,28 +6,37 @@
  */
 
 #include "uart.h"
-#include "stm32f7xx_it.h"
 
-Uart::Uart(USART_TypeDef *usart) {
+int lastStatus = UART_STATUS_SUCCESS;
+
+UART_HandleTypeDef huart6;
+/* Buffer used for transmission */
+uint8_t aTxBuffer[TXBUFFERSIZE];
+/* Buffer used for reception */
+uint8_t aRxBuffer[RXBUFFERSIZE];
+
+UARTReceptionCallback Rxcallee=0;
+UARTErrorCallback Errorcallee=0;
+
+void UartInit(USART_TypeDef *usart) {
 	// TODO Auto-generated constructor stub
-
 	lastStatus = UART_STATUS_SUCCESS;
 
-	UartHandle.Instance        = usart;
+	huart6.Instance        = usart;
 
-	UartHandle.Init.BaudRate   = 9600;
-	UartHandle.Init.WordLength = UART_WORDLENGTH_8B;
-	UartHandle.Init.StopBits   = UART_STOPBITS_1;
-	UartHandle.Init.Parity     = UART_PARITY_NONE;
-	UartHandle.Init.HwFlowCtl  = UART_HWCONTROL_NONE;
-	UartHandle.Init.Mode       = UART_MODE_TX_RX;
-	if(HAL_UART_DeInit(&UartHandle) != HAL_OK)
+	huart6.Init.BaudRate   = 9600;
+	huart6.Init.WordLength = UART_WORDLENGTH_8B;
+	huart6.Init.StopBits   = UART_STOPBITS_1;
+	huart6.Init.Parity     = UART_PARITY_NONE;
+	huart6.Init.HwFlowCtl  = UART_HWCONTROL_NONE;
+	huart6.Init.Mode       = UART_MODE_TX_RX;
+	if(HAL_UART_DeInit(&huart6) != HAL_OK)
 	{
 		lastStatus = UART_STATUS_INIT_FAILED;
 		return;
 	}
 
-	if(HAL_UART_Init(&UartHandle) != HAL_OK)
+	if(HAL_UART_Init(&huart6) != HAL_OK)
 	{
 		lastStatus = UART_STATUS_INIT_FAILED;
 		return;
@@ -82,7 +91,7 @@ Uart::Uart(USART_TypeDef *usart) {
 		HAL_DMA_Init(&hdma_tx);
 
 		/* Associate the initialized DMA handle to the UART handle */
-		__HAL_LINKDMA(&(this->UartHandle), hdmatx, hdma_tx);
+		__HAL_LINKDMA(&huart6, hdmatx, hdma_tx);
 
 		/* Configure the DMA handler for reception process */
 		hdma_rx.Instance                 = DMA2_Stream1;
@@ -98,39 +107,24 @@ Uart::Uart(USART_TypeDef *usart) {
 		HAL_DMA_Init(&hdma_rx);
 
 		/* Associate the initialized DMA handle to the the UART handle */
-		__HAL_LINKDMA(&(this->UartHandle), hdmarx, hdma_rx);
+		__HAL_LINKDMA(&huart6, hdmarx, hdma_rx);
 
 		/*##-4- Configure the NVIC for DMA #########################################*/
 		/* NVIC configuration for DMA transfer complete interrupt (USART6_TX) */
-		if (IT_RegisterHandler(this, DMA2_Stream6_IRQn) != IT_REGISTER_SUCCESS)
-		{
-			lastStatus = UART_STATUS_INIT_FAILED;
-			return;
-		}
 		HAL_NVIC_SetPriority(DMA2_Stream6_IRQn, 0, 1);
 		HAL_NVIC_EnableIRQ(DMA2_Stream6_IRQn);
 
 		/* NVIC configuration for DMA transfer complete interrupt (USART6_RX) */
-		if (IT_RegisterHandler(this, DMA2_Stream1_IRQn) != IT_REGISTER_SUCCESS)
-		{
-			lastStatus = UART_STATUS_INIT_FAILED;
-			return;
-		}
 		HAL_NVIC_SetPriority(DMA2_Stream1_IRQn, 0, 0);
 		HAL_NVIC_EnableIRQ(DMA2_Stream1_IRQn);
 
 		/* NVIC for USART, to catch the TX complete */
-		if (IT_RegisterHandler(this, USART6_IRQn) != IT_REGISTER_SUCCESS)
-		{
-			lastStatus = UART_STATUS_INIT_FAILED;
-			return;
-		}
 		HAL_NVIC_SetPriority(USART6_IRQn, 0, 1);
 		HAL_NVIC_EnableIRQ(USART6_IRQn);
 	}
 }
 
-Uart::~Uart() {
+void UartDeInit(void) {
 	// TODO Auto-generated destructor stub
 	/*##-1- Reset peripherals ##################################################*/
 	__USART6_FORCE_RESET();
@@ -144,14 +138,14 @@ Uart::~Uart() {
 
 	/*##-3- Disable the DMA #####################################################*/
 	/* De-Initialize the DMA channel associated to reception process */
-	if(this->UartHandle.hdmarx != 0)
+	if(huart6.hdmarx != 0)
 	{
-		HAL_DMA_DeInit(this->UartHandle.hdmarx);
+		HAL_DMA_DeInit(huart6.hdmarx);
 	}
 	/* De-Initialize the DMA channel associated to transmission process */
-	if(this->UartHandle.hdmatx != 0)
+	if(huart6.hdmatx != 0)
 	{
-		HAL_DMA_DeInit(this->UartHandle.hdmarx);
+		HAL_DMA_DeInit(huart6.hdmarx);
 	}
 
 	/*##-4- Disable the NVIC for DMA ###########################################*/
@@ -159,15 +153,3 @@ Uart::~Uart() {
 	HAL_NVIC_DisableIRQ(DMA2_Stream1_IRQn);
 }
 
-void Uart::interruptHandler(int signal)
-{
-	if (signal == UART_IT_SIGNAL_DMA_TX)
-		HAL_DMA_IRQHandler(UartHandle.hdmatx);
-	else if (signal == UART_IT_SIGNAL_DMA_RX)
-		HAL_DMA_IRQHandler(UartHandle.hdmarx);
-	else if (signal == UART_IT_SIGNAL_ERROR)
-		HAL_UART_IRQHandler(&UartHandle);
-	else {
-		while(1);
-	}
-}

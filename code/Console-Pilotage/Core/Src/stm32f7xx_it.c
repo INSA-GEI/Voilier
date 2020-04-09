@@ -45,9 +45,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-Driver *uart6ItObj=nullptr;
-Driver *uart6DMATXObj=nullptr;
-Driver *uart6DMARXObj=nullptr;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -57,35 +55,14 @@ Driver *uart6DMARXObj=nullptr;
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-int IT_RegisterHandler(Driver *obj, int IRQn)
-{
-	int status =IT_REGISTER_SUCCESS;
 
-	switch (IRQn)
-	{
-	case DMA2_Stream6_IRQn:
-		uart6DMATXObj = obj;
-		break;
-	case DMA2_Stream1_IRQn:
-		uart6DMARXObj = obj;
-		break;
-	case USART6_IRQn:
-		uart6ItObj = obj;
-		break;
-	default:
-		status=IT_REGISTER_FAILED;
-	}
-
-	return status;
-
-}
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
 extern DMA2D_HandleTypeDef hdma2d;
 extern LTDC_HandleTypeDef hltdc;
 extern TIM_HandleTypeDef htim6;
-
+extern USART_HandleTypeDef huart6;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -236,7 +213,7 @@ void DMA2D_IRQHandler(void)
  */
 void DMA2_Stream6_IRQHandler(void)
 {
-	uart6DMATXObj->interruptHandler(DMA2_Stream6_IRQn);
+	HAL_DMA_IRQHandler(huart6.hdmatx);
 }
 
 /**
@@ -247,7 +224,7 @@ void DMA2_Stream6_IRQHandler(void)
  */
 void DMA2_Stream1_IRQHandler(void)
 {
-	uart6DMARXObj->interruptHandler(DMA2_Stream1_IRQn);
+	HAL_DMA_IRQHandler(huart6.hdmarx);
 }
 
 /**
@@ -258,7 +235,7 @@ void DMA2_Stream1_IRQHandler(void)
   */
 void USART6_IRQHandler(void)
 {
-	uart6ItObj->interruptHandler(USART6_IRQn);
+	HAL_USART_IRQHandler(&huart6);
 }
 
 /* USER CODE BEGIN 1 */

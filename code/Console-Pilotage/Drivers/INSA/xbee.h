@@ -10,16 +10,22 @@
 
 #include "uart.h"
 
-class Xbee {
-public:
-	Xbee();
-	virtual ~Xbee();
+typedef void (*XBEEDataReceivedCallback) (int length, uint8_t *data);
 
-private:
-	Uart *uart;
-	int adresseDes;
-	int adresseSrc;
+	void XbeeInit(USART_TypeDef* uart);
+	void XbeeDeInit();
 
-};
+	int Xbeesetup(int ownAddress);
+	int XbeeGetLastRSSI();
+	int XbeeGetLastStatus();
+
+	void XbeeSetDestinationAddress(int desAddress);
+	int XbeeSendData(uint8_t *data, int length);
+
+	int XbeeGetReceivedLength();
+	void XbeeSetEndingChar(uint8_t endingChar);
+
+	int XbeeReadData(uint8_t *data, int length);
+	void XbeeAddReceptionCallback(XBEEDataReceivedCallback callee);
 
 #endif /* XBEE_H_ */
