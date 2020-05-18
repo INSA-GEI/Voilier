@@ -8,7 +8,9 @@
 #ifndef INSA_DRIVER_H_
 #define INSA_DRIVER_H_
 
-class Driver {
+#include "BaseObject.h"
+
+class Driver : public BaseObject {
 public:
 	Driver();
 	virtual ~Driver();

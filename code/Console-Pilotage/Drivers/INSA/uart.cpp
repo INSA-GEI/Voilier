@@ -168,6 +168,7 @@ void Uart::interruptHandler(int signal)
 	else if (signal == UART_IT_SIGNAL_ERROR)
 		HAL_UART_IRQHandler(&UartHandle);
 	else {
+		/* Unknown IT source */
 		while(1);
 	}
 }

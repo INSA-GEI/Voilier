@@ -236,7 +236,8 @@ void DMA2D_IRQHandler(void)
  */
 void DMA2_Stream6_IRQHandler(void)
 {
-	uart6DMATXObj->interruptHandler(DMA2_Stream6_IRQn);
+	if (uart6DMATXObj != nullptr)
+		uart6DMATXObj->interruptHandler(DMA2_Stream6_IRQn);
 }
 
 /**
@@ -247,18 +248,20 @@ void DMA2_Stream6_IRQHandler(void)
  */
 void DMA2_Stream1_IRQHandler(void)
 {
-	uart6DMARXObj->interruptHandler(DMA2_Stream1_IRQn);
+	if (uart6DMARXObj != nullptr)
+		uart6DMARXObj->interruptHandler(DMA2_Stream1_IRQn);
 }
 
 /**
-  * @brief  This function handles UART Error interrupt request.
-  * @param  None
-  * @retval None
-  * @Note
-  */
+ * @brief  This function handles UART Error interrupt request.
+ * @param  None
+ * @retval None
+ * @Note
+ */
 void USART6_IRQHandler(void)
 {
-	uart6ItObj->interruptHandler(USART6_IRQn);
+	if (uart6ItObj != nullptr)
+		uart6ItObj->interruptHandler(USART6_IRQn);
 }
 
 /* USER CODE BEGIN 1 */
