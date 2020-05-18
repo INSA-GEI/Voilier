@@ -27,6 +27,7 @@ void MenuView::ButtonOKClicked()
 	switch (scrollWheel.getSelectedItem())
 	{
 	case 0:
+
 		static_cast<FrontendApplication*>(Application::getInstance())->gotoTestRotationPlateauScreenSlideTransitionEast();
 		break;
 	case 1:
