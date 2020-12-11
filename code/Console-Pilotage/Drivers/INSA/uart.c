@@ -14,13 +14,19 @@ UART_HandleTypeDef huart6;
 uint8_t aTxBuffer[TXBUFFERSIZE];
 /* Buffer used for reception */
 uint8_t aRxBuffer[RXBUFFERSIZE];
+uint16_t rxDataCounter;
+uint8_t rxDataReceived;
+uint8_t rxEndingChar;
 
-UARTReceptionCallback Rxcallee=0;
-UARTErrorCallback Errorcallee=0;
+UARTReceptionCallback rxCallee=NULL;
+UARTErrorCallback errorCallee=NULL;
 
-void UartInit(USART_TypeDef *usart) {
-	// TODO Auto-generated constructor stub
-	lastStatus = UART_STATUS_SUCCESS;
+uint8_t receivedFrame[RXBUFFERSIZE];
+
+void Error_Handler(void);
+
+int UartInit(USART_TypeDef *usart) {
+	// TODO Auto-generated constructor stu
 
 	huart6.Instance        = usart;
 
@@ -33,19 +39,19 @@ void UartInit(USART_TypeDef *usart) {
 	if(HAL_UART_DeInit(&huart6) != HAL_OK)
 	{
 		lastStatus = UART_STATUS_INIT_FAILED;
-		return;
+		return lastStatus;
 	}
 
 	if(HAL_UART_Init(&huart6) != HAL_OK)
 	{
 		lastStatus = UART_STATUS_INIT_FAILED;
-		return;
+		return lastStatus;
 	}
 
 	if (usart == USART6)
 	{
 		static DMA_HandleTypeDef hdma_tx;
-		static DMA_HandleTypeDef hdma_rx;
+		//static DMA_HandleTypeDef hdma_rx;
 
 		GPIO_InitTypeDef  GPIO_InitStruct;
 
@@ -93,38 +99,46 @@ void UartInit(USART_TypeDef *usart) {
 		/* Associate the initialized DMA handle to the UART handle */
 		__HAL_LINKDMA(&huart6, hdmatx, hdma_tx);
 
-		/* Configure the DMA handler for reception process */
-		hdma_rx.Instance                 = DMA2_Stream1;
-		hdma_rx.Init.Channel             = DMA_CHANNEL_5;
-		hdma_rx.Init.Direction           = DMA_PERIPH_TO_MEMORY;
-		hdma_rx.Init.PeriphInc           = DMA_PINC_DISABLE;
-		hdma_rx.Init.MemInc              = DMA_MINC_ENABLE;
-		hdma_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
-		hdma_rx.Init.MemDataAlignment    = DMA_MDATAALIGN_BYTE;
-		hdma_rx.Init.Mode                = DMA_NORMAL;
-		hdma_rx.Init.Priority            = DMA_PRIORITY_HIGH;
-
-		HAL_DMA_Init(&hdma_rx);
-
-		/* Associate the initialized DMA handle to the the UART handle */
-		__HAL_LINKDMA(&huart6, hdmarx, hdma_rx);
+		//		/* Configure the DMA handler for reception process */
+		//		hdma_rx.Instance                 = DMA2_Stream1;
+		//		hdma_rx.Init.Channel             = DMA_CHANNEL_5;
+		//		hdma_rx.Init.Direction           = DMA_PERIPH_TO_MEMORY;
+		//		hdma_rx.Init.PeriphInc           = DMA_PINC_DISABLE;
+		//		hdma_rx.Init.MemInc              = DMA_MINC_ENABLE;
+		//		hdma_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+		//		hdma_rx.Init.MemDataAlignment    = DMA_MDATAALIGN_BYTE;
+		//		hdma_rx.Init.Mode                = DMA_NORMAL;
+		//		hdma_rx.Init.Priority            = DMA_PRIORITY_HIGH;
+		//
+		//		HAL_DMA_Init(&hdma_rx);
+		//
+		//		/* Associate the initialized DMA handle to the the UART handle */
+		//		__HAL_LINKDMA(&huart6, hdmarx, hdma_rx);
 
 		/*##-4- Configure the NVIC for DMA #########################################*/
 		/* NVIC configuration for DMA transfer complete interrupt (USART6_TX) */
 		HAL_NVIC_SetPriority(DMA2_Stream6_IRQn, 0, 1);
 		HAL_NVIC_EnableIRQ(DMA2_Stream6_IRQn);
 
-		/* NVIC configuration for DMA transfer complete interrupt (USART6_RX) */
-		HAL_NVIC_SetPriority(DMA2_Stream1_IRQn, 0, 0);
-		HAL_NVIC_EnableIRQ(DMA2_Stream1_IRQn);
+		//		/* NVIC configuration for DMA transfer complete interrupt (USART6_RX) */
+		//		HAL_NVIC_SetPriority(DMA2_Stream1_IRQn, 0, 0);
+		//		HAL_NVIC_EnableIRQ(DMA2_Stream1_IRQn);
 
-		/* NVIC for USART, to catch the TX complete */
+		/* NVIC for USART, to catch the TX complete and RXNIE */
 		HAL_NVIC_SetPriority(USART6_IRQn, 0, 1);
 		HAL_NVIC_EnableIRQ(USART6_IRQn);
 	}
+
+	/* Initialisation diverses */
+	rxDataCounter=0;
+	rxDataReceived=0;
+	rxEndingChar=0;
+
+	lastStatus = UART_STATUS_SUCCESS;
+	return lastStatus;
 }
 
-void UartDeInit(void) {
+int UartDeInit(USART_TypeDef *usart) {
 	// TODO Auto-generated destructor stub
 	/*##-1- Reset peripherals ##################################################*/
 	__USART6_FORCE_RESET();
@@ -151,5 +165,98 @@ void UartDeInit(void) {
 	/*##-4- Disable the NVIC for DMA ###########################################*/
 	HAL_NVIC_DisableIRQ(DMA2_Stream6_IRQn);
 	HAL_NVIC_DisableIRQ(DMA2_Stream1_IRQn);
+	HAL_NVIC_DisableIRQ(USART6_IRQn);
+
+	rxCallee=NULL;
+	errorCallee=NULL;
+
+	lastStatus = UART_STATUS_SUCCESS;
+	return lastStatus;
 }
 
+void UartAddReceptionCallback(UARTReceptionCallback callee) {
+	rxCallee=callee;
+}
+
+void UartAddErrorCallback(UARTErrorCallback callee) {
+	errorCallee=callee;
+}
+
+int UartGetStatus(void) {
+	return ((int)rxDataReceived);
+}
+
+void UartStartRX(void) {
+	if(HAL_UART_Receive_IT(&huart6, (uint8_t *)aRxBuffer, 1) != HAL_OK)
+	{
+	   Error_Handler();
+	}
+}
+
+int UartSendData(uint8_t* data, int length) {
+	for (int i; i< length; i++) {
+		aTxBuffer[i] = data[i];
+	}
+
+	lastStatus=HAL_UART_Transmit_DMA(&huart6, (uint8_t*)aTxBuffer, length);
+
+	if(lastStatus!=HAL_OK)
+	{
+		Error_Handler();
+	}
+
+	return lastStatus;
+}
+
+int UartGetReceivedLength() {
+	return ((int)rxDataCounter);
+}
+
+void UartSetEndingChar(uint8_t endingChar) {
+	rxEndingChar = endingChar;
+}
+
+int UARTReadData(uint8_t *data, int *length) {
+	if (data==NULL) {
+		Error_Handler();
+	}
+
+	__disable_irq();
+	for (int i=0; i<rxDataCounter; i++) {
+		data[i]=aRxBuffer[i];
+	}
+
+	*length=(int)rxDataCounter;
+	rxDataCounter=0;
+	__enable_irq();
+
+	lastStatus=UART_STATUS_SUCCESS;
+	return lastStatus;
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	uint16_t receivedLength=rxDataCounter;
+
+	if (aRxBuffer[rxDataCounter] == rxEndingChar) {
+		for (int i=0; i<rxDataCounter; i++)
+		{
+			receivedFrame[i] = aRxBuffer[i];
+		}
+
+		rxDataCounter=0;
+
+		HAL_UART_Receive_IT(&huart6, aRxBuffer, 1);
+
+		if (rxCallee!=NULL) rxCallee(receivedLength, receivedFrame);
+	}
+	else {
+		rxDataCounter++;
+
+		HAL_UART_Receive_IT(&huart6, aRxBuffer+rxDataCounter, 1);
+	}
+}
+
+void Error_Handler(void)
+{
+	while (1);
+}

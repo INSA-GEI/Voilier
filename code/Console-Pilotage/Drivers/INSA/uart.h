@@ -23,16 +23,18 @@
 typedef void (*UARTReceptionCallback) (int length, uint8_t *data);
 typedef void (*UARTErrorCallback) (int errorType);
 
-void UartInit(USART_TypeDef *usart);
+int UartInit(USART_TypeDef *usart);
+int UartDeInit(USART_TypeDef *usart);
 
 void UartAddReceptionCallback(UARTReceptionCallback callee);
 void UartAddErrorCallback(UARTErrorCallback callee);
 
 int UartGetStatus(void);
 int UartSendData(uint8_t* data, int length);
+void UartStartRX(void);
 
 int UartGetReceivedLength();
 void UartSetEndingChar(uint8_t endingChar);
 
-int UARTReadData(uint8_t *data, int length);
+int UARTReadData(uint8_t *data, int *length);
 #endif /* INSA_UART_H_ */

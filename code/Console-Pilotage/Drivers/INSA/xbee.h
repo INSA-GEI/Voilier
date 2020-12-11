@@ -10,22 +10,25 @@
 
 #include "uart.h"
 
+#define XBEE_STATUS_SUCCESS 0
+#define XBEE_STATUS_CONFIG_ERR 1
+
 typedef void (*XBEEDataReceivedCallback) (int length, uint8_t *data);
 
-	void XbeeInit(USART_TypeDef* uart);
-	void XbeeDeInit();
+int XbeeInit(USART_TypeDef* uart);
+int XbeeDeInit();
 
-	int Xbeesetup(int ownAddress);
-	int XbeeGetLastRSSI();
-	int XbeeGetLastStatus();
+int XbeeSetup(int ownAddress);
+int XbeeGetLastRSSI();
+int XbeeGetLastStatus();
 
-	void XbeeSetDestinationAddress(int desAddress);
-	int XbeeSendData(uint8_t *data, int length);
+void XbeeSetDestinationAddress(int desAddress);
+int XbeeSendData(uint8_t *data, int length);
 
-	int XbeeGetReceivedLength();
-	void XbeeSetEndingChar(uint8_t endingChar);
+int XbeeGetReceivedLength();
+void XbeeSetEndingChar(uint8_t endingChar);
 
-	int XbeeReadData(uint8_t *data, int length);
-	void XbeeAddReceptionCallback(XBEEDataReceivedCallback callee);
+int XbeeReadData(uint8_t *data, int length);
+void XbeeAddReceptionCallback(XBEEDataReceivedCallback callee);
 
 #endif /* XBEE_H_ */
