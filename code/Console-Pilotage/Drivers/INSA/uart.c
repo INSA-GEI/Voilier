@@ -1,32 +1,40 @@
 /*
- * uart.cpp
+ * uart.c
  *
  *  Created on: 31 mars 2020
  *      Author: sd
  */
 
+/*
+ * Driver de liaison serie
+ *
+ * Principe de fonctionnement:
+ *      - Si une fonction callback est associée à la reception de donnée (uartDataReceivedCbk), les octets recus sont envoyés
+ *        directement à la fonction callback, sans etre stocké dans le buffer de reception: la quantité de données presentes
+ *        dans le buffer est toujours egale à zero
+ *
+ *      - Si aucune fonction callback n'est associée à la reception de donnée, les octets recus sont stockés dans le buffer
+ *        de reception et la quantité de donnée recu augmentées: les données stockées dans le buffer sont recuperé avec la
+ *        fonction UARTReadData
+ */
 #include "uart.h"
 
-int lastStatus = UART_STATUS_SUCCESS;
+int uartLastStatus = UART_STATUS_SUCCESS;
 
 UART_HandleTypeDef huart6;
 /* Buffer used for transmission */
-uint8_t aTxBuffer[TXBUFFERSIZE];
+uint8_t uartTxBuffer[UART_TX_BUFFERSIZE];
 /* Buffer used for reception */
-uint8_t aRxBuffer[RXBUFFERSIZE];
-uint16_t rxDataCounter;
-uint8_t rxDataReceived;
-uint8_t rxEndingChar;
+uint8_t uartRxBuffer[UART_RX_BUFFERSIZE];
+uint16_t uartRxDataCounter;
 
-UARTReceptionCallback rxCallee=NULL;
-UARTErrorCallback errorCallee=NULL;
-
-uint8_t receivedFrame[RXBUFFERSIZE];
+UARTReceptionCallback uartDataReceivedCbk=NULL;
+UARTErrorCallback uartDataErrorCbk=NULL;
 
 void Error_Handler(void);
 
 int UartInit(USART_TypeDef *usart) {
-	// TODO Auto-generated constructor stu
+	// TODO Auto-generated constructor stub
 
 	huart6.Instance        = usart;
 
@@ -38,14 +46,14 @@ int UartInit(USART_TypeDef *usart) {
 	huart6.Init.Mode       = UART_MODE_TX_RX;
 	if(HAL_UART_DeInit(&huart6) != HAL_OK)
 	{
-		lastStatus = UART_STATUS_INIT_FAILED;
-		return lastStatus;
+		uartLastStatus = UART_STATUS_INIT_FAILED;
+		return uartLastStatus;
 	}
 
 	if(HAL_UART_Init(&huart6) != HAL_OK)
 	{
-		lastStatus = UART_STATUS_INIT_FAILED;
-		return lastStatus;
+		uartLastStatus = UART_STATUS_INIT_FAILED;
+		return uartLastStatus;
 	}
 
 	if (usart == USART6)
@@ -130,12 +138,10 @@ int UartInit(USART_TypeDef *usart) {
 	}
 
 	/* Initialisation diverses */
-	rxDataCounter=0;
-	rxDataReceived=0;
-	rxEndingChar=0;
+	uartRxDataCounter=0;
 
-	lastStatus = UART_STATUS_SUCCESS;
-	return lastStatus;
+	uartLastStatus = UART_STATUS_SUCCESS;
+	return uartLastStatus;
 }
 
 int UartDeInit(USART_TypeDef *usart) {
@@ -167,92 +173,96 @@ int UartDeInit(USART_TypeDef *usart) {
 	HAL_NVIC_DisableIRQ(DMA2_Stream1_IRQn);
 	HAL_NVIC_DisableIRQ(USART6_IRQn);
 
-	rxCallee=NULL;
-	errorCallee=NULL;
+	uartDataReceivedCbk=NULL;
+	uartDataErrorCbk=NULL;
 
-	lastStatus = UART_STATUS_SUCCESS;
-	return lastStatus;
+	uartLastStatus = UART_STATUS_SUCCESS;
+	return uartLastStatus;
 }
 
 void UartAddReceptionCallback(UARTReceptionCallback callee) {
-	rxCallee=callee;
+	uartDataReceivedCbk=callee;
 }
 
 void UartAddErrorCallback(UARTErrorCallback callee) {
-	errorCallee=callee;
+	uartDataErrorCbk=callee;
 }
 
-int UartGetStatus(void) {
-	return ((int)rxDataReceived);
+int UartGetLastStatus(void) {
+	return ((int)uartLastStatus);
 }
 
 void UartStartRX(void) {
-	if(HAL_UART_Receive_IT(&huart6, (uint8_t *)aRxBuffer, 1) != HAL_OK)
+	if(HAL_UART_Receive_IT(&huart6, (uint8_t *)uartRxBuffer, 1) != HAL_OK)
 	{
 	   Error_Handler();
 	}
 }
 
-int UartSendData(uint8_t* data, int length) {
+void UartStopRX(void) {
+	if(HAL_UART_AbortReceive(&huart6) != HAL_OK)
+	{
+	   Error_Handler();
+	}
+}
+
+int UartWriteData(uint8_t* data, int length) {
+	int status;
+
+	uartLastStatus = UART_STATUS_SUCCESS;
+
 	for (int i; i< length; i++) {
-		aTxBuffer[i] = data[i];
+		uartTxBuffer[i] = data[i];
 	}
 
-	lastStatus=HAL_UART_Transmit_DMA(&huart6, (uint8_t*)aTxBuffer, length);
+	status=HAL_UART_Transmit_DMA(&huart6, (uint8_t*)uartTxBuffer, length);
 
-	if(lastStatus!=HAL_OK)
+	if (status!=HAL_OK)
 	{
+		uartLastStatus = UART_STATUS_WRITE_ERR;
 		Error_Handler();
 	}
 
-	return lastStatus;
+	return uartLastStatus;
 }
 
 int UartGetReceivedLength() {
-	return ((int)rxDataCounter);
+	return ((int)uartRxDataCounter);
 }
 
-void UartSetEndingChar(uint8_t endingChar) {
-	rxEndingChar = endingChar;
-}
+int UARTReadData(uint8_t *data) {
+	int length = (int)uartRxDataCounter;
 
-int UARTReadData(uint8_t *data, int *length) {
 	if (data==NULL) {
+		uartLastStatus=UART_STATUS_READ_ERR;
 		Error_Handler();
 	}
 
 	__disable_irq();
-	for (int i=0; i<rxDataCounter; i++) {
-		data[i]=aRxBuffer[i];
+	for (int i=0; i<uartRxDataCounter; i++) {
+		data[i]=uartRxBuffer[i];
 	}
 
-	*length=(int)rxDataCounter;
-	rxDataCounter=0;
+	uartRxDataCounter=0;
 	__enable_irq();
 
-	lastStatus=UART_STATUS_SUCCESS;
-	return lastStatus;
+	uartLastStatus=UART_STATUS_SUCCESS;
+	return length;
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	uint16_t receivedLength=rxDataCounter;
+	uint8_t data = uartRxBuffer[0];
 
-	if (aRxBuffer[rxDataCounter] == rxEndingChar) {
-		for (int i=0; i<rxDataCounter; i++)
-		{
-			receivedFrame[i] = aRxBuffer[i];
-		}
+	if (uartDataReceivedCbk!=NULL) {
+		uartRxDataCounter=0;
+		HAL_UART_Receive_IT(&huart6, uartRxBuffer, 1);
 
-		rxDataCounter=0;
-
-		HAL_UART_Receive_IT(&huart6, aRxBuffer, 1);
-
-		if (rxCallee!=NULL) rxCallee(receivedLength, receivedFrame);
+		uartDataReceivedCbk(data);
 	}
 	else {
-		rxDataCounter++;
+		uartRxDataCounter++;
 
-		HAL_UART_Receive_IT(&huart6, aRxBuffer+rxDataCounter, 1);
+		HAL_UART_Receive_IT(&huart6, uartRxBuffer+uartRxDataCounter, 1);
 	}
 }
 

@@ -6,14 +6,20 @@
  */
 
 #include "xbee.h"
+#include "string.h"
 
 static USART_TypeDef* xbeeUsart;
 int xbeeDesAddress;
 int xbeeOwnAddress;
 int xbeeLastRssi;
 int xbeeLastError;
-void XbeeUARTRxCallback( int length, uint8_t *data);
 
+uint8_t xbeeReceivedFrame[100];
+uint8_t xbeeEndingCharFlag;
+uint8_t xbeeReceivedLength;
+uint8_t xbeeEndingChar;
+
+void XbeeUARTRxCallback(uint8_t data);
 void Error_Handler(void);
 
 int XbeeInit(USART_TypeDef* usart) {
@@ -26,6 +32,14 @@ int XbeeInit(USART_TypeDef* usart) {
 	}
 
 	UartAddReceptionCallback(XbeeUARTRxCallback);
+
+	xbeeEndingCharFlag=0;
+	xbeeReceivedLength=0;
+	xbeeEndingChar=0;
+
+	for (int i=0; i<100; i++) {
+		xbeeReceivedFrame[i]=0;
+	}
 
 	xbeeLastError = XBEE_STATUS_SUCCESS;
 	return xbeeLastError;
@@ -44,15 +58,101 @@ int XbeeDeInit() {
 
 int XbeeSetup(int ownAddress) {
 	xbeeOwnAddress = ownAddress;
+	XbeeSetEndingChar(0x0D);
+
+	/* Passe en mode configuration */
+	if (UartWriteData("+++", strlen("+++"))!= UART_STATUS_SUCCESS) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	HAL_Delay(1500); // attente de 1.5 s
+
+	if (xbeeEndingCharFlag==0) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	if (strstr(xbeeReceivedFrame, "OK") == NULL) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	XbeeFlush();
+
+	/* Defini l'adresse destination */
+	if (UartWriteData("ATDL\n", strlen("ATDL\n"))!= UART_STATUS_SUCCESS) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	HAL_Delay(100); // attente de 0.1 s
+
+	if (xbeeEndingCharFlag==0) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	if (strstr(xbeeReceivedFrame, "OK") == NULL) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	XbeeFlush();
+
+	/* Defini l'adresse source */
+	if (UartWriteData("ATMY\n", strlen("ATMY\n"))!= UART_STATUS_SUCCESS) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	HAL_Delay(100); // attente de 0.1 s
+
+	if (xbeeEndingCharFlag==0) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	if (strstr(xbeeReceivedFrame, "OK") == NULL) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	XbeeFlush();
+
+	/* Termine le mode configuration */
+	if (UartWriteData("ATCN\n", strlen("ATCN\n"))!= UART_STATUS_SUCCESS) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	HAL_Delay(100); // attente de 0.1 s
+
+	if (xbeeEndingCharFlag==0) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	if (strstr(xbeeReceivedFrame, "OK") == NULL) {
+		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		Error_Handler();
+	}
+
+	XbeeFlush();
 
 	xbeeLastError = XBEE_STATUS_SUCCESS;
 	return xbeeLastError;
 }
 
-int XbeeGetLastRSSI() {
+void XbeeFlush(void) {
+	xbeeReceivedFrame[0]=0;
+	xbeeReceivedLength=0;
+	xbeeEndingCharFlag=0;
+}
 
+int XbeeGetLastRSSI() {
 	xbeeLastError = XBEE_STATUS_SUCCESS;
-	return xbeeLastError;
+	return xbeeLastRssi;
 }
 
 int XbeeGetLastStatus() {
@@ -60,29 +160,51 @@ int XbeeGetLastStatus() {
 }
 
 void XbeeSetDestinationAddress(int desAddress) {
+	xbeeDesAddress = desAddress;
 
+	xbeeLastError = XBEE_STATUS_SUCCESS;
 }
 
 int XbeeSendData(uint8_t *data, int length) {
-
 	xbeeLastError = XBEE_STATUS_SUCCESS;
-	return xbeeLastError;
-}
 
-int XbeeGetReceivedLength() {
-	return 0;
+	if (UartWriteData(data, length)!=UART_STATUS_SUCCESS) {
+		xbeeLastError = XBEE_STATUS_SEND_ERR;
+	}
+
+	return xbeeLastError;
 }
 
 void XbeeSetEndingChar(uint8_t endingChar) {
-
-}
-
-int XbeeReadData(uint8_t *data, int length) {
-
+	xbeeEndingChar = endingChar;
 	xbeeLastError = XBEE_STATUS_SUCCESS;
-	return xbeeLastError;
 }
 
-void XbeeUARTRxCallback(int length, uint8_t *data) {
+int XbeeGetReceivedLength() {
+	return (int)xbeeReceivedLength;
+}
 
+int XbeeReadData(uint8_t *data) {
+	int length = (int)xbeeReceivedLength;
+	xbeeLastError = XBEE_STATUS_SUCCESS;
+
+	for (int i=0; i<length; i++) {
+		data[i]=xbeeReceivedFrame[i];
+	}
+
+	data[length]=0;
+
+	xbeeReceivedFrame[0]=0;
+	xbeeReceivedLength=0;
+	xbeeEndingCharFlag=0;
+	return length;
+}
+
+void XbeeUARTRxCallback(uint8_t data) {
+	/* La chaine recu contient le caractere de fin de chaine (CR, LF ou autre), a retirer */
+
+	xbeeReceivedFrame[xbeeReceivedLength]=data;
+	xbeeReceivedFrame[(xbeeReceivedLength++)]=0;
+
+	if (data == xbeeEndingChar) xbeeEndingCharFlag=1;
 }
