@@ -38,7 +38,8 @@ int UartInit(USART_TypeDef *usart) {
 
 	huart6.Instance        = usart;
 
-	huart6.Init.BaudRate   = 9600;
+	//huart6.Init.BaudRate   = 9600;
+	huart6.Init.BaudRate   = 115200;
 	huart6.Init.WordLength = UART_WORDLENGTH_8B;
 	huart6.Init.StopBits   = UART_STOPBITS_1;
 	huart6.Init.Parity     = UART_PARITY_NONE;
@@ -180,6 +181,19 @@ int UartDeInit(USART_TypeDef *usart) {
 	return uartLastStatus;
 }
 
+void HAL_UART_MspInit(UART_HandleTypeDef *huart) {
+
+}
+
+/**
+  * @brief DeInitialize the UART MSP.
+  * @param huart UART handle.
+  * @retval None
+  */
+void HAL_UART_MspDeInit(UART_HandleTypeDef *huart) {
+
+}
+
 void UartAddReceptionCallback(UARTReceptionCallback callee) {
 	uartDataReceivedCbk=callee;
 }
@@ -264,9 +278,4 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 		HAL_UART_Receive_IT(&huart6, uartRxBuffer+uartRxDataCounter, 1);
 	}
-}
-
-void Error_Handler(void)
-{
-	while (1);
 }

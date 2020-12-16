@@ -7,6 +7,7 @@
 
 #include "xbee.h"
 #include "string.h"
+#include "stdio.h"
 
 static USART_TypeDef* xbeeUsart;
 int xbeeDesAddress;
@@ -21,6 +22,7 @@ uint8_t xbeeEndingChar;
 
 void XbeeUARTRxCallback(uint8_t data);
 void Error_Handler(void);
+void XbeeFlush(void);
 
 int XbeeInit(USART_TypeDef* usart) {
 	// Init corresponding UART for Xbee
@@ -56,12 +58,16 @@ int XbeeDeInit() {
 	return xbeeLastError;
 }
 
-int XbeeSetup(int ownAddress) {
+int XbeeSetup(int ownAddress,int desAddress) {
+	char strbuf[20];
+
 	xbeeOwnAddress = ownAddress;
+	xbeeDesAddress = desAddress;
+
 	XbeeSetEndingChar(0x0D);
 
 	/* Passe en mode configuration */
-	if (UartWriteData("+++", strlen("+++"))!= UART_STATUS_SUCCESS) {
+	if (UartWriteData((uint8_t *)"+++", strlen("+++"))!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
 		Error_Handler();
 	}
@@ -73,7 +79,7 @@ int XbeeSetup(int ownAddress) {
 		Error_Handler();
 	}
 
-	if (strstr(xbeeReceivedFrame, "OK") == NULL) {
+	if (strstr((char *)xbeeReceivedFrame, "OK") == NULL) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
 		Error_Handler();
 	}
@@ -81,7 +87,8 @@ int XbeeSetup(int ownAddress) {
 	XbeeFlush();
 
 	/* Defini l'adresse destination */
-	if (UartWriteData("ATDL\n", strlen("ATDL\n"))!= UART_STATUS_SUCCESS) {
+	sprintf(strbuf, "ATDL %04X\r",xbeeDesAddress);
+	if (UartWriteData((uint8_t *)strbuf, strlen(strbuf))!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
 		Error_Handler();
 	}
@@ -93,7 +100,7 @@ int XbeeSetup(int ownAddress) {
 		Error_Handler();
 	}
 
-	if (strstr(xbeeReceivedFrame, "OK") == NULL) {
+	if (strstr((char *)xbeeReceivedFrame, "OK") == NULL) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
 		Error_Handler();
 	}
@@ -101,7 +108,8 @@ int XbeeSetup(int ownAddress) {
 	XbeeFlush();
 
 	/* Defini l'adresse source */
-	if (UartWriteData("ATMY\n", strlen("ATMY\n"))!= UART_STATUS_SUCCESS) {
+	sprintf(strbuf, "ATMY %04X\r",xbeeOwnAddress);
+	if (UartWriteData((uint8_t *)strbuf, strlen(strbuf))!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
 		Error_Handler();
 	}
@@ -113,7 +121,7 @@ int XbeeSetup(int ownAddress) {
 		Error_Handler();
 	}
 
-	if (strstr(xbeeReceivedFrame, "OK") == NULL) {
+	if (strstr((char *)xbeeReceivedFrame, "OK") == NULL) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
 		Error_Handler();
 	}
@@ -121,7 +129,7 @@ int XbeeSetup(int ownAddress) {
 	XbeeFlush();
 
 	/* Termine le mode configuration */
-	if (UartWriteData("ATCN\n", strlen("ATCN\n"))!= UART_STATUS_SUCCESS) {
+	if (UartWriteData((uint8_t *)"ATCN\n", strlen("ATCN\n"))!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
 		Error_Handler();
 	}
@@ -133,7 +141,7 @@ int XbeeSetup(int ownAddress) {
 		Error_Handler();
 	}
 
-	if (strstr(xbeeReceivedFrame, "OK") == NULL) {
+	if (strstr((char *)xbeeReceivedFrame, "OK") == NULL) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
 		Error_Handler();
 	}
@@ -161,6 +169,12 @@ int XbeeGetLastStatus() {
 
 void XbeeSetDestinationAddress(int desAddress) {
 	xbeeDesAddress = desAddress;
+
+	xbeeLastError = XBEE_STATUS_SUCCESS;
+}
+
+void XbeeSetOwnAddress(int ownAddress) {
+	xbeeOwnAddress = ownAddress;
 
 	xbeeLastError = XBEE_STATUS_SUCCESS;
 }

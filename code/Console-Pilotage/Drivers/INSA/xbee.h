@@ -19,11 +19,12 @@ typedef void (*XBEEDataReceivedCallback) (int length, uint8_t *data);
 int XbeeInit(USART_TypeDef* uart);
 int XbeeDeInit();
 
-int XbeeSetup(int ownAddress);
+int XbeeSetup(int ownAddress, int desAddress);
 int XbeeGetLastRSSI();
 int XbeeGetLastStatus();
 
 void XbeeSetDestinationAddress(int desAddress);
+void XbeeSetOwnAddress(int ownAddress);
 int XbeeSendData(uint8_t *data, int length);
 
 int XbeeGetReceivedLength();

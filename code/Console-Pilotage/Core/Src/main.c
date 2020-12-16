@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stm32746g_discovery_qspi.h>
+#include "xbee.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -146,6 +147,8 @@ int main(void)
   MX_I2C3_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
+  XbeeInit(USART6);
+  XbeeSetup(0x86,0x6);
 
   /* USER CODE END 2 */
 
