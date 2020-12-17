@@ -129,7 +129,7 @@ int XbeeSetup(int ownAddress,int desAddress) {
 	XbeeFlush();
 
 	/* Termine le mode configuration */
-	if (UartWriteData((uint8_t *)"ATCN\n", strlen("ATCN\n"))!= UART_STATUS_SUCCESS) {
+	if (UartWriteData((uint8_t *)"ATCN\r", strlen("ATCN\r"))!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
 		Error_Handler();
 	}
