@@ -15,13 +15,13 @@ int xbeeOwnAddress;
 int xbeeLastRssi;
 int xbeeLastError;
 
-uint8_t xbeeReceivedFrame[100];
+#define XBEE_RECEIVED_FRAME_LENGTH 100
+uint8_t xbeeReceivedFrame[XBEE_RECEIVED_FRAME_LENGTH];
 uint8_t xbeeEndingCharFlag;
 uint8_t xbeeReceivedLength;
 uint8_t xbeeEndingChar;
 
 void XbeeUARTRxCallback(uint8_t data);
-void Error_Handler(void);
 void XbeeFlush(void);
 
 int XbeeInit(USART_TypeDef* usart) {
@@ -30,6 +30,8 @@ int XbeeInit(USART_TypeDef* usart) {
 
 	if (UartInit(xbeeUsart)!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
 		return xbeeLastError;
 	}
 
@@ -39,18 +41,24 @@ int XbeeInit(USART_TypeDef* usart) {
 	xbeeReceivedLength=0;
 	xbeeEndingChar=0;
 
-	for (int i=0; i<100; i++) {
+	for (int i=0; i<XBEE_RECEIVED_FRAME_LENGTH; i++) {
 		xbeeReceivedFrame[i]=0;
 	}
+
+	//UartStartRX();
 
 	xbeeLastError = XBEE_STATUS_SUCCESS;
 	return xbeeLastError;
 }
 
 int XbeeDeInit() {
+	UartStopRX();
+
 	// TODO Auto-generated destructor stub
 	if (UartDeInit(xbeeUsart)!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
 		return xbeeLastError;
 	}
 
@@ -64,24 +72,31 @@ int XbeeSetup(int ownAddress,int desAddress) {
 	xbeeOwnAddress = ownAddress;
 	xbeeDesAddress = desAddress;
 
+	XbeeFlush();
 	XbeeSetEndingChar(0x0D);
 
 	/* Passe en mode configuration */
 	if (UartWriteData((uint8_t *)"+++", strlen("+++"))!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	HAL_Delay(1500); // attente de 1.5 s
 
 	if (xbeeEndingCharFlag==0) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	if (strstr((char *)xbeeReceivedFrame, "OK") == NULL) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	XbeeFlush();
@@ -90,19 +105,25 @@ int XbeeSetup(int ownAddress,int desAddress) {
 	sprintf(strbuf, "ATDL %04X\r",xbeeDesAddress);
 	if (UartWriteData((uint8_t *)strbuf, strlen(strbuf))!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	HAL_Delay(100); // attente de 0.1 s
 
 	if (xbeeEndingCharFlag==0) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	if (strstr((char *)xbeeReceivedFrame, "OK") == NULL) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	XbeeFlush();
@@ -111,19 +132,25 @@ int XbeeSetup(int ownAddress,int desAddress) {
 	sprintf(strbuf, "ATMY %04X\r",xbeeOwnAddress);
 	if (UartWriteData((uint8_t *)strbuf, strlen(strbuf))!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	HAL_Delay(100); // attente de 0.1 s
 
 	if (xbeeEndingCharFlag==0) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	if (strstr((char *)xbeeReceivedFrame, "OK") == NULL) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	XbeeFlush();
@@ -131,25 +158,39 @@ int XbeeSetup(int ownAddress,int desAddress) {
 	/* Termine le mode configuration */
 	if (UartWriteData((uint8_t *)"ATCN\r", strlen("ATCN\r"))!= UART_STATUS_SUCCESS) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	HAL_Delay(100); // attente de 0.1 s
 
 	if (xbeeEndingCharFlag==0) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	if (strstr((char *)xbeeReceivedFrame, "OK") == NULL) {
 		xbeeLastError = XBEE_STATUS_CONFIG_ERR;
-		Error_Handler();
+		assert_failed((uint8_t *)__FILE__,__LINE__);
+
+		return xbeeLastError;
 	}
 
 	XbeeFlush();
 
 	xbeeLastError = XBEE_STATUS_SUCCESS;
 	return xbeeLastError;
+}
+
+void XbeeStartRx(void) {
+	UartStartRX();
+}
+
+void XbeeStopRx(void) {
+	UartStopRX();
 }
 
 void XbeeFlush(void) {
@@ -179,7 +220,7 @@ void XbeeSetOwnAddress(int ownAddress) {
 	xbeeLastError = XBEE_STATUS_SUCCESS;
 }
 
-int XbeeSendData(uint8_t *data, int length) {
+int XbeeWriteData(uint8_t *data, int length) {
 	xbeeLastError = XBEE_STATUS_SUCCESS;
 
 	if (UartWriteData(data, length)!=UART_STATUS_SUCCESS) {
@@ -217,8 +258,10 @@ int XbeeReadData(uint8_t *data) {
 void XbeeUARTRxCallback(uint8_t data) {
 	/* La chaine recu contient le caractere de fin de chaine (CR, LF ou autre), a retirer */
 
-	xbeeReceivedFrame[xbeeReceivedLength]=data;
-	xbeeReceivedFrame[(xbeeReceivedLength++)]=0;
+	xbeeReceivedFrame[xbeeReceivedLength++]=data;
+	if (xbeeReceivedLength>=XBEE_RECEIVED_FRAME_LENGTH) xbeeReceivedLength = XBEE_RECEIVED_FRAME_LENGTH-1;
+
+	xbeeReceivedFrame[xbeeReceivedLength]=0;
 
 	if (data == xbeeEndingChar) xbeeEndingCharFlag=1;
 }

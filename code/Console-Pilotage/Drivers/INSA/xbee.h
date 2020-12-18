@@ -23,9 +23,13 @@ int XbeeSetup(int ownAddress, int desAddress);
 int XbeeGetLastRSSI();
 int XbeeGetLastStatus();
 
+void XbeeStartRx(void);
+void XbeeStopRx(void);
+void XbeeFlush(void);
+
 void XbeeSetDestinationAddress(int desAddress);
 void XbeeSetOwnAddress(int ownAddress);
-int XbeeSendData(uint8_t *data, int length);
+int XbeeWriteData(uint8_t *data, int length);
 
 int XbeeGetReceivedLength();
 void XbeeSetEndingChar(uint8_t endingChar);

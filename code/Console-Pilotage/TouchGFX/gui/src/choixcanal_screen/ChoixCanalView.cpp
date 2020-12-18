@@ -1,5 +1,11 @@
 #include <gui/choixcanal_screen/ChoixCanalView.hpp>
 
+extern "C" {
+#include "xbee.h"
+
+void assert_failed(uint8_t *file, uint32_t line);
+}
+
 ChoixCanalView::ChoixCanalView()
 {
 
@@ -18,6 +24,10 @@ void ChoixCanalView::tearDownScreen()
 void ChoixCanalView::buttonConnectClicked()
 {
 	//touchgfx_printf("Bouton demarrer appuye\n");
+	XbeeStartRx();
+	if (XbeeSetup(canalVoilier+0x80, canalVoilier) != XBEE_STATUS_SUCCESS) {
+		assert_failed((uint8_t *) __FILE__, __LINE__);
+	}
 }
 
 void ChoixCanalView::buttonUpClicked()

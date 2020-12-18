@@ -16,7 +16,7 @@ public:
     virtual void buttonMessagesClicked();
     virtual void buttonWipeClicked();
 protected:
-
+    uint8_t textBuffer[TEXTMESSAGES_SIZE];
     Unicode::UnicodeChar messageTxt[1500];
 };
 
