@@ -25,6 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 #include <stm32746g_discovery_qspi.h>
 #include "xbee.h"
 /* USER CODE END Includes */
@@ -148,7 +149,7 @@ int main(void)
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
   XbeeInit(USART6);
-  XbeeSetup(0x86,0x6);
+  //XbeeSetup(0x86,0x6);
 
   /* USER CODE END 2 */
 
@@ -1042,6 +1043,7 @@ void Error_Handler(void)
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
 
+
   /* USER CODE END Error_Handler_Debug */
 }
 
@@ -1058,6 +1060,7 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+	printf("Wrong parameters value: file %s on line %ld\r\n", file, line);
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
