@@ -424,4 +424,48 @@ Wire Wire Line
 	9900 1450 10300 1450
 Wire Wire Line
 	10300 1750 9900 1750
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 600A68FD
+P 1900 1350
+F 0 "H1" H 1850 1200 50  0000 L CNN
+F 1 "MountingHole" H 2000 1305 50  0001 L CNN
+F 2 "MountingHole:MountingHole_4.3mm_M4_DIN965" H 1900 1350 50  0001 C CNN
+F 3 "~" H 1900 1350 50  0001 C CNN
+	1    1900 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 600A78CA
+P 2100 1350
+F 0 "H2" H 2050 1200 50  0000 L CNN
+F 1 "MountingHole" H 2200 1305 50  0001 L CNN
+F 2 "MountingHole:MountingHole_4.3mm_M4_DIN965" H 2100 1350 50  0001 C CNN
+F 3 "~" H 2100 1350 50  0001 C CNN
+	1    2100 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 600A90C6
+P 2300 1350
+F 0 "H3" H 2250 1200 50  0000 L CNN
+F 1 "MountingHole" H 2400 1305 50  0001 L CNN
+F 2 "MountingHole:MountingHole_4.3mm_M4_DIN965" H 2300 1350 50  0001 C CNN
+F 3 "~" H 2300 1350 50  0001 C CNN
+	1    2300 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 600AA83F
+P 2500 1350
+F 0 "H4" H 2450 1200 50  0000 L CNN
+F 1 "MountingHole" H 2600 1305 50  0001 L CNN
+F 2 "MountingHole:MountingHole_4.3mm_M4_DIN965" H 2500 1350 50  0001 C CNN
+F 3 "~" H 2500 1350 50  0001 C CNN
+	1    2500 1350
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
