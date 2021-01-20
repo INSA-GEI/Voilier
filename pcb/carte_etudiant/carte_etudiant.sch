@@ -25,7 +25,7 @@ F 3 "~" H 7350 2450 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Insa:NUCLEO64-F103RB U1
+L carte_etudiant-rescue:NUCLEO64-F103RB-Insa U1
 U 1 1 5E490880
 P 4000 3250
 F 0 "U1" H 2950 5350 50  0000 C CNN
