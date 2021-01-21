@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source /home/dimercur/Travail/git/voilier/pcb/carte_etudiant/carte_etudiant.sch)
-    (date "mar. 19 janv. 2021 16:55:30")
+    (source /home/dimercur/Documents/Travail/git/Voilier/pcb/carte_etudiant/carte_etudiant.sch)
+    (date "mer. 20 janv. 2021 15:31:15")
     (tool "Eeschema 5.1.5+dfsg1-2build2")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -26,7 +26,7 @@
       (value NUCLEO64-F103RB)
       (footprint Insa:ST_Morpho_Connector_64)
       (datasheet http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00105918.pdf)
-      (libsource (lib Insa) (part NUCLEO64-F103RB) (description "Nucleo 64 Development Board with STM32F411RET6 MCU, 128kB RAM, 512KB FLASH"))
+      (libsource (lib carte_etudiant-rescue) (part NUCLEO64-F103RB-Insa) (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 5E490880))
     (comp (ref J1)
@@ -118,14 +118,12 @@
         (pin (num 38) (name Pin_38) (type passive))
         (pin (num 39) (name Pin_39) (type passive))
         (pin (num 40) (name Pin_40) (type passive))))
-    (libpart (lib Insa) (part NUCLEO64-F103RB)
-      (description "Nucleo 64 Development Board with STM32F411RET6 MCU, 128kB RAM, 512KB FLASH")
-      (docs http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00105918.pdf)
+    (libpart (lib carte_etudiant-rescue) (part NUCLEO64-F103RB-Insa)
       (footprints
         (fp ST*Morpho*Connector*144*STLink*))
       (fields
         (field (name Reference) U)
-        (field (name Value) NUCLEO64-F103RB)
+        (field (name Value) NUCLEO64-F103RB-Insa)
         (field (name Footprint) Insa:ST_Morpho_Connector_64))
       (pins
         (pin (num 1) (name PC10) (type BiDi))
@@ -207,8 +205,8 @@
   (libraries
     (library (logical Connector_Generic)
       (uri /home/dimercur/kicad/kicad-symbols/Connector_Generic.lib))
-    (library (logical Insa)
-      (uri /home/dimercur/kicad/local-symbols/Insa.lib)))
+    (library (logical carte_etudiant-rescue)
+      (uri /home/dimercur/Documents/Travail/git/Voilier/pcb/carte_etudiant/carte_etudiant-rescue.lib)))
   (nets
     (net (code 1) (name /CAPTEUR_SPI_CS)
       (node (ref J3) (pin 4))
