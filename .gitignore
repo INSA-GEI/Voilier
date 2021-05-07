@@ -94,5 +94,9 @@ OldVersions/
 # DS_Store osx files
 *.DS_Store
 
+*.step
+*.stp
+*.stl
 
-/pcb/Carte_telecommande_voilier/PDF
+PDF/
+"meca/Content center files/"
