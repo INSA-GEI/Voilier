@@ -1,0 +1,1090 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Components": [
+          {
+            "RelativeFilename": "background.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "button_up_pressed.png",
+            "Released": "button_up_released.png",
+            "Alpha": 255,
+            "Name": "buttonUp",
+            "X": 272,
+            "Y": 12,
+            "Width": 130,
+            "Height": 56,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "button_down_pressed.png",
+            "Released": "button_down_released.png",
+            "Alpha": 255,
+            "Name": "buttonDown",
+            "X": 272,
+            "Y": 205,
+            "Width": 130,
+            "Height": 56,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "counter_box-120x122.png",
+            "Alpha": 255,
+            "Name": "imageBgCanal",
+            "X": 277,
+            "Y": 75,
+            "Width": 120,
+            "Height": 122,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 250,
+              "Green": 160,
+              "Blue": 50
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea1",
+            "X": 81,
+            "Y": 50,
+            "Width": 93,
+            "Height": 50,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 250,
+              "Green": 160,
+              "Blue": 50
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId4",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textCanalVoilier",
+            "X": 261,
+            "Y": 87,
+            "Width": 152,
+            "Height": 99,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "button_connect_pressed.png",
+            "Released": "button_connect_released.png",
+            "Alpha": 255,
+            "Name": "buttonConnect",
+            "X": 65,
+            "Y": 130,
+            "Width": 130,
+            "Height": 56,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionButtonConnectClicked",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "TriggerComponent": "buttonConnect",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonConnectClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonUpClicked",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "buttonUp",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonUpClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonDownClicked",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "buttonDown",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonDownClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "interactionButtonUpMoved",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonConnectClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 600,
+              "Y": 12,
+              "Easing": "Sine",
+              "EasingOption": "Out",
+              "Duration": 400,
+              "ActionComponent": "buttonUp",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonDownMove",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonConnectClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 600,
+              "Y": 205,
+              "Easing": "Sine",
+              "EasingOption": "Out",
+              "Duration": 400,
+              "ActionComponent": "buttonDown",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionCanalMove",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonConnectClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 600,
+              "Y": 87,
+              "Easing": "Sine",
+              "EasingOption": "Out",
+              "Duration": 400,
+              "ActionComponent": "textCanalVoilier",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionChangeScreen",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonConnectMove",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RotationVoilier",
+              "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonConnectMove",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonConnectClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": -160,
+              "Y": 130,
+              "Easing": "Sine",
+              "EasingOption": "Out",
+              "Duration": 500,
+              "ActionComponent": "buttonConnect",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionTextMove",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonConnectClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": -100,
+              "Y": 50,
+              "Easing": "Sine",
+              "EasingOption": "Out",
+              "Duration": 400,
+              "ActionComponent": "textArea1",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionCanalBGMove",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonConnectClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 600,
+              "Y": 75,
+              "Easing": "Sine",
+              "EasingOption": "Out",
+              "Duration": 500,
+              "ActionComponent": "imageBgCanal",
+              "Type": "ActionMove"
+            }
+          }
+        ],
+        "Name": "ChoixCanal",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "background.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "side_button_pressed.png",
+            "Released": "side_button_released.png",
+            "Alpha": 255,
+            "IconPressed": "messages-orange-light.png",
+            "IconReleased": "messages-orange.png",
+            "IconX": 9,
+            "IconY": 52,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "buttonMessages",
+            "X": 0,
+            "Y": 136,
+            "Width": 50,
+            "Height": 136,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "side_button_idle.png",
+            "Alpha": 255,
+            "Name": "imageRotation",
+            "X": 0,
+            "Y": 0,
+            "Width": 50,
+            "Height": 136,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "sailboat-orange-light.png",
+            "Alpha": 255,
+            "Name": "imageRotationIcon",
+            "X": 9,
+            "Y": 52,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "slider_round_back.png",
+            "BackgroundSelected": "slider_round_back.png",
+            "Indicator": "slider_knob.png",
+            "BackgroundX": 0,
+            "BackgroundY": 10,
+            "IndicatorPos": 0,
+            "IndicatorMax": 318,
+            "IndicatorMin": 0,
+            "ValueMax": 100,
+            "ValueMin": 0,
+            "InitValue": 50,
+            "Name": "sliderRotation",
+            "X": 500,
+            "Y": 220,
+            "Width": 350,
+            "Height": 32,
+            "Type": "Slider",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 249,
+              "Green": 186,
+              "Blue": 109
+            },
+            "CenterX": 100,
+            "CenterY": 100,
+            "Radius": 95,
+            "LineWidth": 7,
+            "StartAngle": 180,
+            "EndAngle": 180,
+            "CapPrecision": "Round",
+            "Alpha": 255,
+            "Name": "circleRotation",
+            "X": 500,
+            "Y": 12,
+            "Width": 200,
+            "Height": 200,
+            "Type": "Circle",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "sailboat-2-large.png",
+            "Alpha": 255,
+            "Name": "imageRotBg",
+            "X": 500,
+            "Y": 84,
+            "Width": 100,
+            "Height": 100,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 249,
+              "Green": 186,
+              "Blue": 109
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId6",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textRotationSpeed",
+            "X": 500,
+            "Y": 43,
+            "Width": 92,
+            "Height": 25,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "icons8-up-3-52.png",
+            "Alpha": 255,
+            "Name": "imageRotLeft",
+            "X": 500,
+            "Y": 180,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "icons8-up-2-52.png",
+            "Alpha": 255,
+            "Name": "imageRotRight",
+            "X": 500,
+            "Y": 180,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionButtonMessagesClicked",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "TriggerComponent": "buttonMessages",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "ButtonMessagesClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionChangeScreenMessage",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionExitRotRight",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Messages",
+              "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionsliderRotationChanged",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "sliderRotation",
+              "Type": "TriggerSliderValueChanged"
+            },
+            "Action": {
+              "FunctionName": "sliderRotationChanged",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionRotationReleased",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "sliderRotation",
+              "Type": "TriggerSliderValueConfirmed"
+            },
+            "Action": {
+              "FunctionName": "sliderRotationReleased",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterCircle",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 164,
+              "Y": 12,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "circleRotation",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEntreSlider",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 89,
+              "Y": 220,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "sliderRotation",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterImageRotBg",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 214,
+              "Y": 84,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "imageRotBg",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterTextRotationSpeed",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 218,
+              "Y": 43,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "textRotationSpeed",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterRotLeft",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 123,
+              "Y": 180,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "imageRotLeft",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterRotRight",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 374,
+              "Y": 180,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "imageRotRight",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitSliderRotation",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 220,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "sliderRotation",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitCicleRotation",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 12,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "circleRotation",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitImageRotBg",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 84,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "imageRotBg",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionTextRotationSpeed",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 43,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "textRotationSpeed",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitRotLeft",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 180,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "imageRotLeft",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitRotRight",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 180,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 300,
+              "ActionComponent": "imageRotRight",
+              "Type": "ActionMove"
+            }
+          }
+        ],
+        "Name": "RotationVoilier",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 7200
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "background.png",
+            "Alpha": 255,
+            "Name": "imageBg",
+            "X": 0,
+            "Y": 0,
+            "Width": 480,
+            "Height": 272,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "side_button_pressed.png",
+            "Released": "side_button_released.png",
+            "Alpha": 255,
+            "IconPressed": "sailboat-orange-light.png",
+            "IconReleased": "sailboat-orange.png",
+            "IconX": 9,
+            "IconY": 52,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "buttonRotation",
+            "X": 0,
+            "Y": 0,
+            "Width": 50,
+            "Height": 136,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "side_button_idle.png",
+            "Alpha": 255,
+            "Name": "imageMessages",
+            "X": 0,
+            "Y": 136,
+            "Width": 50,
+            "Height": 136,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "messages-orange-light.png",
+            "Alpha": 255,
+            "Name": "imageMessagesIcon",
+            "X": 9,
+            "Y": 188,
+            "Width": 32,
+            "Height": 32,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "counter_box_messages.png",
+            "Alpha": 255,
+            "Name": "imageMessageBoxBg",
+            "X": 500,
+            "Y": 14,
+            "Width": 360,
+            "Height": 200,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 249,
+              "Green": 186,
+              "Blue": 109
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 1500
+            },
+            "Name": "textMessages",
+            "X": 500,
+            "Y": 14,
+            "Width": 360,
+            "Height": 200,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "button_empty_pressed.png",
+            "Released": "button_empty_released.png",
+            "Alpha": 255,
+            "IconPressed": "icons8-broom-orange-light.png",
+            "IconReleased": "icons8-broom-orange.png",
+            "IconX": 49,
+            "IconY": 12,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "Name": "buttonWipe",
+            "X": 500,
+            "Y": 214,
+            "Width": 130,
+            "Height": 56,
+            "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionButtonMessagesClicked",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "TriggerComponent": "buttonRotation",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonMessagesClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionChangeScreenRotation",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionExitButtonWipe",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RotationVoilier",
+              "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonWipeClicked",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "buttonWipe",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonWipeClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterMessageBoxBg",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 81,
+              "Y": 14,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "imageMessageBoxBg",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionTextMessage",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 81,
+              "Y": 14,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 250,
+              "ActionComponent": "textMessages",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionEnterButtonWipe",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "X": 196,
+              "Y": 214,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "buttonWipe",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitMessageBoxBg",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 14,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "imageMessageBoxBg",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitTextMessages",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 14,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "textMessages",
+              "Type": "ActionMove"
+            }
+          },
+          {
+            "InteractionName": "InteractionExitButtonWipe",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "InteractionToTriggerOn": "InteractionButtonMessagesClicked",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "X": 500,
+              "Y": 214,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 250,
+              "ActionComponent": "buttonWipe",
+              "Type": "ActionMove"
+            }
+          }
+        ],
+        "Name": "Messages",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "TextEntries": [
+      {
+        "TextEntryId": "SingleUseId2",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId3",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId4",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId5",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId6",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId7",
+        "IsResource": false
+      }
+    ],
+    "Name": "Console-Pilotage",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 24,
+    "StartupScreenName": "ChoixCanal",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      24
+    ],
+    "AvailableLCDs": {
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD24bpp": {
+        "Id": "LCD24bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project --project-file=../Console-Pilotage.ioc --platform=m7",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape"
+  },
+  "Version": "4.13.0"
+}

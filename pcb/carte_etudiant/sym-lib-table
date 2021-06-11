@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name carte_etudiant-rescue)(type Legacy)(uri ${KIPRJMOD}/carte_etudiant-rescue.lib)(options "")(descr ""))
+)
