@@ -456,4 +456,46 @@ Wire Wire Line
 	8050 2150 8050 2650
 Connection ~ 8050 2650
 NoConn ~ 8150 2150
+$Comp
+L Connector:TestPoint GND_1
+U 1 1 60C8950E
+P 2300 6550
+F 0 "GND_1" H 2358 6668 50  0000 L CNN
+F 1 "GND Ref" H 2358 6577 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2358 6531 50  0001 L CNN
+F 3 "~" H 2500 6550 50  0001 C CNN
+	1    2300 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint GND_2
+U 1 1 60C89C49
+P 2950 6550
+F 0 "GND_2" H 3008 6668 50  0000 L CNN
+F 1 "GND Ref" H 3008 6577 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3150 6550 50  0001 C CNN
+F 3 "~" H 3150 6550 50  0001 C CNN
+	1    2950 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 60C93D1F
+P 2650 6750
+F 0 "#PWR0107" H 2650 6500 50  0001 C CNN
+F 1 "GND" H 2655 6577 50  0000 C CNN
+F 2 "" H 2650 6750 50  0001 C CNN
+F 3 "" H 2650 6750 50  0001 C CNN
+	1    2650 6750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 6550 2300 6750
+Wire Wire Line
+	2300 6750 2650 6750
+Wire Wire Line
+	2950 6750 2950 6550
+Connection ~ 2650 6750
+Wire Wire Line
+	2650 6750 2950 6750
 $EndSCHEMATC
