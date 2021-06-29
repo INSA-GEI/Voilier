@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Carte étudiant"
-Date "2020-03-10"
-Rev "1.1"
+Date "2021-06-29"
+Rev "1.4"
 Comp "INSA GEI"
 Comment1 ""
 Comment2 ""
@@ -211,7 +211,6 @@ NoConn ~ 8150 5650
 NoConn ~ 8050 5650
 NoConn ~ 6450 5650
 NoConn ~ 6350 5650
-NoConn ~ 8250 5150
 Wire Wire Line
 	6650 2750 9700 2750
 Wire Wire Line
@@ -354,15 +353,10 @@ Wire Wire Line
 Connection ~ 6450 5100
 Wire Wire Line
 	6450 5100 6350 5100
-NoConn ~ 8150 2650
 Wire Wire Line
 	8050 4850 9700 4850
 Wire Wire Line
-	8050 4850 8050 4950
-Wire Wire Line
-	8050 4950 8150 4950
-Wire Wire Line
-	8150 4950 8150 5150
+	8050 5000 8150 5000
 Connection ~ 8050 4850
 Wire Wire Line
 	3800 1250 3800 950 
@@ -455,7 +449,6 @@ Connection ~ 7950 2650
 Wire Wire Line
 	8050 2150 8050 2650
 Connection ~ 8050 2650
-NoConn ~ 8150 2150
 $Comp
 L Connector:TestPoint GND_1
 U 1 1 60C8950E
@@ -498,4 +491,24 @@ Wire Wire Line
 Connection ~ 2650 6750
 Wire Wire Line
 	2650 6750 2950 6750
+Wire Wire Line
+	8150 2150 8150 2650
+Wire Wire Line
+	8150 5000 8150 5150
+Wire Wire Line
+	8050 4850 8050 5000
+Wire Wire Line
+	8250 5150 8250 5000
+Wire Wire Line
+	8250 4900 8150 4900
+Wire Wire Line
+	8150 4900 8150 2650
+Connection ~ 8150 2650
+Wire Wire Line
+	9700 5000 8250 5000
+Connection ~ 8250 5000
+Wire Wire Line
+	8250 5000 8250 4900
+Text Label 9700 5000 2    50   ~ 0
+SPI_CS2
 $EndSCHEMATC
