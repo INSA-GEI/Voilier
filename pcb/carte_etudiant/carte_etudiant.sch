@@ -326,9 +326,9 @@ SERVO_VOILE_PWM
 Text Label 9700 3650 2    50   ~ 0
 PLATEAU_PWM
 Text Label 9700 3800 2    50   ~ 0
-XBEE_UART_TX
+UART_RX
 Text Label 9700 3950 2    50   ~ 0
-XBEE_UART_RX
+UART_TX
 Text Label 9700 4100 2    50   ~ 0
 CAPTEUR_I2C_SCL
 Text Label 9700 4250 2    50   ~ 0
@@ -450,28 +450,6 @@ Wire Wire Line
 	8050 2150 8050 2650
 Connection ~ 8050 2650
 $Comp
-L Connector:TestPoint GND_1
-U 1 1 60C8950E
-P 2300 6550
-F 0 "GND_1" H 2358 6668 50  0000 L CNN
-F 1 "GND Ref" H 2358 6577 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2358 6531 50  0001 L CNN
-F 3 "~" H 2500 6550 50  0001 C CNN
-	1    2300 6550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint GND_2
-U 1 1 60C89C49
-P 2950 6550
-F 0 "GND_2" H 3008 6668 50  0000 L CNN
-F 1 "GND Ref" H 3008 6577 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3150 6550 50  0001 C CNN
-F 3 "~" H 3150 6550 50  0001 C CNN
-	1    2950 6550
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0107
 U 1 1 60C93D1F
 P 2650 6750
@@ -511,4 +489,43 @@ Wire Wire Line
 	8250 5000 8250 4900
 Text Label 9700 5000 2    50   ~ 0
 SPI_CS2
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO1
+U 1 1 60E31959
+P 10800 6900
+F 0 "LOGO1" H 10800 7175 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 10800 6675 50  0001 C CNN
+F 2 "Insa:insa-image" H 10800 6900 50  0001 C CNN
+F 3 "~" H 10800 6900 50  0001 C CNN
+	1    10800 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J10
+U 1 1 60E869DB
+P 2200 6350
+F 0 "J10" V 2118 6162 50  0000 R CNN
+F 1 "Conn_01x02" V 2073 6162 50  0001 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2200 6350 50  0001 C CNN
+F 3 "~" H 2200 6350 50  0001 C CNN
+	1    2200 6350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J11
+U 1 1 60E86EF8
+P 2950 6350
+F 0 "J11" V 2868 6162 50  0000 R CNN
+F 1 "Conn_01x02" V 2823 6162 50  0001 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2950 6350 50  0001 C CNN
+F 3 "~" H 2950 6350 50  0001 C CNN
+	1    2950 6350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3050 6550 2950 6550
+Connection ~ 2950 6550
+Wire Wire Line
+	2200 6550 2300 6550
+Connection ~ 2300 6550
 $EndSCHEMATC

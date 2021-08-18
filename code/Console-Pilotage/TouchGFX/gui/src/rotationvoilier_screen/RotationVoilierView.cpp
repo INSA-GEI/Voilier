@@ -30,7 +30,7 @@ void RotationVoilierView::ButtonMessagesClicked()
 
 void RotationVoilierView::sliderRotationChanged(int value)
 {
-	char strbuf[20];
+	//char strbuf[20];
 
 	rotationValue=value;
 	rotationValue=(rotationValue-50)*2;
@@ -40,13 +40,14 @@ void RotationVoilierView::sliderRotationChanged(int value)
 	Unicode::snprintf(textRotationSpeedBuffer,TEXTROTATIONSPEED_SIZE,"%d",abs(rotationValue));
 
 	if (!circleRotation.isVisible()) circleRotation.setVisible(true);
-	sprintf(strbuf,"ROT=%i\r",rotationValue);
-	XbeeWriteData((uint8_t *)strbuf, strlen(strbuf));
+	//sprintf(strbuf,"ROT=%i\r",rotationValue);
+	//XbeeWriteData((uint8_t *)strbuf, strlen(strbuf));
+	XBEE_SetRotation(rotationValue);
 }
 
 void RotationVoilierView::sliderRotationReleased(int value)
 {
-	char strbuf[20];
+	//char strbuf[20];
 
 	rotationValue=0;
 
@@ -61,8 +62,9 @@ void RotationVoilierView::sliderRotationReleased(int value)
 
 	rotationAnimate=0;
 
-	sprintf(strbuf,"ROT=0\r");
-	XbeeWriteData((uint8_t *)strbuf, strlen(strbuf));
+	//sprintf(strbuf,"ROT=0\r");
+	//XbeeWriteData((uint8_t *)strbuf, strlen(strbuf));
+	XBEE_SetRotation(rotationValue);
 }
 
 void RotationVoilierView::handleTickEvent()

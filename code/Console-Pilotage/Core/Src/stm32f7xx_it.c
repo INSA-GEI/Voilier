@@ -23,6 +23,7 @@
 #include "stm32f7xx_it.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "xbee.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -168,12 +169,19 @@ void DebugMon_Handler(void)
  */
 void TIM6_DAC_IRQHandler(void)
 {
+	static uint32_t Counter_100ms=0;
+
 	/* USER CODE BEGIN TIM6_DAC_IRQn 0 */
 
 	/* USER CODE END TIM6_DAC_IRQn 0 */
 	HAL_TIM_IRQHandler(&htim6);
 	/* USER CODE BEGIN TIM6_DAC_IRQn 1 */
-
+	Counter_100ms++;
+	if (Counter_100ms==100)
+	{
+		XBEE_SendRotation();
+		Counter_100ms=0;
+	}
 	/* USER CODE END TIM6_DAC_IRQn 1 */
 }
 

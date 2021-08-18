@@ -31,18 +31,20 @@
 #include <sys/time.h>
 #include <sys/times.h>
 
+#include "stm32f7xx.h"
 
 /* Variables */
 //#undef errno
 extern int errno;
-extern int __io_putchar(int ch) __attribute__((weak));
-extern int __io_getchar(void) __attribute__((weak));
+int __io_putchar(int ch);
+int __io_getchar(void);
 
 register char * stack_ptr asm("sp");
 
 char *__env[1] = { 0 };
 char **environ = __env;
 
+volatile int32_t ITM_RxBuffer = ITM_RXBUFFER_EMPTY;
 
 /* Functions */
 void initialise_monitor_handles()
@@ -87,6 +89,21 @@ __attribute__((weak)) int _write(int file, char *ptr, int len)
 		__io_putchar(*ptr++);
 	}
 	return len;
+}
+
+int __io_putchar(int ch)
+{
+	ITM_SendChar((uint32_t) ch);
+
+	return 1;
+}
+
+int __io_getchar(void)
+{
+	while (!ITM_CheckChar());
+
+	return ((int)ITM_ReceiveChar());
+
 }
 
 int _close(int file)

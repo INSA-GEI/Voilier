@@ -37,4 +37,6 @@ void XbeeSetEndingChar(uint8_t endingChar);
 int XbeeReadData(uint8_t *data);
 void XbeeAddReceptionCallback(XBEEDataReceivedCallback callee);
 
+void XBEE_SendRotation(void);
+void XBEE_SetRotation(int rot);
 #endif /* XBEE_H_ */

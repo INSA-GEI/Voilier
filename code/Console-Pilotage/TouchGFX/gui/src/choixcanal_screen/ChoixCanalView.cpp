@@ -2,6 +2,7 @@
 
 extern "C" {
 #include "xbee.h"
+#include <stdio.h>
 
 void assert_failed(uint8_t *file, uint32_t line);
 }
@@ -25,6 +26,9 @@ void ChoixCanalView::buttonConnectClicked()
 {
 	//touchgfx_printf("Bouton demarrer appuye\n");
 	XbeeStartRx();
+
+	printf ("Hello swv\n");
+
 	if (XbeeSetup(canalVoilier+0x80, canalVoilier) != XBEE_STATUS_SUCCESS) {
 		assert_failed((uint8_t *) __FILE__, __LINE__);
 	}

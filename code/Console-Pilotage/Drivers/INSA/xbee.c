@@ -24,6 +24,8 @@ uint8_t xbeeEndingChar;
 void XbeeUARTRxCallback(uint8_t data);
 void XbeeFlush(void);
 
+int rotation=0;
+
 int XbeeInit(USART_TypeDef* usart) {
 	// Init corresponding UART for Xbee
 	xbeeUsart=usart;
@@ -264,4 +266,16 @@ void XbeeUARTRxCallback(uint8_t data) {
 	xbeeReceivedFrame[xbeeReceivedLength]=0;
 
 	if (data == xbeeEndingChar) xbeeEndingCharFlag=1;
+}
+
+void XBEE_SendRotation(void)
+{
+	printf ("%d\n", rotation);
+	signed char rot = (signed char)rotation;
+	XbeeWriteData((uint8_t*)&rot, 1);
+}
+
+void XBEE_SetRotation(int rot)
+{
+	rotation=rot;
 }
