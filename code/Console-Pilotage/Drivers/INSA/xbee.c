@@ -25,6 +25,7 @@ void XbeeUARTRxCallback(uint8_t data);
 void XbeeFlush(void);
 
 int rotation=0;
+static char isConfigured=0;
 
 int XbeeInit(USART_TypeDef* usart) {
 	// Init corresponding UART for Xbee
@@ -48,6 +49,7 @@ int XbeeInit(USART_TypeDef* usart) {
 	}
 
 	//UartStartRX();
+	isConfigured=0;
 
 	xbeeLastError = XBEE_STATUS_SUCCESS;
 	return xbeeLastError;
@@ -55,6 +57,7 @@ int XbeeInit(USART_TypeDef* usart) {
 
 int XbeeDeInit() {
 	UartStopRX();
+	isConfigured=0;
 
 	// TODO Auto-generated destructor stub
 	if (UartDeInit(xbeeUsart)!= UART_STATUS_SUCCESS) {
@@ -70,6 +73,7 @@ int XbeeDeInit() {
 
 int XbeeSetup(int ownAddress,int desAddress) {
 	char strbuf[20];
+	isConfigured=0;
 
 	xbeeOwnAddress = ownAddress;
 	xbeeDesAddress = desAddress;
@@ -183,8 +187,14 @@ int XbeeSetup(int ownAddress,int desAddress) {
 
 	XbeeFlush();
 
+	isConfigured=1;
 	xbeeLastError = XBEE_STATUS_SUCCESS;
 	return xbeeLastError;
+}
+
+char XbeeIsConfigured()
+{
+	return isConfigured;
 }
 
 void XbeeStartRx(void) {
@@ -268,14 +278,14 @@ void XbeeUARTRxCallback(uint8_t data) {
 	if (data == xbeeEndingChar) xbeeEndingCharFlag=1;
 }
 
-void XBEE_SendRotation(void)
+void XbeeSendRotation(void)
 {
 	printf ("%d\n", rotation);
 	signed char rot = (signed char)rotation;
 	XbeeWriteData((uint8_t*)&rot, 1);
 }
 
-void XBEE_SetRotation(int rot)
+void XbeeSetRotation(int rot)
 {
 	rotation=rot;
 }

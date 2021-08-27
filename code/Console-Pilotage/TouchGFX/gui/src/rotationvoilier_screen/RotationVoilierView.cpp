@@ -42,7 +42,7 @@ void RotationVoilierView::sliderRotationChanged(int value)
 	if (!circleRotation.isVisible()) circleRotation.setVisible(true);
 	//sprintf(strbuf,"ROT=%i\r",rotationValue);
 	//XbeeWriteData((uint8_t *)strbuf, strlen(strbuf));
-	XBEE_SetRotation(rotationValue);
+	XbeeSetRotation(rotationValue);
 }
 
 void RotationVoilierView::sliderRotationReleased(int value)
@@ -64,7 +64,7 @@ void RotationVoilierView::sliderRotationReleased(int value)
 
 	//sprintf(strbuf,"ROT=0\r");
 	//XbeeWriteData((uint8_t *)strbuf, strlen(strbuf));
-	XBEE_SetRotation(rotationValue);
+	XbeeSetRotation(rotationValue);
 }
 
 void RotationVoilierView::handleTickEvent()

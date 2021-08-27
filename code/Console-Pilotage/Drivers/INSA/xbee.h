@@ -20,6 +20,8 @@ int XbeeInit(USART_TypeDef* uart);
 int XbeeDeInit();
 
 int XbeeSetup(int ownAddress, int desAddress);
+char XbeeIsConfigured();
+
 int XbeeGetLastRSSI();
 int XbeeGetLastStatus();
 
@@ -37,6 +39,6 @@ void XbeeSetEndingChar(uint8_t endingChar);
 int XbeeReadData(uint8_t *data);
 void XbeeAddReceptionCallback(XBEEDataReceivedCallback callee);
 
-void XBEE_SendRotation(void);
-void XBEE_SetRotation(int rot);
+void XbeeSendRotation(void);
+void XbeeSetRotation(int rot);
 #endif /* XBEE_H_ */

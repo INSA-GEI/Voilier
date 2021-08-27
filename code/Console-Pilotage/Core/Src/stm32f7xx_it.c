@@ -179,8 +179,9 @@ void TIM6_DAC_IRQHandler(void)
 	Counter_100ms++;
 	if (Counter_100ms==100)
 	{
-		XBEE_SendRotation();
 		Counter_100ms=0;
+
+		if (XbeeIsConfigured()) XbeeSendRotation();
 	}
 	/* USER CODE END TIM6_DAC_IRQn 1 */
 }
