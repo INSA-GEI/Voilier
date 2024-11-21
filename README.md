@@ -11,3 +11,17 @@ La structure du dépôt suit cette organisation:
 ## Contributeurs
 L'équipe enseignante et l’équipe technique du département GEI, spécialité électronique, de l'INSA de Toulouse, France.
 
+## Config XBEE
+
+Voilier
+Channel: F
+PanID: 111
+My : n
+Dest : 0x80+n
+
+Telecommande:
+Channel: F
+PanID: 111
+My: 0x80+n
+Dest: n
+
